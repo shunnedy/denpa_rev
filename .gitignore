@@ -1,0 +1,29 @@
+# ROM イメージ・暗号化コンテナ（絶対にコミットしない）
+*.cci
+*.cia
+*.3ds
+*.cxi
+*.app
+*.ncch
+*.romfs
+*.bin.dec
+
+# 展開物（ゲーム本体の著作物）
+extracted/
+romfs/
+exefs/
+code.bin
+code_dec.bin
+exheader.bin
+exefs.bin
+romfs.bin
+
+# セーブデータ・個人情報
+*.sav
+*.gh_token
+.gh_token
+
+# 作業ゴミ
+__pycache__/
+*.pyc
+.DS_Store
