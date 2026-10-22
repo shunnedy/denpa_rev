@@ -98,6 +98,31 @@ python3 tools/gsmsg.py extracted/base_romfs/5EFE0000 d01_msg    # テーブル�
 
 `gsmsg.decode()` は `(漢字形, かな形, 差し込み参照の一覧)` を返す。
 
+## 変数の差し込み
+
+差し込みトークン（オペコード `7`）で指定される名前には、他テーブルの
+参照だけでなく**実行時の変数**もある。文字列プールに生ASCIIで入っている
+トークンを集計すると:
+
+```
+name        グループ名としても使われる     num / value / count / max / a_num
+skill_name / sp_skill_name  とくぎ名       item / rank / level / rare
+gold / jewel                通貨            fish_a / fish_b / fish_c  釣った魚
+month / day / hour / minute / minutes / second   日時
+target      全国討伐イベントの目標数        answer  クイズの答え
+```
+
+たとえば全国討伐イベントの告知文は
+
+```
+今回の作戦での討伐目標数は全国で「{target} 匹」よ。
+目標達成時に送られる報酬は「{name}」の予定だから、頑張って！
+```
+
+という形で、目標数と報酬名を**サーバから受け取って差し込む**作りになっている
+（docs/09のチェックインサーバ）。blob全体を素直にUTF-16としてデコードすると
+これらのASCIIトークンが `慴杲瑥`（= "target"）のような文字化けとして現れる。
+
 ## 未解決
 
 - フラグ `0xD0D0D0xx` の下位バイトの意味
