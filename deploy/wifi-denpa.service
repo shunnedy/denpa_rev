@@ -1,0 +1,13 @@
+[Unit]
+Description=Denpa Men FREE! game server (Wi-Fi Colosseum revival)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/asahina-net-wifi
+ExecStart=/usr/bin/python3 /root/asahina-net-wifi/denpa_server.py --host 127.0.0.1 --port 8082 --opponents 12
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

@@ -43,7 +43,17 @@ ROMイメージ、展開した romfs / code.bin、モデル・テクスチャ・
 | [docs/10-qr.md](docs/10-qr.md) | QR機能の有無（結論: 無い） | 確定 |
 | [docs/11-cut-content.md](docs/11-cut-content.md) | 没データ・未使用データ | 確定 |
 | [docs/12-modding.md](docs/12-modding.md) | MODの作りやすさ（実証2件） | 一部未検証 |
-| [docs/13-server-protocol.md](docs/13-server-protocol.md) | サーバプロトコルとプロトタイプ実装 | `time`/`bonus_tbl` は確定 |
+| [docs/13-server-protocol.md](docs/13-server-protocol.md) | サーバプロトコルとプロトタイプ実装 | `time`/`bonus_tbl`/`rand3` は確定 |
+| [docs/14-revival.md](docs/14-revival.md) | Ｗｉ-Ｆｉコロシアム復活の構成 | 実機未検証 |
+
+## 復活キット
+
+- [`patches/`](patches) — 接続先を自前サーバに差し替えるIPSパッチ（base / update）
+- [`deploy/`](deploy) — systemdユニット、Cloudflare tunnelのingress、手順書
+- [`tools/denpa_server.py`](tools/denpa_server.py) — サーバ実装（自己テスト22項目）
+
+詳細は [docs/14-revival.md](docs/14-revival.md) と
+[patches/README.md](patches/README.md)。**実機・エミュでの動作確認は未了**。
 
 ## ツール
 
@@ -117,7 +127,9 @@ MD5 が一致することを確認済み。
 - [x] 没データの洗い出し（ペイント機能がアーカイブごと削除、Aprilイベントのデータ欠落ほか）
 - [x] データMODの実証（テキストと数値バランスの書き換え→再構築→読み戻し確認）
 - [x] サーバプロトコルの解明（CSV + base64、NEX不使用）とプロトタイプ実装
-- [ ] `rand3`/`rank` の40KB応答（Ｗｉ-Ｆｉコロシアムの対戦相手一覧）のフィールド構成
+- [x] `rand3` の応答形式（1相手につきbase64 2フィールド）
+- [x] 接続先差し替えパッチ（同一長25バイト、HTTPS維持）と証明書スロットの特定
+- [ ] 実機・Azaharでの動作確認（証明書・`auth_token`・残りの応答フィールド）
 - [ ] 84バイトのチェックインレコードの中身
 - [ ] `vendor.bin` の形式
 

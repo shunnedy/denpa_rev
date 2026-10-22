@@ -1,0 +1,4 @@
+# /root/.cloudflared/config.yml の ingress に、http_status:404 の
+# キャッチオールより前へ挿入する
+  - hostname: wifi.asahina.net
+    service: http://127.0.0.1:8082
