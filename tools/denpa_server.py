@@ -47,6 +47,27 @@ def now_stamp(when=None):
 # That split is inferred, not yet confirmed in the code.
 CHUNK = 3000
 
+# Wi-Fi Colosseum opponent list (`req=rand3` / `rank`, 40 KB response buffer):
+#   SUCCESS,<base64 A1>,<base64 B1>,<base64 A2>,<base64 B2>,...
+# two fields per opponent, each base64, decoded straight into a fixed slot:
+#   A = 0x20 bytes  (32)   -> entry + 8      most likely the team/player name
+#   B = 0x4E8 bytes (1256) -> entry + 40     the party blob
+# entry stride is 0x142 u32 = 1288 bytes. Sizes are read from the code
+# (0x003EA2B0 holds 0x4E8); what the two blobs CONTAIN is not decoded yet.
+OPP_NAME_LEN = 0x20
+OPP_PARTY_LEN = 0x4E8
+OPPONENTS = []
+
+
+def opponent_fields():
+    out = []
+    for name, party in OPPONENTS:
+        n = (name.encode('utf-16-le')[:OPP_NAME_LEN]).ljust(OPP_NAME_LEN, b'\0')
+        p = party[:OPP_PARTY_LEN].ljust(OPP_PARTY_LEN, b'\0')
+        out.append(base64.b64encode(n).decode('ascii'))
+        out.append(base64.b64encode(p).decode('ascii'))
+    return out
+
 
 def table_payload(name, t_num=0, limit=None):
     blob = TABLES.get(name)
@@ -97,8 +118,10 @@ def handle(path, q):
             return csv_ok(0)
         if req == 'player_data':
             return csv_ok(0, 0, 0)
-        if req in ('top10', 'top', 'rand3', 'rand', 'current_party',
-                   'prize_tbl'):
+        if req in ('rand3', 'rand', 'top10', 'top'):
+            fields = opponent_fields()
+            return csv_ok(*fields) if fields else csv_ok()
+        if req in ('current_party', 'prize_tbl'):
             payload = table_payload(req, t_num, 0xA000) or table_payload(tbl, t_num, 0xA000)
             return csv_ok(payload) if payload else csv_ok()
         return csv_err(10)
@@ -155,10 +178,17 @@ def main():
     ap.add_argument('--port', type=int, default=8080)
     ap.add_argument('--table', action='append',
                     help='<archive path>:<TableName> to serve as a payload')
+    ap.add_argument('--opponents', type=int, default=0,
+                    help='serve N synthetic Wi-Fi Colosseum opponents')
     ap.add_argument('--cert', help='PEM certificate to wrap the socket in TLS')
     ap.add_argument('--key', help='its private key')
     a = ap.parse_args()
     load_tables(a.table)
+    for i in range(a.opponents):
+        OPPONENTS.append((f'テスト{i:02d}', bytes((i + j) & 0xFF
+                                                  for j in range(OPP_PARTY_LEN))))
+    if OPPONENTS:
+        print(f'opponents: {len(OPPONENTS)}')
     srv = ThreadingHTTPServer((a.host, a.port), Handler)
     if a.cert:
         ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)

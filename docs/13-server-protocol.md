@@ -156,6 +156,34 @@ URLセーフ（`-_`）が1箇所ある。
 手元にあるので、配信の再現は「同じ形式のテーブルを作ってbase64で返す」
 に落ちる。
 
+### `gameserver?req=rand3` / `rank` — Ｗｉ-Ｆｉコロシアムの対戦相手一覧
+
+応答バッファが 40 KB（`0xA000`）あるのはこれのため。
+
+```
+SUCCESS,<base64 A1>,<base64 B1>,<base64 A2>,<base64 B2>,...
+```
+
+**1相手につきフィールド2つ**で、どちらもbase64。デコード結果は
+固定長スロットにそのままmemcpyされる:
+
+| | 長さ | 格納先 |
+|---|---|---|
+| A | `0x20`（32バイト） | エントリ +8 |
+| B | `0x4E8`（1256バイト、`0x003EA2B0` の定数） | エントリ +40 |
+
+エントリの間隔は `0x142` u32 = 1288バイト。応答コンテナは
+`body[0x2800]` + オフセット表（10,240本）+ 件数（`+0xC800`）なので、
+**最大5,120相手**まで受け取れる構造。
+
+Aが32バイト（UTF-16LEで16文字）なのでチーム名・プレイヤー名、
+Bの1256バイトがパーティのデータと見るのが自然
+（RPG3のQRではキャラ1体88バイトだったので、10数体＋装備で妥当な大きさ）。
+**ただし2つのblobの中身そのものは未解析。**
+
+エントリを受け取ったあとクライアントは相手ごとに
+`%s%s&t_num=%d&tbl=%u&sub0=%d&case=%d` で追加リクエストを投げている。
+
 ## プロトタイプサーバ
 
 ```bash
@@ -165,8 +193,13 @@ python3 tools/denpa_server.py --port 8080 \
 python3 tools/denpa_server.py --cert server.pem --key server.key --port 443
 ```
 
+```bash
+# Ｗｉ-Ｆｉコロシアムの相手を合成して配る
+python3 tools/denpa_server.py --port 8080 --opponents 8
+```
+
 `tools/test_server.py` が**ゲーム側の解析規則をそのまま再現して**検証する。
-16項目すべて通過:
+22項目すべて通過:
 
 ```
 req=time       200 / 第0フィールド SUCCESS / 15文字以上 /
@@ -175,6 +208,9 @@ req=bonus_tbl  200 / "SUCCESS," 始まり / 1応答が 0x1000 以内 /
                22チャンクを連結してbase64デコードすると
                48,360バイトの CheckinData が**バイト単位で一致** /
                デコード結果がテーブルとして妥当 / 名前とレコード数241が保持
+req=rand3      第0フィールド SUCCESS / 1相手につき2フィールド /
+               0xA000 以内 / 名前blobが 0x20 バイト・パーティblobが
+               0x4E8 バイト / 名前が UTF-16LE として読める
 その他         未知の req は ERROR,<数値> / res_ver / ctr_state / check_party
 ```
 
@@ -188,12 +224,9 @@ req=bonus_tbl  200 / "SUCCESS," 始まり / 1応答が 0x1000 以内 /
    `unsend_account` `unsend_auth_token` があり、NNID（`act:u`）由来と
    見られる。サーバ側で検証しなければ通る可能性が高い（失敗パスが
    実装されている）が、**未検証**
-3. **各応答のフィールド構成** — `time` と `bonus_tbl` は確定。
-   `rank` / `total` / `player_data` / `top10` / `rand3` /
-   `current_party` / `check_party` / `prize_tbl` は
-   「SUCCESS + 数値またはbase64」までは分かっているが、
-   フィールドの意味は未確定。`0x003E9A00`（`rand3`/`rank`、40 KB応答、
-   オフセット表2560本）がＷｉ-Ｆｉコロシアムの対戦相手一覧と見られ、
-   ここを読むのが次の山
+3. **各応答のフィールド構成** — `time` `bonus_tbl` `rand3` は確定。
+   残りの `total` / `player_data` / `check` / `check_party` /
+   `current_party` / `prize_tbl` は「SUCCESS + 数値またはbase64」まで。
+   対戦相手の32バイト名と1256バイトのパーティblobの**中身**も未解析
 4. **84バイトのチェックインレコードの中身** — 正解サンプル8種が
    あるので突き合わせで解ける

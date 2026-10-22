@@ -77,6 +77,23 @@ def main(archive, want_table):
     check('table name survives', h['name'], want_table)
     check('record count survives', h['count'], table_header(orig)['count'])
 
+    print('req=rand3 (Wi-Fi Colosseum opponent list):')
+    denpa_server.OPPONENTS.clear()
+    for i in range(3):
+        denpa_server.OPPONENTS.append(
+            (f'あいて{i}', bytes((i + j) & 0xFF for j in range(denpa_server.OPP_PARTY_LEN))))
+    st, body = get('/gameserver?req=rand3&prod=ranking_dev&reg=0')
+    f = split_csv(body)
+    check('field0 is SUCCESS', f[0], 'SUCCESS')
+    check('two fields per opponent', len(f) - 1, 6)
+    check('fits the 0xA000 response buffer', len(body) <= 0xA000, True)
+    names = [base64.b64decode(f[1 + i * 2]) for i in range(3)]
+    parties = [base64.b64decode(f[2 + i * 2]) for i in range(3)]
+    check('name blob is 0x20 bytes', {len(n) for n in names}, {0x20})
+    check('party blob is 0x4E8 bytes', {len(p) for p in parties}, {0x4E8})
+    check('name decodes as UTF-16LE',
+          names[0].decode('utf-16-le').rstrip('\0'), 'あいて0')
+
     print('errors and the rest:')
     st, body = get('/checkinserver?req=nonsense')
     check('unknown req -> ERROR,<code>', body.split(',')[0], 'ERROR')
