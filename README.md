@@ -36,6 +36,7 @@ ROMイメージ、展開した romfs / code.bin、モデル・テクスチャ・
 | [docs/03-archive.md](docs/03-archive.md) | hex名アーカイブのコンテナ仕様、LZ10 | 確定 |
 | [docs/04-data-tables.md](docs/04-data-tables.md) | データテーブル形式、テーブル一覧118件 | 確定（レコード内部は未解析） |
 | [docs/05-text.md](docs/05-text.md) | メッセージ形式、制御コード、ルビ | 確定 |
+| [docs/06-gsc.md](docs/06-gsc.md) | `.gsc` リソースラッパ | 確定 |
 
 ## ツール
 
@@ -57,6 +58,9 @@ python3 tools/manifest.py extracted/base_romfs > manifest-base.tsv
 # メッセージテーブルをテキストに展開（漢字形／かな形）
 python3 tools/gsmsg.py extracted/base_romfs/5EFE0000
 python3 tools/gsmsg.py extracted/base_romfs/5EFE0000 d01_msg
+
+# .gsc リソースラッパの中身を見る
+python3 tools/gsc.py extracted/base_romfs/07E40000
 ```
 
 `ctr_extract.py` の BLZ 展開は、別途入手した `code.bin` / `code_dec.bin` のペアに対して
@@ -71,8 +75,8 @@ MD5 が一致することを確認済み。
 - [x] 全17,330エントリのマニフェスト作成
 - [x] データテーブルのヘッダ解析（91.0%が整合、テーブル名118件を特定）
 - [x] メッセージ形式とルビ制御コード（19,344件 / 約67.8万文字を抽出可能）
+- [x] `.gsc` の正体を確定（イベントスクリプトではなくマップモデルのラッパ）
 - [ ] データテーブルのレコード内部（フィールド境界と型）
-- [ ] `.gsc`（イベントスクリプト）のオペコード解析
 - [ ] `.cro` の関数解析
 - [ ] QR機能の有無の確定（code内に Blowfish 定数・QR関連文字列が見つかっていない）
 
