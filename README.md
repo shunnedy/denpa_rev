@@ -46,6 +46,7 @@ ROMイメージ、展開した romfs / code.bin、モデル・テクスチャ・
 | [docs/13-server-protocol.md](docs/13-server-protocol.md) | サーバプロトコルとプロトタイプ実装 | `time`/`bonus_tbl`/`rand3` は確定 |
 | [docs/14-revival.md](docs/14-revival.md) | Ｗｉ-Ｆｉコロシアム復活の構成 | 実機未検証 |
 | [docs/15-character-format.md](docs/15-character-format.md) | キャラクター・チームのデータ構造 | 装備6枠は確定、残りは推定 |
+| [docs/16-save-editing.md](docs/16-save-editing.md) | セーブエディタの可否と探索ツール | 実セーブ待ち |
 
 ## 復活キット
 
@@ -87,6 +88,13 @@ python3 tools/crosym.py exports extracted/base_romfs/app/lanai.crs > symbols.csv
 # 実行中のゲームに対する注入（Azahar の GDB スタブ経由）
 python3 tools/inject.py --crs extracted/base_romfs/app/lanai.crs sym OpenTreasure
 python3 tools/test_inject.py        # エミュ不要の自己テスト
+
+# 参照データ（ID→名前）をJSONに書き出す
+python3 tools/dbexport.py extracted/update_romfs out/db
+
+# セーブ内の構造を探す（実セーブが必要）
+python3 tools/savetool.py names save.bin --db out/db
+python3 tools/savetool.py diff before.bin after.bin
 
 # 配信コンテンツモジュールのイベントクラス一覧
 python3 tools/crocontents.py extracted/.../contents0000.cro
