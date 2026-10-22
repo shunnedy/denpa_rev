@@ -1,0 +1,172 @@
+#!/usr/bin/env python3
+"""Prototype re-implementation of 電波人間のRPG FREE! の la1.denpamen.com.
+
+Everything here was derived from the game's own code (see docs/13):
+the client sends a plain HTTP GET, requires status 200, and parses the body as
+comma separated text whose first field is `SUCCESS` or `ERROR`. Payloads that
+carry a data table are base64 in the field after `SUCCESS,`, and the decoded
+bytes go straight into the table loader - so serving a table means serving
+base64 of exactly the blob format in docs/04.
+
+  python3 tools/denpa_server.py --port 8080 \
+      --table extracted/update_romfs/A9DF0000:CheckinData
+
+The game talks HTTPS and pins a certificate, so in front of this you need
+either a patched game (docs/07: swap the two words at 0x00288E04 / 0x00288E10)
+or a TLS terminator holding a certificate the console accepts. `--cert` wraps
+this server in TLS directly for the patched case.
+"""
+import argparse, base64, datetime, os, ssl, sys, urllib.parse
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+TABLES = {}          # name -> raw table blob to hand out
+LOG = []
+
+
+def csv_ok(*fields):
+    return 'SUCCESS' + (',' + ','.join(str(f) for f in fields) if fields else '')
+
+
+def csv_err(code=10):
+    return f'ERROR,{code}'
+
+
+def now_stamp(when=None):
+    """The 15-character form the client parses: YYYYMMDD<sep>HHMMSS."""
+    w = when or datetime.datetime.now()
+    return w.strftime('%Y%m%d %H%M%S')
+
+
+# The client gives each request a fixed response buffer, so a payload cannot
+# exceed it: 0x40 for the small status calls, 0x1000 for `bonus_tbl` and
+# `player_data`, 0xA000 for the big `rand3`/`rank` listing. A 48 KB table
+# therefore cannot arrive in one `bonus_tbl` response, which is why the query
+# carries `tbl=` and `t_num=` - almost certainly table id and chunk index.
+# That split is inferred, not yet confirmed in the code.
+CHUNK = 3000
+
+
+def table_payload(name, t_num=0, limit=None):
+    blob = TABLES.get(name)
+    if blob is None:
+        return None
+    b64 = base64.b64encode(blob).decode('ascii')
+    if limit is None:
+        return b64
+    chunks = [b64[i:i + CHUNK] for i in range(0, len(b64), CHUNK)] or ['']
+    if t_num >= len(chunks):
+        return None
+    return chunks[t_num]
+
+
+def handle(path, q):
+    """Return the response body for one request."""
+    req = (q.get('req') or [''])[0]
+    tbl = (q.get('tbl') or [''])[0]
+    try:
+        t_num = int((q.get('t_num') or ['0'])[0])
+    except ValueError:
+        t_num = 0
+
+    if path.startswith('/ctr_state/'):
+        # server-state probe; the game only needs a 200 with a SUCCESS line
+        return csv_ok()
+
+    if path == '/checkinserver':
+        if req == 'time':
+            return csv_ok(now_stamp())
+        if req == 'bonus_tbl':
+            payload = (table_payload('CheckinData', t_num, 0x1000)
+                       or table_payload(tbl, t_num, 0x1000))
+            return csv_ok(payload) if payload else csv_err(10)
+        if req == 'check':
+            # support_id is echoed back by the real server's check call
+            return csv_ok(1, (q.get('support_id') or [''])[0])
+        return csv_err(10)
+
+    if path == '/gameserver':
+        if req == 'res_ver':
+            return csv_ok(1)
+        if req == 'check':
+            return csv_ok(1)
+        if req == 'check_party':
+            return csv_ok(1)
+        if req in ('total', 'rank'):
+            return csv_ok(0)
+        if req == 'player_data':
+            return csv_ok(0, 0, 0)
+        if req in ('top10', 'top', 'rand3', 'rand', 'current_party',
+                   'prize_tbl'):
+            payload = table_payload(req, t_num, 0xA000) or table_payload(tbl, t_num, 0xA000)
+            return csv_ok(payload) if payload else csv_ok()
+        return csv_err(10)
+
+    if path == '/campaigncodeserver':
+        return csv_err(10)          # no code is valid until the table is known
+
+    return csv_err(10)
+
+
+class Handler(BaseHTTPRequestHandler):
+    server_version = 'denpamen-proto'
+
+    def do_GET(self):
+        u = urllib.parse.urlparse(self.path)
+        q = urllib.parse.parse_qs(u.query)
+        body = handle(u.path, q)
+        LOG.append((u.path, q.get('req', [''])[0], len(body)))
+        raw = body.encode('ascii')
+        self.send_response(200)
+        self.send_header('Content-Type', 'text/plain')
+        self.send_header('Content-Length', str(len(raw)))
+        self.end_headers()
+        self.wfile.write(raw)
+
+    def log_message(self, fmt, *a):
+        print('  ' + fmt % a, file=sys.stderr)
+
+
+def load_tables(specs):
+    """--table <archive>:<TableName> pulls a table blob straight out of a romfs archive."""
+    from tdmarc import Archive, table_header
+    for spec in specs or []:
+        arc, _, want = spec.partition(':')
+        a = Archive(arc)
+        for s in a.sections:
+            z = a.zip(s)
+            blobs = ([z.read(i) for i in z.infolist()
+                      if i.filename.endswith(('.bin', '.dat'))] if z
+                     else [a.payload(s)[0]])
+            for d in blobs:
+                if len(d) < 0x44:
+                    continue
+                h = table_header(d)
+                if h['valid'] and (not want or h['name'] == want):
+                    TABLES[h['name']] = d
+                    print(f'table {h["name"]}: {h["count"]} records, {len(d)} bytes')
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument('--host', default='0.0.0.0')
+    ap.add_argument('--port', type=int, default=8080)
+    ap.add_argument('--table', action='append',
+                    help='<archive path>:<TableName> to serve as a payload')
+    ap.add_argument('--cert', help='PEM certificate to wrap the socket in TLS')
+    ap.add_argument('--key', help='its private key')
+    a = ap.parse_args()
+    load_tables(a.table)
+    srv = ThreadingHTTPServer((a.host, a.port), Handler)
+    if a.cert:
+        ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+        ctx.load_cert_chain(a.cert, a.key)
+        srv.socket = ctx.wrap_socket(srv.socket, server_side=True)
+    print(f'listening on {"https" if a.cert else "http"}://{a.host}:{a.port}')
+    srv.serve_forever()
+
+
+if __name__ == '__main__':
+    main()

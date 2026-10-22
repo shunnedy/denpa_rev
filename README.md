@@ -43,6 +43,7 @@ ROMイメージ、展開した romfs / code.bin、モデル・テクスチャ・
 | [docs/10-qr.md](docs/10-qr.md) | QR機能の有無（結論: 無い） | 確定 |
 | [docs/11-cut-content.md](docs/11-cut-content.md) | 没データ・未使用データ | 確定 |
 | [docs/12-modding.md](docs/12-modding.md) | MODの作りやすさ（実証2件） | 一部未検証 |
+| [docs/13-server-protocol.md](docs/13-server-protocol.md) | サーバプロトコルとプロトタイプ実装 | `time`/`bonus_tbl` は確定 |
 
 ## ツール
 
@@ -79,6 +80,10 @@ python3 tools/test_inject.py        # エミュ不要の自己テスト
 # 配信コンテンツモジュールのイベントクラス一覧
 python3 tools/crocontents.py extracted/.../contents0000.cro
 
+# サーバのプロトタイプ（ROM内のテーブルを配信データとして返す）
+python3 tools/denpa_server.py --port 8080 --table extracted/update_romfs/A9DF0000:CheckinData
+python3 tools/test_server.py extracted/update_romfs/A9DF0000 CheckinData
+
 # アーカイブ再構築（LayeredFS でのデータ改造）
 python3 tools/tdmpack.py extracted/base_romfs/5EFE0000 out.bin d01_msg=patched.bin
 ```
@@ -111,6 +116,9 @@ MD5 が一致することを確認済み。
 - [ ] レコード内の個別フィールドの意味、ブロック3/4の幅
 - [x] 没データの洗い出し（ペイント機能がアーカイブごと削除、Aprilイベントのデータ欠落ほか）
 - [x] データMODの実証（テキストと数値バランスの書き換え→再構築→読み戻し確認）
+- [x] サーバプロトコルの解明（CSV + base64、NEX不使用）とプロトタイプ実装
+- [ ] `rand3`/`rank` の40KB応答（Ｗｉ-Ｆｉコロシアムの対戦相手一覧）のフィールド構成
+- [ ] 84バイトのチェックインレコードの中身
 - [ ] `vendor.bin` の形式
 
 ## ライセンス
