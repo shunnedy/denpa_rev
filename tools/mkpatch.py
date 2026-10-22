@@ -123,6 +123,7 @@ def main():
     recs = build_records(data, OLD, new)
     if not recs:
         sys.exit('no endpoint strings found in that file')
+    n_url = len(recs)
 
     if a.cert:
         der = open(a.cert, 'rb').read()
@@ -148,13 +149,22 @@ def main():
     patched = apply_ips(data, patch)
     assert len(patched) == len(data), 'patch changed the file length'
     diff = [i for i in range(len(data)) if data[i] != patched[i]]
-    print(f'{os.path.basename(a.code)}: {len(recs)} occurrences -> '
-          f'{a.out} ({len(patch)} bytes)')
+    print(f'{os.path.basename(a.code)}: {n_url} endpoint strings'
+          + (f' + certificate' if a.cert else '')
+          + f' -> {a.out} ({len(patch)} bytes)')
     print(f'  replaced {OLD.decode()} with {new.decode()}')
-    print(f'  bytes changed: {len(diff)} (expected at most {len(recs) * len(OLD)})')
-    print(f'  old string remaining: {patched.count(OLD)}, '
-          f'new string present: {patched.count(new)}')
-    assert patched.count(OLD) == 0 and patched.count(new) == len(recs)
+    print(f'  bytes changed: {len(diff)}')
+    print(f'  old URL remaining: {patched.count(OLD)}, '
+          f'new URL present: {patched.count(new)}')
+    assert patched.count(OLD) == 0, 'an endpoint string survived'
+    assert patched.count(new) == n_url, 'not every endpoint string was replaced'
+    if a.cert:
+        import struct
+        got = struct.unpack_from('<I', patched, len_site)[0]
+        print(f'  certificate in place: {patched[cert_off:cert_off+2].hex()}... '
+              f'length word now {got} (was {cert_len})')
+        assert patched[cert_off:cert_off + len(der)] == der, 'certificate mismatch'
+        assert got == len(der), 'length word not updated'
     for off, _ in recs[:3]:
         print(f'  e.g. offset {off:#08x} (VA {off + 0x00100000:#010x})')
 

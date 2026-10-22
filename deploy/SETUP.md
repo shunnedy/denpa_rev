@@ -38,24 +38,20 @@ systemctl restart cloudflared     # asahina.net も一瞬切れる
 `SUCCESS,1` を返せばここまで完了。このマシンからの外向きHTTPSは
 遮断されているので、確認はブラウザ側で。
 
-## 3. 証明書のDERを書き出してパッチを作り直す
+## 3. 証明書（済み）
 
-ゲームは証明書をピン留めしているので、**新しいホストの証明書を発行した
-CAに張り替える**必要がある（検証は有効のまま）。
-
-1. ブラウザで `https://wifi.asahina.net` を開く
-2. 鍵アイコン → 証明書 → チェーンの**発行者（中間CA）**を選び、
-   DER形式で `ca.der` として書き出す
-3. パッチを作り直す
+ブラウザのUIを触らずに `openssl` でチェーンを取得して、中間CA
+（`Google Trust Services CN=WE1`、675バイト）をパッチに埋め込み済み。
+DERは `/root/asahina-net-wifi/certs/` に保存してある。
 
 ```bash
-python3 tools/mkpatch.py \
-    /root/modding/denpamen_free/extracted/update_c0/code_dec.bin \
-    patches/code-update.ips --host wifi.asahina.net --cert ca.der
+# 取り直したいとき
+openssl s_client -connect wifi.asahina.net:443 -servername wifi.asahina.net \
+        -showcerts </dev/null 2>/dev/null > chain.pem
 ```
 
-`ca.der` は **1334バイト以下**（ECDSAの中間CAなら収まる）。
-超える場合はチェーンの別の段を試す。
+証明書が更新されても、**ピン留めしているのは中間CAなので2029年まで
+作り直し不要**。GTSがWE1を切り替えた場合だけ再生成が必要。
 
 ## 4. ゲーム側
 
