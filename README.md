@@ -38,6 +38,9 @@ ROMイメージ、展開した romfs / code.bin、モデル・テクスチャ・
 | [docs/05-text.md](docs/05-text.md) | メッセージ形式、制御コード、ルビ | 確定 |
 | [docs/06-gsc.md](docs/06-gsc.md) | `.gsc` リソースラッパ | 確定 |
 | [docs/07-injection.md](docs/07-injection.md) | コードインジェクション基盤、シンボルマップ | 動作確認済み |
+| [docs/08-data-records.md](docs/08-data-records.md) | レコード内部、残りの形式の分類 | 一部未解明を明記 |
+| [docs/09-contents-and-server.md](docs/09-contents-and-server.md) | 配信コンテンツ、キャンペーンコード、サーバAPI | 確定 |
+| [docs/10-qr.md](docs/10-qr.md) | QR機能の有無（結論: 無い） | 確定 |
 
 ## ツール
 
@@ -71,6 +74,9 @@ python3 tools/crosym.py exports extracted/base_romfs/app/lanai.crs > symbols.csv
 python3 tools/inject.py --crs extracted/base_romfs/app/lanai.crs sym OpenTreasure
 python3 tools/test_inject.py        # エミュ不要の自己テスト
 
+# 配信コンテンツモジュールのイベントクラス一覧
+python3 tools/crocontents.py extracted/.../contents0000.cro
+
 # アーカイブ再構築（LayeredFS でのデータ改造）
 python3 tools/tdmpack.py extracted/base_romfs/5EFE0000 out.bin d01_msg=patched.bin
 ```
@@ -91,8 +97,13 @@ MD5 が一致することを確認済み。
 - [ ] データテーブルのレコード内部（フィールド境界と型）
 - [x] CRO0 の完全パース（静的モジュールのエクスポート783/1101件を絶対アドレスで特定）
 - [x] コードインジェクション基盤（GDB RSPクライアント + vtable差し替え + 再構築、自己テスト12項目）
-- [ ] `contents*.cro` 174本のイベント内容
-- [ ] QR機能の有無の確定（code内に Blowfish 定数・QR関連文字列が見つかっていない）
+- [x] `contents*.cro` 174本のイベントクラス棚卸し（のべ551クラス、updateで+353）
+- [x] QR機能の有無を確定（**存在しない** — docs/10）
+- [x] サーバAPI・キャンペーンコード・デバッグ残骸の洗い出し
+- [x] `LevelData` と `MapChipDB.dat` の完全デコード
+- [ ] 名前ハッシュ索引348件のハッシュ関数（一般的な6種はいずれも不一致）
+- [ ] レコード内のフィールド境界と型（bit31フラグは推定まで）
+- [ ] `vendor.bin` の形式
 
 ## ライセンス
 
