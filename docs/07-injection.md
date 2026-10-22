@@ -38,14 +38,32 @@ GDBスタブ、または「自作ローダを3GXプラグインとして常駐�
 **アドレスの下位ビットはThumbフラグ**。奇数ならThumbコードなので、
 ラベルは偶数アドレスに付ける。
 
-Ghidraへの取り込み:
+Ghidraへの取り込み（実際に通した手順）:
 
 ```bash
-/opt/ghidra/support/analyzeHeadless /root/ghidra-projects denpafree \
-  -import extracted/base/code_dec.bin -processor ARM:LE:32:v7 \
-  -loader BinaryLoader -loader-baseAddr 0x00100000 \
-  -postScript tools/ghidra_import_symbols.py data/symbols-base.csv
+# 1. 解析（3.8MBで数分、~2GBメモリで足りる）
+GHIDRA_HEADLESS_MAXMEM=2G /opt/ghidra/support/analyzeHeadless \
+  /root/ghidra-projects denpafree \
+  -import extracted/base/code_dec.bin \
+  -processor ARM:LE:32:v7 -cspec default \
+  -loader BinaryLoader -loader-baseAddr 0x00100000
+
+# 2. シンボル適用（PyGhidra）
+python3 tools/pyghidra_apply_symbols.py denpafree code_dec.bin data/symbols-base.csv
+#   labels 658, thumb context 11, functions created 248, skipped 0,
+#   thumb-context conflicts 120
 ```
+
+**`ARM:LE:32:v7` を使うこと（v6ではない）**。ARM11はARMv6Kだが、
+`v6` の既定コンパイラ仕様 `ARM_v45.cspec` はソフトフロートで、
+3DSのAAPCS-VFPハードフロートと食い違う。v7の既定 `ARM.cspec` なら
+float引数・戻り値が s0-s15 に乗り、floatを返す関数が
+`void f(void){return;}` に化けない。
+
+`thumb-context conflicts 120` は、解析時にGhidraがすでに命令を
+確定させている箇所でTModeの上書きが拒否されたもの。ラベルは付くので
+支障はない。`ghidra_import_symbols.py` はGhidra内スクリプトとして
+動かす版で、PyGhidra版のほうが実績がある。
 
 ## 実行中の差し替えは vtable を狙う
 
@@ -97,7 +115,8 @@ python3 tools/inject.py restore
 | [`tools/inject.py`](../tools/inject.py) | 上記CLI。全書き込みを journal に記録し `restore` で巻き戻す |
 | [`tools/mockrsp.py`](../tools/mockrsp.py) | 擬似GDBスタブ。エミュなしで検証するため |
 | [`tools/test_inject.py`](../tools/test_inject.py) | 通し自己テスト（12項目） |
-| [`tools/ghidra_import_symbols.py`](../tools/ghidra_import_symbols.py) | Ghidraにシンボルを流し込む |
+| [`tools/pyghidra_apply_symbols.py`](../tools/pyghidra_apply_symbols.py) | PyGhidraでシンボルを適用（実績あり） |
+| [`tools/ghidra_import_symbols.py`](../tools/ghidra_import_symbols.py) | 同じことをGhidra内スクリプトで |
 | [`tools/tdmpack.py`](../tools/tdmpack.py) | アーカイブ再構築（LayeredFS用） |
 
 ## 検証済みの内容
@@ -127,6 +146,6 @@ LZ10セクションは**リテラルのみのLZ10**として再圧縮してい�
   GDB経路なら `.bss` 末尾か `nn::fnd::ExpHeapBase` から確保した領域を使う
 - `.crr` にCROのハッシュがあり `ldr:ro` が検証するため、`contents*.cro` を
   自作モジュールに差し替える筋は署名検証が壁
-- vtableのエントリ順（どのindexがどのメソッドか）は未確定。Ghidraで確定させる
+- vtableのエントリ順（どのindexがどのメソッドか）は未確定
 - アドレスはbase版とupdate版で別。updateを当てるなら
   `data/symbols-update.csv` を使う

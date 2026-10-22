@@ -103,6 +103,25 @@ gameserver?req=current_party&prod=ranking_dev&reg=0&sub0=
 gameserver?req=check_party&pid=
 ```
 
+`code.bin` のフォーマット文字列からURLの組み立て方も分かる:
+
+```
+%s&auth_token=%s
+%s%s&tbl=%u
+%s&sub0=%u&pid=%s&t_num=%d&tbl=%u
+%s%s&t_num=%d&tbl=%u&sub0=%d&case=%d
+```
+
+つまりクエリは `auth_token`（認証トークン）、`tbl`（テーブル番号）、
+`t_num`、`sub0`、`case`、`pid`（プレイヤーID）で構成される。
+`support_id` も `checkinserver?req=check` 側に現れる。
+
+ゲーム側のアサート文字列はリリースビルドで削られていて（`.cpp` を含む
+文字列は0件）、`code.bin` に残る `%` 書式文字列73件のうち
+ゲーム固有のものは上記のURL組み立てと `%s_%s.bflan`（レイアウトアニメの
+ファイル名組み立て）だけ。残りは `nn::uds`（`RelayRouteManager` など
+ローカル通信の中継経路管理）と C++ 標準ライブラリの例外メッセージ。
+
 `prod=` に現れるのは **`checkin_dev` と `ranking_dev` だけ**。
 製品ROMに開発用のプロダクト名が残っている。`ctr_ec/` はニンテンドー
 eショップ連携（ジュエル購入）。サーバはすでに停止している。
