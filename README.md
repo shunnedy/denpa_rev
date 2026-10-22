@@ -47,6 +47,7 @@ ROMイメージ、展開した romfs / code.bin、モデル・テクスチャ・
 | [docs/14-revival.md](docs/14-revival.md) | Ｗｉ-Ｆｉコロシアム復活の構成 | 実機未検証 |
 | [docs/15-character-format.md](docs/15-character-format.md) | キャラクター・チームのデータ構造 | 装備6枠は確定、残りは推定 |
 | [docs/16-save-editing.md](docs/16-save-editing.md) | セーブエディタの可否と探索ツール | 実セーブ待ち |
+| [docs/17-stock-console.md](docs/17-stock-console.md) | 無改造3DSでどこまでできるか | 一部推測を明記 |
 
 ## 復活キット
 
