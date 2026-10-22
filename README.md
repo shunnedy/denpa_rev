@@ -45,6 +45,7 @@ ROMイメージ、展開した romfs / code.bin、モデル・テクスチャ・
 | [docs/12-modding.md](docs/12-modding.md) | MODの作りやすさ（実証2件） | 一部未検証 |
 | [docs/13-server-protocol.md](docs/13-server-protocol.md) | サーバプロトコルとプロトタイプ実装 | `time`/`bonus_tbl`/`rand3` は確定 |
 | [docs/14-revival.md](docs/14-revival.md) | Ｗｉ-Ｆｉコロシアム復活の構成 | 実機未検証 |
+| [docs/15-character-format.md](docs/15-character-format.md) | キャラクター・チームのデータ構造 | 装備6枠は確定、残りは推定 |
 
 ## 復活キット
 
@@ -129,7 +130,10 @@ MD5 が一致することを確認済み。
 - [x] サーバプロトコルの解明（CSV + base64、NEX不使用）とプロトタイプ実装
 - [x] `rand3` の応答形式（1相手につきbase64 2フィールド）
 - [x] 接続先差し替えパッチ（同一長25バイト、HTTPS維持）と証明書スロットの特定
-- [ ] 実機・Azaharでの動作確認（証明書・`auth_token`・残りの応答フィールド）
+- [x] コロシアムのチーム（124B）とキャラクター（120B）の構造、装備6枠の特定
+- [x] リクエストヘッダ `101`〜`105` とプレイヤー識別（NNID principal ID）の解析
+- [ ] 実機・Azaharでの動作確認（証明書・識別子・残りの応答フィールド）
+- [ ] 対戦相手blob 1256バイトの正確なレイアウト
 - [ ] 84バイトのチェックインレコードの中身
 - [ ] `vendor.bin` の形式
 
