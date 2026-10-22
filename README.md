@@ -37,6 +37,7 @@ ROMイメージ、展開した romfs / code.bin、モデル・テクスチャ・
 | [docs/04-data-tables.md](docs/04-data-tables.md) | データテーブル形式、テーブル一覧118件 | 確定（レコード内部は未解析） |
 | [docs/05-text.md](docs/05-text.md) | メッセージ形式、制御コード、ルビ | 確定 |
 | [docs/06-gsc.md](docs/06-gsc.md) | `.gsc` リソースラッパ | 確定 |
+| [docs/07-injection.md](docs/07-injection.md) | コードインジェクション基盤、シンボルマップ | 動作確認済み |
 
 ## ツール
 
@@ -61,6 +62,17 @@ python3 tools/gsmsg.py extracted/base_romfs/5EFE0000 d01_msg
 
 # .gsc リソースラッパの中身を見る
 python3 tools/gsc.py extracted/base_romfs/07E40000
+
+# 静的モジュールのエクスポート表（= code.bin の名前付きアドレス）
+python3 tools/crosym.py info    extracted/base_romfs/app/lanai.crs
+python3 tools/crosym.py exports extracted/base_romfs/app/lanai.crs > symbols.csv
+
+# 実行中のゲームに対する注入（Azahar の GDB スタブ経由）
+python3 tools/inject.py --crs extracted/base_romfs/app/lanai.crs sym OpenTreasure
+python3 tools/test_inject.py        # エミュ不要の自己テスト
+
+# アーカイブ再構築（LayeredFS でのデータ改造）
+python3 tools/tdmpack.py extracted/base_romfs/5EFE0000 out.bin d01_msg=patched.bin
 ```
 
 `ctr_extract.py` の BLZ 展開は、別途入手した `code.bin` / `code_dec.bin` のペアに対して
@@ -77,7 +89,9 @@ MD5 が一致することを確認済み。
 - [x] メッセージ形式とルビ制御コード（19,344件 / 約67.8万文字を抽出可能）
 - [x] `.gsc` の正体を確定（イベントスクリプトではなくマップモデルのラッパ）
 - [ ] データテーブルのレコード内部（フィールド境界と型）
-- [ ] `.cro` の関数解析
+- [x] CRO0 の完全パース（静的モジュールのエクスポート783/1101件を絶対アドレスで特定）
+- [x] コードインジェクション基盤（GDB RSPクライアント + vtable差し替え + 再構築、自己テスト12項目）
+- [ ] `contents*.cro` 174本のイベント内容
 - [ ] QR機能の有無の確定（code内に Blowfish 定数・QR関連文字列が見つかっていない）
 
 ## ライセンス
