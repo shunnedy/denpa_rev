@@ -1,4 +1,4 @@
-archive	section	kind	encoding	name	size	stored	table_type	records	rec_size
+archive	section	kind	encoding	name	size	stored	records	rec_size	pool_size
 00910000	0	4	zip	capture_bg.bch	11928	4270			
 00910000	1	4	zip	capture_bg2.bch	26976	5617			
 00910000	2	4	zip	capture_select_bg.bch	8272	3287			
@@ -23,7 +23,7 @@ archive	section	kind	encoding	name	size	stored	table_type	records	rec_size
 012A000A	13	11	zip	createSelectMouth.bin	816	219			
 012A000A	14	11	zip	createSelectName.bin	28928	7016			
 012A000A	15	11	zip	createSelectNose.bin	800	179			
-012A000A	16	11	lz10/table	B0D0	87888	58768	32465	2765	8
+012A000A	16	11	lz10/table	MessageDenpaName	87888	58768	2765	8	32465
 07E40000	0	10	zip	bg_15_green_01.gsc	5396	2141			
 07E40000	1	10	zip	bg_15_green_02.gsc	11004	5208			
 07E40000	2	10	zip	bg_15_green_03.gsc	17088	6613			
@@ -1058,20 +1058,20 @@ archive	section	kind	encoding	name	size	stored	table_type	records	rec_size
 2135000A	299	13	zip	hum_cloth_212.bch	868	257			
 2135000A	300	13	zip	hum_cloth_213.bch	868	257			
 2135000A	301	13	zip	hum_cloth_214.bch	868	257			
-2135000A	302	11	lz10/table	j0W0	1296	868	406	39	12
-2135000A	303	11	lz10/table		10040	4516	2656	152	36
-2135000A	304	11	lz10/table		3440	1868	396	35	76
-2135000A	305	11	lz10/table	j0W0	491236	161628	290357	2182	76
-2135000A	306	11	lz10/table	j0W0	5452	2556	918	48	76
-2135000A	307	11	lz10/table	j0W0	27048	10660	22173	397	4
-2135000A	308	11	lz10/table		6160	2928	4750	65	8
-2135000A	309	11	lz10/table	zz	15312	5292	13150	51	20
-2135000A	310	11	lz10/table		2576	2052	1082	69	8
-2135000A	311	11	lz10/table		3568	1508	2905	23	12
-2135000A	312	11	lz10/table		100800	41568	16390	439	176
-2135000A	313	11	lz10/table		3232	1928	941	55	32
-2135000A	314	11	lz10/table		1264	764	789	7	44
-2135000A	315	11	lz10/table		53560	15300	43307	253	24
+2135000A	302	11	lz10/table	ColorData	1296	868	39	12	406
+2135000A	303	11	lz10/table	ConditionData	10040	4516	152	36	2656
+2135000A	304	11	lz10/table	DenpaCustom	3440	1868	35	76	396
+2135000A	305	11	lz10/table	ItemData	491236	161628	2182	76	290357
+2135000A	306	11	lz10/table	MapStageIntegration	5452	2556	48	76	918
+2135000A	307	11	lz10/table	MessageCommon	27048	10660	397	4	22173
+2135000A	308	11	lz10/table	MessageMapName	6160	2928	65	8	4750
+2135000A	309	11	lz10/table	MessageMapStage	15312	5292	51	20	13150
+2135000A	310	11	lz10/table	MessageNpcName	2576	2052	69	8	1082
+2135000A	311	11	lz10/table	MessageTalkCommon	3568	1508	23	12	2905
+2135000A	312	11	lz10/table	MonsterParameter	100800	41568	439	176	16390
+2135000A	313	11	lz10/table	NpcParameter	3232	1928	55	32	941
+2135000A	314	11	lz10/table	ShopIsland	1264	764	7	44	789
+2135000A	315	11	lz10/table	SkillData	53560	15300	253	24	43307
 23090000	0	10	zip	bg_10_temple_01.gsc	4756	1745			
 23090000	1	10	zip	bg_10_temple_01_a.gsc	7164	2253			
 23090000	2	10	zip	bg_10_temple_01_b.gsc	29256	19620			
@@ -1684,12 +1684,12 @@ archive	section	kind	encoding	name	size	stored	table_type	records	rec_size
 3DC60000	23	4	zip	tex_09_shop.bch	23320	10267			
 3DC60000	24	4	zip	tex_10_stone.bch	42576	34046			
 3DC60000	25	4	zip	tex_myland.bch	78012	31037			
-3E42000A	0	11	lz10/table		124064	49216	84729	1961	8
-3E42000A	1	11	lz10/table		5184	1832	4411	33	8
+3E42000A	0	11	lz10/table	MessageAction	124064	49216	1961	8	84729
+3E42000A	1	11	lz10/table	MessageAction	5184	1832	33	8	4411
 402F0000	0	11	zip	directData.bin	40576	8865			
 402F0000	1	11	zip	directDataAddEffect.bin	368	165			
 402F0000	2	11	zip	monsterBrain.bin	176	112			
-4177000A	0	11	lz10/table		98072	31196	93240	393	4
+4177000A	0	11	lz10/table	MessageFlavor	98072	31196	393	4	93240
 45650000	0	10	zip	inpt_05_fairysubt_01.gsc	17352	5809			
 45650000	1	10	zip	inpt_05_fairysubt_02.gsc	15492	4742			
 45650000	2	10	zip	inpt_05_fairysubt_03.gsc	24776	7697			
@@ -1775,973 +1775,973 @@ archive	section	kind	encoding	name	size	stored	table_type	records	rec_size
 58190000	1	4	zip	inside_02_cam.bch	744	236			
 58190000	2	4	zip	inside_02_cam2.bch	744	237			
 58190000	3	4	zip	inside_02_black.bch	2932	880			
-59B00000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-59B00000	1	12	lz10/table	BattleFieldContents	208	124	21	6	12
-59B00000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-59B00000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-59B00000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-59B00000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-59B00000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-59B00000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-59B00000	8	12	lz10/table	symbol	260	108	25	2	72
-59B00000	9	12	lz10/table	MapCamera	128	68	11	3	16
-59B00000	10	12	lz10/table	MapChara	128	68	10	1	48
-59B00000	11	12	lz10/table	MapData	112	72	9	1	12
-59B00000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-59B00000	13	12	lz10/table	MapEnv	160	80	8	3	24
-59B00000	14	12	lz10/table	MapGroup	176	100	10	2	44
-59B00000	15	12	lz10/table	MapPartsType	96	60	14	2	4
-59B00000	16	12	lz10/table	MapResource	256	124	13	3	56
-59B00000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-59B00000	18	12	lz10/table	MonsterGroup	432	144	14	2	156
-59B00000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-59B00000	20	12	lz10/table	Shop	128	76	6	1	28
-59B00000	21	12	lz10/table	ShopItem	192	88	10	2	44
-59B00000	22	3	lz10/table	TableResource	192	164	15	26	4
-59B00000	23	12	lz10/table	TreasureGroup	592	176	15	6	80
-59B00000	24	3	lz10/table		3180	936	0	9	308
-59B00000	25	3	lz10/table		76	80	235983835	2729450724	0
+59B00000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+59B00000	1	12	lz10/table	BattleFieldContents	208	124	6	12	21
+59B00000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+59B00000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+59B00000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+59B00000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+59B00000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+59B00000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+59B00000	8	12	lz10/table	layout_contents	260	108	2	72	25
+59B00000	9	12	lz10/table	MapCamera	128	68	3	16	11
+59B00000	10	12	lz10/table	MapChara	128	68	1	48	10
+59B00000	11	12	lz10/table	MapData	112	72	1	12	9
+59B00000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+59B00000	13	12	lz10/table	MapEnv	160	80	3	24	8
+59B00000	14	12	lz10/table	MapGroup	176	100	2	44	10
+59B00000	15	12	lz10/table	MapPartsType	96	60	2	4	14
+59B00000	16	12	lz10/table	MapResource	256	124	3	56	13
+59B00000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+59B00000	18	12	lz10/table	MonsterGroup	432	144	2	156	14
+59B00000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+59B00000	20	12	lz10/table	Shop	128	76	1	28	6
+59B00000	21	12	lz10/table	ShopItem	192	88	2	44	10
+59B00000	22	3	lz10/table	TableResource	192	164	26	4	15
+59B00000	23	12	lz10/table	TreasureGroup	592	176	6	80	15
+59B00000	24	3	lz10/?		3180	936	9	205829502	0
+59B00000	25	3	lz10/?		76	80	2729450724	1655719032	235983835
 59B00000	26	3	lz10/?		0	0			
 59B00000	27	1	zip	contents0038.cro	20480	5448			
 59B00000	28	1	zip	d01_EventObject.bin	1200	148			
 59B00000	29	1	zip	d01_StaticEvent.bin	112	41			
-59B00000	30	11	lz10/table		1536	836	1251	7	12
-59B00000	31	11	lz10/table	MapPartsCaveB	4368	812	15	67	64
-59B00000	32	11	lz10/table	MapPartsRuinsB	4368	724	16	67	64
-59B00000	33	11	lz10/table	MapPartsTemple	4368	868	16	67	64
-59B00000	34	1	lz10/table	j0W0	264	184	61	1	64
-59B00000	35	12	lz10/table	j0W0	280	220	117	2	12
+59B00000	30	11	lz10/table	d01_msg	1536	836	7	12	1251
+59B00000	31	11	lz10/table	MapPartsCaveB	4368	812	67	64	15
+59B00000	32	11	lz10/table	MapPartsRuinsB	4368	724	67	64	16
+59B00000	33	11	lz10/table	MapPartsTemple	4368	868	67	64	16
+59B00000	34	1	lz10/table	MapStage	264	184	1	64	61
+59B00000	35	12	lz10/table	MessageContents	280	220	2	12	117
 59B00000	36	6	zip	Stage_symbol01.arc	33448	6381			
-59B10000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-59B10000	1	12	lz10/table	BattleFieldContents	208	124	21	6	12
-59B10000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-59B10000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-59B10000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-59B10000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-59B10000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-59B10000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-59B10000	8	12	lz10/table	symbol	260	108	25	2	72
-59B10000	9	12	lz10/table	MapCamera	128	68	11	3	16
-59B10000	10	12	lz10/table	MapChara	176	92	10	2	48
-59B10000	11	12	lz10/table	MapData	112	72	9	1	12
-59B10000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-59B10000	13	12	lz10/table	MapEnv	160	88	8	3	24
-59B10000	14	12	lz10/table	MapGroup	176	100	10	2	44
-59B10000	15	12	lz10/table	MapPartsType	96	60	14	2	4
-59B10000	16	12	lz10/table	MapResource	256	148	13	3	56
-59B10000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-59B10000	18	12	lz10/table	MonsterGroup	432	140	14	2	156
-59B10000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-59B10000	20	12	lz10/table	Shop	128	76	6	1	28
-59B10000	21	12	lz10/table	ShopItem	192	88	10	2	44
-59B10000	22	3	lz10/table	TableResource	192	164	15	26	4
-59B10000	23	12	lz10/table	TreasureGroup	416	132	15	4	80
-59B10000	24	3	lz10/table		1392	528	0	9	126
-59B10000	25	3	lz10/table		76	80	235983835	2729450724	0
+59B10000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+59B10000	1	12	lz10/table	BattleFieldContents	208	124	6	12	21
+59B10000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+59B10000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+59B10000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+59B10000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+59B10000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+59B10000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+59B10000	8	12	lz10/table	layout_contents	260	108	2	72	25
+59B10000	9	12	lz10/table	MapCamera	128	68	3	16	11
+59B10000	10	12	lz10/table	MapChara	176	92	2	48	10
+59B10000	11	12	lz10/table	MapData	112	72	1	12	9
+59B10000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+59B10000	13	12	lz10/table	MapEnv	160	88	3	24	8
+59B10000	14	12	lz10/table	MapGroup	176	100	2	44	10
+59B10000	15	12	lz10/table	MapPartsType	96	60	2	4	14
+59B10000	16	12	lz10/table	MapResource	256	148	3	56	13
+59B10000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+59B10000	18	12	lz10/table	MonsterGroup	432	140	2	156	14
+59B10000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+59B10000	20	12	lz10/table	Shop	128	76	1	28	6
+59B10000	21	12	lz10/table	ShopItem	192	88	2	44	10
+59B10000	22	3	lz10/table	TableResource	192	164	26	4	15
+59B10000	23	12	lz10/table	TreasureGroup	416	132	4	80	15
+59B10000	24	3	lz10/?		1392	528	9	205829502	0
+59B10000	25	3	lz10/?		76	80	2729450724	1655719032	235983835
 59B10000	26	3	lz10/?		0	0			
 59B10000	27	1	zip	contents0037.cro	20480	6297			
 59B10000	28	1	zip	d01_EventObject.bin	704	122			
 59B10000	29	1	zip	d01_StaticEvent.bin	112	41			
-59B10000	30	11	lz10/table		3048	1316	2605	14	12
-59B10000	31	11	lz10/table	MapPartsCaveB	4368	812	15	67	64
-59B10000	32	11	lz10/table	MapPartsForestA	4384	792	17	67	64
-59B10000	33	1	lz10/table	j0W0	264	180	61	1	64
-59B10000	34	12	lz10/table	j0W0	280	220	117	2	12
+59B10000	30	11	lz10/table	d01_msg	3048	1316	14	12	2605
+59B10000	31	11	lz10/table	MapPartsCaveB	4368	812	67	64	15
+59B10000	32	11	lz10/table	MapPartsForestA	4384	792	67	64	17
+59B10000	33	1	lz10/table	MapStage	264	180	1	64	61
+59B10000	34	12	lz10/table	MessageContents	280	220	2	12	117
 59B10000	35	6	zip	Stage_symbol01.arc	33448	6767			
-59B20000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-59B20000	1	12	lz10/table	BattleFieldContents	160	92	21	3	12
-59B20000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-59B20000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-59B20000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-59B20000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-59B20000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-59B20000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-59B20000	8	12	lz10/table	symbol	260	108	25	2	72
-59B20000	9	12	lz10/table	MapCamera	128	68	11	3	16
-59B20000	10	12	lz10/table	MapChara	128	64	10	1	48
-59B20000	11	12	lz10/table	MapData	112	72	9	1	12
-59B20000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-59B20000	13	12	lz10/table	MapEnv	160	84	8	3	24
-59B20000	14	12	lz10/table	MapGroup	176	100	10	2	44
-59B20000	15	12	lz10/table	MapPartsType	96	60	14	2	4
-59B20000	16	12	lz10/table	MapResource	192	100	13	2	56
-59B20000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-59B20000	18	12	lz10/table	MonsterGroup	432	144	14	2	156
-59B20000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-59B20000	20	12	lz10/table	Shop	128	76	6	1	28
-59B20000	21	12	lz10/table	ShopItem	192	88	10	2	44
-59B20000	22	3	lz10/table	TableResource	192	164	15	26	4
-59B20000	23	12	lz10/table	TreasureGroup	416	132	15	4	80
-59B20000	24	3	lz10/table		1164	468	0	9	73
-59B20000	25	3	lz10/table		76	76	3705371318	2621253731	1
+59B20000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+59B20000	1	12	lz10/table	BattleFieldContents	160	92	3	12	21
+59B20000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+59B20000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+59B20000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+59B20000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+59B20000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+59B20000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+59B20000	8	12	lz10/table	layout_contents	260	108	2	72	25
+59B20000	9	12	lz10/table	MapCamera	128	68	3	16	11
+59B20000	10	12	lz10/table	MapChara	128	64	1	48	10
+59B20000	11	12	lz10/table	MapData	112	72	1	12	9
+59B20000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+59B20000	13	12	lz10/table	MapEnv	160	84	3	24	8
+59B20000	14	12	lz10/table	MapGroup	176	100	2	44	10
+59B20000	15	12	lz10/table	MapPartsType	96	60	2	4	14
+59B20000	16	12	lz10/table	MapResource	192	100	2	56	13
+59B20000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+59B20000	18	12	lz10/table	MonsterGroup	432	144	2	156	14
+59B20000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+59B20000	20	12	lz10/table	Shop	128	76	1	28	6
+59B20000	21	12	lz10/table	ShopItem	192	88	2	44	10
+59B20000	22	3	lz10/table	TableResource	192	164	26	4	15
+59B20000	23	12	lz10/table	TreasureGroup	416	132	4	80	15
+59B20000	24	3	lz10/?		1164	468	9	115269721	0
+59B20000	25	3	lz10/?		76	76	2621253731	479661765	3705371318
 59B20000	26	3	lz10/?		0	0			
 59B20000	27	1	zip	contents0036.cro	20480	5341			
 59B20000	28	1	zip	d01_EventObject.bin	608	109			
 59B20000	29	1	zip	d01_StaticEvent.bin	112	41			
-59B20000	30	11	lz10/table		1856	920	1571	7	12
-59B20000	31	11	lz10/table	MapPartsCaveB	4368	812	15	67	64
-59B20000	32	11	lz10/table	MapPartsRuinsA	4368	772	16	67	64
-59B20000	33	1	lz10/table	j0W0	264	184	61	1	64
-59B20000	34	12	lz10/table	j0W0	280	220	117	2	12
+59B20000	30	11	lz10/table	d01_msg	1856	920	7	12	1571
+59B20000	31	11	lz10/table	MapPartsCaveB	4368	812	67	64	15
+59B20000	32	11	lz10/table	MapPartsRuinsA	4368	772	67	64	16
+59B20000	33	1	lz10/table	MapStage	264	184	1	64	61
+59B20000	34	12	lz10/table	MessageContents	280	220	2	12	117
 59B20000	35	6	zip	Stage_symbol01.arc	33448	8393			
-59B30000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-59B30000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-59B30000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-59B30000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-59B30000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-59B30000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-59B30000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-59B30000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-59B30000	8	12	lz10/table	symbol	260	108	25	2	72
-59B30000	9	12	lz10/table	MapCamera	112	68	11	2	16
-59B30000	10	12	lz10/table	MapChara	176	92	10	2	48
-59B30000	11	12	lz10/table	MapData	112	68	9	1	12
-59B30000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-59B30000	13	12	lz10/table	MapEnv	128	72	8	2	24
-59B30000	14	12	lz10/table	MapGroup	176	100	10	2	44
-59B30000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-59B30000	16	12	lz10/table	MapResource	192	112	13	2	56
-59B30000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-59B30000	18	12	lz10/table	MonsterGroup	432	140	14	2	156
-59B30000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-59B30000	20	12	lz10/table	Shop	128	76	6	1	28
-59B30000	21	12	lz10/table	ShopItem	192	88	10	2	44
-59B30000	22	3	lz10/table	TableResource	192	164	15	26	4
-59B30000	23	12	lz10/table	TreasureGroup	416	132	15	4	80
-59B30000	24	3	lz10/table		1180	484	0	9	77
-59B30000	25	3	lz10/table		76	76	3705371318	2621253731	1
+59B30000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+59B30000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+59B30000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+59B30000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+59B30000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+59B30000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+59B30000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+59B30000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+59B30000	8	12	lz10/table	layout_contents	260	108	2	72	25
+59B30000	9	12	lz10/table	MapCamera	112	68	2	16	11
+59B30000	10	12	lz10/table	MapChara	176	92	2	48	10
+59B30000	11	12	lz10/table	MapData	112	68	1	12	9
+59B30000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+59B30000	13	12	lz10/table	MapEnv	128	72	2	24	8
+59B30000	14	12	lz10/table	MapGroup	176	100	2	44	10
+59B30000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+59B30000	16	12	lz10/table	MapResource	192	112	2	56	13
+59B30000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+59B30000	18	12	lz10/table	MonsterGroup	432	140	2	156	14
+59B30000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+59B30000	20	12	lz10/table	Shop	128	76	1	28	6
+59B30000	21	12	lz10/table	ShopItem	192	88	2	44	10
+59B30000	22	3	lz10/table	TableResource	192	164	26	4	15
+59B30000	23	12	lz10/table	TreasureGroup	416	132	4	80	15
+59B30000	24	3	lz10/?		1180	484	9	115269721	0
+59B30000	25	3	lz10/?		76	76	2621253731	479661765	3705371318
 59B30000	26	3	lz10/?		0	0			
 59B30000	27	1	zip	contents0035.cro	20480	6318			
 59B30000	28	1	zip	d01_EventObject.bin	704	120			
 59B30000	29	1	zip	d01_StaticEvent.bin	112	41			
-59B30000	30	11	lz10/table		3272	1432	2819	14	12
-59B30000	31	11	lz10/table	MapPartsForestA	4384	792	17	67	64
-59B30000	32	1	lz10/table	j0W0	264	184	61	1	64
-59B30000	33	12	lz10/table	j0W0	280	220	117	2	12
+59B30000	30	11	lz10/table	d01_msg	3272	1432	14	12	2819
+59B30000	31	11	lz10/table	MapPartsForestA	4384	792	67	64	17
+59B30000	32	1	lz10/table	MapStage	264	184	1	64	61
+59B30000	33	12	lz10/table	MessageContents	280	220	2	12	117
 59B30000	34	6	zip	Stage_symbol01.arc	33448	7785			
-59B70000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-59B70000	1	12	lz10/table	BattleFieldContents	208	124	21	6	12
-59B70000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-59B70000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-59B70000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-59B70000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-59B70000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-59B70000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-59B70000	8	12	lz10/table	symbol	260	108	25	2	72
-59B70000	9	12	lz10/table	MapCamera	128	68	11	3	16
-59B70000	10	12	lz10/table	MapChara	128	64	10	1	48
-59B70000	11	12	lz10/table	MapData	112	72	9	1	12
-59B70000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-59B70000	13	12	lz10/table	MapEnv	160	84	8	3	24
-59B70000	14	12	lz10/table	MapGroup	176	100	10	2	44
-59B70000	15	12	lz10/table	MapPartsType	96	60	14	2	4
-59B70000	16	12	lz10/table	MapResource	256	132	13	3	56
-59B70000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-59B70000	18	12	lz10/table	MonsterGroup	432	140	14	2	156
-59B70000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-59B70000	20	12	lz10/table	Shop	128	76	6	1	28
-59B70000	21	12	lz10/table	ShopItem	192	88	10	2	44
-59B70000	22	3	lz10/table	TableResource	192	164	15	26	4
-59B70000	23	12	lz10/table	TreasureGroup	416	132	15	4	80
-59B70000	24	3	lz10/table		1804	636	0	9	175
-59B70000	25	3	lz10/table		76	80	235983835	2729450724	0
+59B70000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+59B70000	1	12	lz10/table	BattleFieldContents	208	124	6	12	21
+59B70000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+59B70000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+59B70000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+59B70000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+59B70000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+59B70000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+59B70000	8	12	lz10/table	layout_contents	260	108	2	72	25
+59B70000	9	12	lz10/table	MapCamera	128	68	3	16	11
+59B70000	10	12	lz10/table	MapChara	128	64	1	48	10
+59B70000	11	12	lz10/table	MapData	112	72	1	12	9
+59B70000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+59B70000	13	12	lz10/table	MapEnv	160	84	3	24	8
+59B70000	14	12	lz10/table	MapGroup	176	100	2	44	10
+59B70000	15	12	lz10/table	MapPartsType	96	60	2	4	14
+59B70000	16	12	lz10/table	MapResource	256	132	3	56	13
+59B70000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+59B70000	18	12	lz10/table	MonsterGroup	432	140	2	156	14
+59B70000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+59B70000	20	12	lz10/table	Shop	128	76	1	28	6
+59B70000	21	12	lz10/table	ShopItem	192	88	2	44	10
+59B70000	22	3	lz10/table	TableResource	192	164	26	4	15
+59B70000	23	12	lz10/table	TreasureGroup	416	132	4	80	15
+59B70000	24	3	lz10/?		1804	636	9	205829502	0
+59B70000	25	3	lz10/?		76	80	2729450724	1655719032	235983835
 59B70000	26	3	lz10/?		0	0			
 59B70000	27	1	zip	contents0039.cro	20480	5346			
 59B70000	28	1	zip	d01_EventObject.bin	608	111			
 59B70000	29	1	zip	d01_StaticEvent.bin	112	41			
-59B70000	30	11	lz10/table		1968	924	1681	7	12
-59B70000	31	11	lz10/table	MapPartsIceA	4368	748	14	67	64
-59B70000	32	11	lz10/table	MapPartsTemple	4368	868	16	67	64
-59B70000	33	1	lz10/table	j0W0	264	184	61	1	64
-59B70000	34	12	lz10/table	j0W0	280	220	117	2	12
+59B70000	30	11	lz10/table	d01_msg	1968	924	7	12	1681
+59B70000	31	11	lz10/table	MapPartsIceA	4368	748	67	64	14
+59B70000	32	11	lz10/table	MapPartsTemple	4368	868	67	64	16
+59B70000	33	1	lz10/table	MapStage	264	184	1	64	61
+59B70000	34	12	lz10/table	MessageContents	280	220	2	12	117
 59B70000	35	6	zip	Stage_symbol01.arc	33448	7237			
-59B80000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-59B80000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-59B80000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-59B80000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-59B80000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-59B80000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-59B80000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-59B80000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-59B80000	8	12	lz10/table	symbol	260	108	25	2	72
-59B80000	9	12	lz10/table	MapCamera	112	68	11	2	16
-59B80000	10	12	lz10/table	MapChara	224	92	10	3	48
-59B80000	11	12	lz10/table	MapData	112	68	9	1	12
-59B80000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-59B80000	13	12	lz10/table	MapEnv	128	72	8	2	24
-59B80000	14	12	lz10/table	MapGroup	176	100	10	2	44
-59B80000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-59B80000	16	12	lz10/table	MapResource	192	88	13	2	56
-59B80000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-59B80000	18	12	lz10/table	MonsterGroup	432	160	14	2	156
-59B80000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-59B80000	20	12	lz10/table	Shop	128	76	6	1	28
-59B80000	21	12	lz10/table	ShopItem	272	112	10	4	44
-59B80000	22	3	lz10/table	TableResource	192	164	15	26	4
-59B80000	23	12	lz10/table	TreasureGroup	336	108	15	3	80
-59B80000	24	3	lz10/table		1640	620	0	9	142
-59B80000	25	3	lz10/table		76	80	235983835	2729450724	0
+59B80000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+59B80000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+59B80000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+59B80000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+59B80000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+59B80000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+59B80000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+59B80000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+59B80000	8	12	lz10/table	layout_contents	260	108	2	72	25
+59B80000	9	12	lz10/table	MapCamera	112	68	2	16	11
+59B80000	10	12	lz10/table	MapChara	224	92	3	48	10
+59B80000	11	12	lz10/table	MapData	112	68	1	12	9
+59B80000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+59B80000	13	12	lz10/table	MapEnv	128	72	2	24	8
+59B80000	14	12	lz10/table	MapGroup	176	100	2	44	10
+59B80000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+59B80000	16	12	lz10/table	MapResource	192	88	2	56	13
+59B80000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+59B80000	18	12	lz10/table	MonsterGroup	432	160	2	156	14
+59B80000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+59B80000	20	12	lz10/table	Shop	128	76	1	28	6
+59B80000	21	12	lz10/table	ShopItem	272	112	4	44	10
+59B80000	22	3	lz10/table	TableResource	192	164	26	4	15
+59B80000	23	12	lz10/table	TreasureGroup	336	108	3	80	15
+59B80000	24	3	lz10/?		1640	620	9	205829502	0
+59B80000	25	3	lz10/?		76	80	2729450724	1655719032	235983835
 59B80000	26	3	lz10/?		0	0			
 59B80000	27	1	zip	contents0030.cro	20480	3900			
 59B80000	28	1	zip	d01_EventObject.bin	608	97			
 59B80000	29	1	zip	d01_StaticEvent.bin	112	41			
-59B80000	30	11	lz10/table		2976	1720	2511	15	12
-59B80000	31	11	lz10/table	MapPartsTowerA	4368	760	16	67	64
-59B80000	32	1	lz10/table	j0W0	264	184	61	1	64
-59B80000	33	12	lz10/table	j0W0	280	220	117	2	12
-59B80000	34	6	lz10/table		33448	13748	128	1129464147	1
-59BC0000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-59BC0000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-59BC0000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-59BC0000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-59BC0000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-59BC0000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-59BC0000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-59BC0000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-59BC0000	8	12	lz10/table	symbol	260	108	25	2	72
-59BC0000	9	12	lz10/table	MapCamera	112	68	11	2	16
-59BC0000	10	12	lz10/table	MapChara	176	92	10	2	48
-59BC0000	11	12	lz10/table	MapData	112	68	9	1	12
-59BC0000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-59BC0000	13	12	lz10/table	MapEnv	128	72	8	2	24
-59BC0000	14	12	lz10/table	MapGroup	176	100	10	2	44
-59BC0000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-59BC0000	16	12	lz10/table	MapResource	192	88	13	2	56
-59BC0000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-59BC0000	18	12	lz10/table	MonsterGroup	432	140	14	2	156
-59BC0000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-59BC0000	20	12	lz10/table	Shop	128	76	6	1	28
-59BC0000	21	12	lz10/table	ShopItem	192	88	10	2	44
-59BC0000	22	3	lz10/table	TableResource	192	164	15	26	4
-59BC0000	23	12	lz10/table	TreasureGroup	512	164	15	5	80
-59BC0000	24	3	lz10/table		1132	460	0	9	94
-59BC0000	25	3	lz10/table		76	80	235983835	2729450724	0
+59B80000	30	11	lz10/table	d01_msg	2976	1720	15	12	2511
+59B80000	31	11	lz10/table	MapPartsTowerA	4368	760	67	64	16
+59B80000	32	1	lz10/table	MapStage	264	184	1	64	61
+59B80000	33	12	lz10/table	MessageContents	280	220	2	12	117
+59B80000	34	6	lz10/?		33448	13748	1129464147	4278124564	128
+59BC0000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+59BC0000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+59BC0000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+59BC0000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+59BC0000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+59BC0000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+59BC0000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+59BC0000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+59BC0000	8	12	lz10/table	layout_contents	260	108	2	72	25
+59BC0000	9	12	lz10/table	MapCamera	112	68	2	16	11
+59BC0000	10	12	lz10/table	MapChara	176	92	2	48	10
+59BC0000	11	12	lz10/table	MapData	112	68	1	12	9
+59BC0000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+59BC0000	13	12	lz10/table	MapEnv	128	72	2	24	8
+59BC0000	14	12	lz10/table	MapGroup	176	100	2	44	10
+59BC0000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+59BC0000	16	12	lz10/table	MapResource	192	88	2	56	13
+59BC0000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+59BC0000	18	12	lz10/table	MonsterGroup	432	140	2	156	14
+59BC0000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+59BC0000	20	12	lz10/table	Shop	128	76	1	28	6
+59BC0000	21	12	lz10/table	ShopItem	192	88	2	44	10
+59BC0000	22	3	lz10/table	TableResource	192	164	26	4	15
+59BC0000	23	12	lz10/table	TreasureGroup	512	164	5	80	15
+59BC0000	24	3	lz10/?		1132	460	9	205829502	0
+59BC0000	25	3	lz10/?		76	80	2729450724	1655719032	235983835
 59BC0000	26	3	lz10/?		0	0			
 59BC0000	27	1	zip	contents0034.cro	20480	6288			
 59BC0000	28	1	zip	d01_EventObject.bin	800	130			
 59BC0000	29	1	zip	d01_StaticEvent.bin	112	41			
-59BC0000	30	11	lz10/table		4008	1660	3553	14	12
-59BC0000	31	11	lz10/table	MapPartsCaveA	4368	696	15	67	64
-59BC0000	32	1	lz10/table	j0W0	264	180	61	1	64
-59BC0000	33	12	lz10/table	j0W0	280	220	117	2	12
+59BC0000	30	11	lz10/table	d01_msg	4008	1660	14	12	3553
+59BC0000	31	11	lz10/table	MapPartsCaveA	4368	696	67	64	15
+59BC0000	32	1	lz10/table	MapStage	264	180	1	64	61
+59BC0000	33	12	lz10/table	MessageContents	280	220	2	12	117
 59BC0000	34	6	zip	Stage_symbol01.arc	33448	7362			
-59BD0000	0	12	lz10/table	AreaInfo	208	108	10	7	12
-59BD0000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-59BD0000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-59BD0000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-59BD0000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-59BD0000	5	12	lz10/table	DebugMapJump	240	128	14	3	48
-59BD0000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-59BD0000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-59BD0000	8	12	lz10/table	symbol	360	144	33	3	72
-59BD0000	9	12	lz10/table	MapCamera	144	80	11	4	16
-59BD0000	10	12	lz10/table	MapChara	320	104	10	5	48
-59BD0000	11	12	lz10/table	MapData	144	92	9	3	12
-59BD0000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-59BD0000	13	12	lz10/table	MapEnv	160	88	8	3	24
-59BD0000	14	12	lz10/table	MapGroup	224	140	10	3	44
-59BD0000	15	12	lz10/table	MapPartsType	96	60	14	2	4
-59BD0000	16	12	lz10/table	MapResource	256	140	13	3	56
-59BD0000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-59BD0000	18	12	lz10/table	MonsterGroup	1280	352	14	7	156
-59BD0000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-59BD0000	20	12	lz10/table	Shop	128	76	6	1	28
-59BD0000	21	12	lz10/table	ShopItem	384	136	10	6	44
-59BD0000	22	3	lz10/table	TableResource	192	164	15	26	4
-59BD0000	23	12	lz10/table	TreasureGroup	336	108	15	3	80
-59BD0000	24	3	lz10/table		231800	30260	22500	28	7413
-59BD0000	25	3	lz10/table		228	192	1507183295	2991493867	0
+59BD0000	0	12	lz10/table	AreaInfo	208	108	7	12	10
+59BD0000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+59BD0000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+59BD0000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+59BD0000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+59BD0000	5	12	lz10/table	DebugMapJump	240	128	3	48	14
+59BD0000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+59BD0000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+59BD0000	8	12	lz10/table	layout_contents	360	144	3	72	33
+59BD0000	9	12	lz10/table	MapCamera	144	80	4	16	11
+59BD0000	10	12	lz10/table	MapChara	320	104	5	48	10
+59BD0000	11	12	lz10/table	MapData	144	92	3	12	9
+59BD0000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+59BD0000	13	12	lz10/table	MapEnv	160	88	3	24	8
+59BD0000	14	12	lz10/table	MapGroup	224	140	3	44	10
+59BD0000	15	12	lz10/table	MapPartsType	96	60	2	4	14
+59BD0000	16	12	lz10/table	MapResource	256	140	3	56	13
+59BD0000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+59BD0000	18	12	lz10/table	MonsterGroup	1280	352	7	156	14
+59BD0000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+59BD0000	20	12	lz10/table	Shop	128	76	1	28	6
+59BD0000	21	12	lz10/table	ShopItem	384	136	6	44	10
+59BD0000	22	3	lz10/table	TableResource	192	164	26	4	15
+59BD0000	23	12	lz10/table	TreasureGroup	336	108	3	80	15
+59BD0000	24	3	lz10/?		231800	30260	28	481706560	22500
+59BD0000	25	3	lz10/?		228	192	2991493867	1358777446	1507183295
 59BD0000	26	3	lz10/?		0	0			
 59BD0000	27	1	zip	contents0033.cro	12288	2990			
 59BD0000	28	1	zip	w01_EventObject.bin	304	87			
 59BD0000	29	1	zip	w01_StaticEvent.bin	112	41			
 59BD0000	30	1	zip	s01_EventObject.bin	1808	207			
 59BD0000	31	1	zip	s01_StaticEvent.bin	112	41			
-59BD0000	32	11	lz10/table	MapPartsCaveB	4368	812	15	67	64
-59BD0000	33	11	lz10/table	MapPartsForestA	4384	792	17	67	64
-59BD0000	34	1	lz10/table	j0W0	264	184	61	1	64
-59BD0000	35	12	lz10/table	j0W0	280	220	117	2	12
-59BD0000	36	11	lz10/table		2768	1228	2445	9	12
-59BD0000	37	6	lz10/table		33448	13524	128	1129464147	1
-59BD0000	38	6	lz10/table		527400	64960	384	1129464147	1
-59BE0000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-59BE0000	1	12	lz10/table	BattleFieldContents	160	92	21	3	12
-59BE0000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-59BE0000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-59BE0000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-59BE0000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-59BE0000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-59BE0000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-59BE0000	8	12	lz10/table	symbol	260	108	25	2	72
-59BE0000	9	12	lz10/table	MapCamera	112	68	11	2	16
-59BE0000	10	12	lz10/table	MapChara	224	92	10	3	48
-59BE0000	11	12	lz10/table	MapData	112	68	9	1	12
-59BE0000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-59BE0000	13	12	lz10/table	MapEnv	128	72	8	2	24
-59BE0000	14	12	lz10/table	MapGroup	176	100	10	2	44
-59BE0000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-59BE0000	16	12	lz10/table	MapResource	192	96	13	2	56
-59BE0000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-59BE0000	18	12	lz10/table	MonsterGroup	432	160	14	2	156
-59BE0000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-59BE0000	20	12	lz10/table	Shop	128	76	6	1	28
-59BE0000	21	12	lz10/table	ShopItem	272	112	10	4	44
-59BE0000	22	3	lz10/table	TableResource	192	164	15	26	4
-59BE0000	23	12	lz10/table	TreasureGroup	336	108	15	3	80
-59BE0000	24	3	lz10/table		1592	532	0	9	137
-59BE0000	25	3	lz10/table		76	80	235983835	2729450724	0
+59BD0000	32	11	lz10/table	MapPartsCaveB	4368	812	67	64	15
+59BD0000	33	11	lz10/table	MapPartsForestA	4384	792	67	64	17
+59BD0000	34	1	lz10/table	MapStage	264	184	1	64	61
+59BD0000	35	12	lz10/table	MessageContents	280	220	2	12	117
+59BD0000	36	11	lz10/table	s01_msg	2768	1228	9	12	2445
+59BD0000	37	6	lz10/?		33448	13524	1129464147	4278124564	128
+59BD0000	38	6	lz10/?		527400	64960	1129464147	4278124564	384
+59BE0000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+59BE0000	1	12	lz10/table	BattleFieldContents	160	92	3	12	21
+59BE0000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+59BE0000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+59BE0000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+59BE0000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+59BE0000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+59BE0000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+59BE0000	8	12	lz10/table	layout_contents	260	108	2	72	25
+59BE0000	9	12	lz10/table	MapCamera	112	68	2	16	11
+59BE0000	10	12	lz10/table	MapChara	224	92	3	48	10
+59BE0000	11	12	lz10/table	MapData	112	68	1	12	9
+59BE0000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+59BE0000	13	12	lz10/table	MapEnv	128	72	2	24	8
+59BE0000	14	12	lz10/table	MapGroup	176	100	2	44	10
+59BE0000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+59BE0000	16	12	lz10/table	MapResource	192	96	2	56	13
+59BE0000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+59BE0000	18	12	lz10/table	MonsterGroup	432	160	2	156	14
+59BE0000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+59BE0000	20	12	lz10/table	Shop	128	76	1	28	6
+59BE0000	21	12	lz10/table	ShopItem	272	112	4	44	10
+59BE0000	22	3	lz10/table	TableResource	192	164	26	4	15
+59BE0000	23	12	lz10/table	TreasureGroup	336	108	3	80	15
+59BE0000	24	3	lz10/?		1592	532	9	205829502	0
+59BE0000	25	3	lz10/?		76	80	2729450724	1655719032	235983835
 59BE0000	26	3	lz10/?		0	0			
 59BE0000	27	1	zip	contents0032.cro	20480	3899			
 59BE0000	28	1	zip	d01_EventObject.bin	608	97			
 59BE0000	29	1	zip	d01_StaticEvent.bin	112	41			
-59BE0000	30	11	lz10/table		3184	1756	2717	15	12
-59BE0000	31	11	lz10/table	MapPartsCaveC	4368	700	15	67	64
-59BE0000	32	1	lz10/table	j0W0	264	184	61	1	64
-59BE0000	33	12	lz10/table	j0W0	280	220	117	2	12
-59BE0000	34	6	lz10/table		33448	11728	128	1129464147	1
-59BF0000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-59BF0000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-59BF0000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-59BF0000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-59BF0000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-59BF0000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-59BF0000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-59BF0000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-59BF0000	8	12	lz10/table	symbol	260	108	25	2	72
-59BF0000	9	12	lz10/table	MapCamera	112	68	11	2	16
-59BF0000	10	12	lz10/table	MapChara	224	92	10	3	48
-59BF0000	11	12	lz10/table	MapData	112	68	9	1	12
-59BF0000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-59BF0000	13	12	lz10/table	MapEnv	128	72	8	2	24
-59BF0000	14	12	lz10/table	MapGroup	176	100	10	2	44
-59BF0000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-59BF0000	16	12	lz10/table	MapResource	192	96	13	2	56
-59BF0000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-59BF0000	18	12	lz10/table	MonsterGroup	432	164	14	2	156
-59BF0000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-59BF0000	20	12	lz10/table	Shop	128	76	6	1	28
-59BF0000	21	12	lz10/table	ShopItem	272	112	10	4	44
-59BF0000	22	3	lz10/table	TableResource	192	164	15	26	4
-59BF0000	23	12	lz10/table	TreasureGroup	336	108	15	3	80
-59BF0000	24	3	lz10/table		1652	576	0	9	144
-59BF0000	25	3	lz10/table		76	80	235983835	2729450724	0
+59BE0000	30	11	lz10/table	d01_msg	3184	1756	15	12	2717
+59BE0000	31	11	lz10/table	MapPartsCaveC	4368	700	67	64	15
+59BE0000	32	1	lz10/table	MapStage	264	184	1	64	61
+59BE0000	33	12	lz10/table	MessageContents	280	220	2	12	117
+59BE0000	34	6	lz10/?		33448	11728	1129464147	4278124564	128
+59BF0000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+59BF0000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+59BF0000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+59BF0000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+59BF0000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+59BF0000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+59BF0000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+59BF0000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+59BF0000	8	12	lz10/table	layout_contents	260	108	2	72	25
+59BF0000	9	12	lz10/table	MapCamera	112	68	2	16	11
+59BF0000	10	12	lz10/table	MapChara	224	92	3	48	10
+59BF0000	11	12	lz10/table	MapData	112	68	1	12	9
+59BF0000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+59BF0000	13	12	lz10/table	MapEnv	128	72	2	24	8
+59BF0000	14	12	lz10/table	MapGroup	176	100	2	44	10
+59BF0000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+59BF0000	16	12	lz10/table	MapResource	192	96	2	56	13
+59BF0000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+59BF0000	18	12	lz10/table	MonsterGroup	432	164	2	156	14
+59BF0000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+59BF0000	20	12	lz10/table	Shop	128	76	1	28	6
+59BF0000	21	12	lz10/table	ShopItem	272	112	4	44	10
+59BF0000	22	3	lz10/table	TableResource	192	164	26	4	15
+59BF0000	23	12	lz10/table	TreasureGroup	336	108	3	80	15
+59BF0000	24	3	lz10/?		1652	576	9	205829502	0
+59BF0000	25	3	lz10/?		76	80	2729450724	1655719032	235983835
 59BF0000	26	3	lz10/?		0	0			
 59BF0000	27	1	zip	contents0031.cro	20480	3897			
 59BF0000	28	1	zip	d01_EventObject.bin	608	96			
 59BF0000	29	1	zip	d01_StaticEvent.bin	112	41			
-59BF0000	30	11	lz10/table		3520	1412	3045	15	12
-59BF0000	31	11	lz10/table	MapPartsTowerB	4368	652	16	67	64
-59BF0000	32	1	lz10/table	j0W0	264	184	61	1	64
-59BF0000	33	12	lz10/table	j0W0	280	220	117	2	12
-59BF0000	34	6	lz10/table		33448	12056	128	1129464147	1
-5E3A0000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5E3A0000	1	12	lz10/table	BattleFieldContents	256	144	21	9	12
-5E3A0000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5E3A0000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5E3A0000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5E3A0000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5E3A0000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5E3A0000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5E3A0000	8	12	lz10/table	symbol	360	144	33	3	72
-5E3A0000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5E3A0000	10	12	lz10/table	MapChara	128	68	10	1	48
-5E3A0000	11	12	lz10/table	MapData	112	72	9	1	12
-5E3A0000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5E3A0000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5E3A0000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5E3A0000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5E3A0000	16	12	lz10/table	MapResource	192	96	13	2	56
-5E3A0000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5E3A0000	18	12	lz10/table	MonsterGroup	272	100	14	1	156
-5E3A0000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5E3A0000	20	12	lz10/table	Shop	128	76	6	1	28
-5E3A0000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5E3A0000	22	3	lz10/table	TableResource	192	164	15	26	4
-5E3A0000	23	12	lz10/table	TreasureGroup	416	144	15	4	80
-5E3A0000	24	3	lz10/table		1380	572	32	9	73
-5E3A0000	25	3	lz10/table		76	76	3705371318	2621253731	1
+59BF0000	30	11	lz10/table	d01_msg	3520	1412	15	12	3045
+59BF0000	31	11	lz10/table	MapPartsTowerB	4368	652	67	64	16
+59BF0000	32	1	lz10/table	MapStage	264	184	1	64	61
+59BF0000	33	12	lz10/table	MessageContents	280	220	2	12	117
+59BF0000	34	6	lz10/?		33448	12056	1129464147	4278124564	128
+5E3A0000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5E3A0000	1	12	lz10/table	BattleFieldContents	256	144	9	12	21
+5E3A0000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5E3A0000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5E3A0000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5E3A0000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5E3A0000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5E3A0000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5E3A0000	8	12	lz10/table	layout_contents	360	144	3	72	33
+5E3A0000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5E3A0000	10	12	lz10/table	MapChara	128	68	1	48	10
+5E3A0000	11	12	lz10/table	MapData	112	72	1	12	9
+5E3A0000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5E3A0000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5E3A0000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5E3A0000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5E3A0000	16	12	lz10/table	MapResource	192	96	2	56	13
+5E3A0000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5E3A0000	18	12	lz10/table	MonsterGroup	272	100	1	156	14
+5E3A0000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5E3A0000	20	12	lz10/table	Shop	128	76	1	28	6
+5E3A0000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5E3A0000	22	3	lz10/table	TableResource	192	164	26	4	15
+5E3A0000	23	12	lz10/table	TreasureGroup	416	144	4	80	15
+5E3A0000	24	3	lz10/?		1380	572	9	115269721	32
+5E3A0000	25	3	lz10/?		76	76	2621253731	479661765	3705371318
 5E3A0000	26	3	lz10/?		0	0			
 5E3A0000	27	1	zip	contents0010.cro	24576	6403			
 5E3A0000	28	1	zip	d01_EventObject.bin	800	128			
 5E3A0000	29	1	zip	d01_StaticEvent.bin	112	41			
-5E3A0000	30	11	lz10/table		7832	2872	6899	34	12
-5E3A0000	31	11	lz10/table	MapPartsForestA	4384	792	17	67	64
+5E3A0000	30	11	lz10/table	d01_msg	7832	2872	34	12	6899
+5E3A0000	31	11	lz10/table	MapPartsForestA	4384	792	67	64	17
 5E3A0000	32	11	lz10/?		0	0			
 5E3A0000	33	11	lz10/?		0	0			
 5E3A0000	34	11	lz10/?		0	0			
-5E3A0000	35	11	lz10/table	MapPartsTempleB	4384	712	17	67	64
+5E3A0000	35	11	lz10/table	MapPartsTempleB	4384	712	67	64	17
 5E3A0000	36	11	lz10/?		0	0			
-5E3A0000	37	1	lz10/table	j0W0	264	184	61	1	64
-5E3A0000	38	12	lz10/table	j0W0	280	220	117	2	12
-5E3A0000	39	6	lz10/table		33448	9504	128	1129464147	1
-5E3A0000	40	6	lz10/table		527400	65836	384	1129464147	1
-5E700000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5E700000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5E700000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5E700000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5E700000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5E700000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5E700000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5E700000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5E700000	8	12	lz10/table	symbol	260	108	25	2	72
-5E700000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5E700000	10	12	lz10/table	MapChara	224	92	10	3	48
-5E700000	11	12	lz10/table	MapData	112	68	9	1	12
-5E700000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5E700000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5E700000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5E700000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5E700000	16	12	lz10/table	MapResource	192	104	13	2	56
-5E700000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5E700000	18	12	lz10/table	MonsterGroup	432	168	14	2	156
-5E700000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5E700000	20	12	lz10/table	Shop	128	76	6	1	28
-5E700000	21	12	lz10/table	ShopItem	272	112	10	4	44
-5E700000	22	3	lz10/table	TableResource	192	164	15	26	4
-5E700000	23	12	lz10/table	TreasureGroup	336	108	15	3	80
-5E700000	24	3	lz10/table		1752	640	0	9	155
-5E700000	25	3	lz10/table		76	80	235983835	2729450724	0
+5E3A0000	37	1	lz10/table	MapStage	264	184	1	64	61
+5E3A0000	38	12	lz10/table	MessageContents	280	220	2	12	117
+5E3A0000	39	6	lz10/?		33448	9504	1129464147	4278124564	128
+5E3A0000	40	6	lz10/?		527400	65836	1129464147	4278124564	384
+5E700000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5E700000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5E700000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5E700000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5E700000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5E700000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5E700000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5E700000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5E700000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5E700000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5E700000	10	12	lz10/table	MapChara	224	92	3	48	10
+5E700000	11	12	lz10/table	MapData	112	68	1	12	9
+5E700000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5E700000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5E700000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5E700000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5E700000	16	12	lz10/table	MapResource	192	104	2	56	13
+5E700000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5E700000	18	12	lz10/table	MonsterGroup	432	168	2	156	14
+5E700000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5E700000	20	12	lz10/table	Shop	128	76	1	28	6
+5E700000	21	12	lz10/table	ShopItem	272	112	4	44	10
+5E700000	22	3	lz10/table	TableResource	192	164	26	4	15
+5E700000	23	12	lz10/table	TreasureGroup	336	108	3	80	15
+5E700000	24	3	lz10/?		1752	640	9	205829502	0
+5E700000	25	3	lz10/?		76	80	2729450724	1655719032	235983835
 5E700000	26	3	lz10/?		0	0			
 5E700000	27	1	zip	contents0027.cro	20480	3896			
 5E700000	28	1	zip	d01_EventObject.bin	608	98			
 5E700000	29	1	zip	d01_StaticEvent.bin	112	41			
-5E700000	30	11	lz10/table		2944	1660	2479	15	12
-5E700000	31	11	lz10/table	MapPartsTemple	4368	868	16	67	64
-5E700000	32	1	lz10/table	j0W0	264	184	61	1	64
-5E700000	33	12	lz10/table	j0W0	280	220	117	2	12
+5E700000	30	11	lz10/table	d01_msg	2944	1660	15	12	2479
+5E700000	31	11	lz10/table	MapPartsTemple	4368	868	67	64	16
+5E700000	32	1	lz10/table	MapStage	264	184	1	64	61
+5E700000	33	12	lz10/table	MessageContents	280	220	2	12	117
 5E700000	34	6	zip	Stage_symbol01.arc	33448	8486			
-5E710000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5E710000	1	12	lz10/table	BattleFieldContents	160	92	21	3	12
-5E710000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5E710000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5E710000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5E710000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5E710000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5E710000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5E710000	8	12	lz10/table	symbol	260	108	25	2	72
-5E710000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5E710000	10	12	lz10/table	MapChara	224	92	10	3	48
-5E710000	11	12	lz10/table	MapData	112	68	9	1	12
-5E710000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5E710000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5E710000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5E710000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5E710000	16	12	lz10/table	MapResource	192	96	13	2	56
-5E710000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5E710000	18	12	lz10/table	MonsterGroup	432	152	14	2	156
-5E710000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5E710000	20	12	lz10/table	Shop	128	76	6	1	28
-5E710000	21	12	lz10/table	ShopItem	272	112	10	4	44
-5E710000	22	3	lz10/table	TableResource	192	164	15	26	4
-5E710000	23	12	lz10/table	TreasureGroup	336	108	15	3	80
-5E710000	24	3	lz10/table		1612	528	0	9	140
-5E710000	25	3	lz10/table		76	80	235983835	2729450724	0
+5E710000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5E710000	1	12	lz10/table	BattleFieldContents	160	92	3	12	21
+5E710000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5E710000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5E710000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5E710000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5E710000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5E710000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5E710000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5E710000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5E710000	10	12	lz10/table	MapChara	224	92	3	48	10
+5E710000	11	12	lz10/table	MapData	112	68	1	12	9
+5E710000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5E710000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5E710000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5E710000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5E710000	16	12	lz10/table	MapResource	192	96	2	56	13
+5E710000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5E710000	18	12	lz10/table	MonsterGroup	432	152	2	156	14
+5E710000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5E710000	20	12	lz10/table	Shop	128	76	1	28	6
+5E710000	21	12	lz10/table	ShopItem	272	112	4	44	10
+5E710000	22	3	lz10/table	TableResource	192	164	26	4	15
+5E710000	23	12	lz10/table	TreasureGroup	336	108	3	80	15
+5E710000	24	3	lz10/?		1612	528	9	205829502	0
+5E710000	25	3	lz10/?		76	80	2729450724	1655719032	235983835
 5E710000	26	3	lz10/?		0	0			
 5E710000	27	1	zip	contents0028.cro	20480	3898			
 5E710000	28	1	zip	d01_EventObject.bin	608	96			
 5E710000	29	1	zip	d01_StaticEvent.bin	112	41			
-5E710000	30	11	lz10/table		3168	1772	2691	15	12
-5E710000	31	11	lz10/table	MapPartsCaveC	4368	700	15	67	64
-5E710000	32	1	lz10/table	j0W0	264	184	61	1	64
-5E710000	33	12	lz10/table	j0W0	280	220	117	2	12
-5E710000	34	6	lz10/table		33448	10900	128	1129464147	1
-5E720000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5E720000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5E720000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5E720000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5E720000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5E720000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5E720000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5E720000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5E720000	8	12	lz10/table	symbol	260	108	25	2	72
-5E720000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5E720000	10	12	lz10/table	MapChara	224	92	10	3	48
-5E720000	11	12	lz10/table	MapData	112	68	9	1	12
-5E720000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5E720000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5E720000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5E720000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5E720000	16	12	lz10/table	MapResource	192	108	13	2	56
-5E720000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5E720000	18	12	lz10/table	MonsterGroup	432	160	14	2	156
-5E720000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5E720000	20	12	lz10/table	Shop	128	76	6	1	28
-5E720000	21	12	lz10/table	ShopItem	272	112	10	4	44
-5E720000	22	3	lz10/table	TableResource	192	164	15	26	4
-5E720000	23	12	lz10/table	TreasureGroup	336	108	15	3	80
-5E720000	24	3	lz10/table		3212	884	0	9	317
-5E720000	25	3	lz10/table		76	80	235983835	2729450724	0
+5E710000	30	11	lz10/table	d01_msg	3168	1772	15	12	2691
+5E710000	31	11	lz10/table	MapPartsCaveC	4368	700	67	64	15
+5E710000	32	1	lz10/table	MapStage	264	184	1	64	61
+5E710000	33	12	lz10/table	MessageContents	280	220	2	12	117
+5E710000	34	6	lz10/?		33448	10900	1129464147	4278124564	128
+5E720000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5E720000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5E720000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5E720000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5E720000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5E720000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5E720000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5E720000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5E720000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5E720000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5E720000	10	12	lz10/table	MapChara	224	92	3	48	10
+5E720000	11	12	lz10/table	MapData	112	68	1	12	9
+5E720000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5E720000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5E720000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5E720000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5E720000	16	12	lz10/table	MapResource	192	108	2	56	13
+5E720000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5E720000	18	12	lz10/table	MonsterGroup	432	160	2	156	14
+5E720000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5E720000	20	12	lz10/table	Shop	128	76	1	28	6
+5E720000	21	12	lz10/table	ShopItem	272	112	4	44	10
+5E720000	22	3	lz10/table	TableResource	192	164	26	4	15
+5E720000	23	12	lz10/table	TreasureGroup	336	108	3	80	15
+5E720000	24	3	lz10/?		3212	884	9	205829502	0
+5E720000	25	3	lz10/?		76	80	2729450724	1655719032	235983835
 5E720000	26	3	lz10/?		0	0			
 5E720000	27	1	zip	contents0025.cro	20480	3897			
 5E720000	28	1	zip	d01_EventObject.bin	608	97			
 5E720000	29	1	zip	d01_StaticEvent.bin	112	41			
-5E720000	30	11	lz10/table		3072	1704	2607	15	12
-5E720000	31	11	lz10/table	MapPartsCaveB	4368	812	15	67	64
-5E720000	32	1	lz10/table	j0W0	264	184	61	1	64
-5E720000	33	12	lz10/table	j0W0	280	220	117	2	12
-5E720000	34	6	lz10/table		33448	13872	128	1129464147	1
-5E730000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5E730000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5E730000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5E730000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5E730000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5E730000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5E730000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5E730000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5E730000	8	12	lz10/table	symbol	260	108	25	2	72
-5E730000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5E730000	10	12	lz10/table	MapChara	224	92	10	3	48
-5E730000	11	12	lz10/table	MapData	112	68	9	1	12
-5E730000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5E730000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5E730000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5E730000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5E730000	16	12	lz10/table	MapResource	192	112	13	2	56
-5E730000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5E730000	18	12	lz10/table	MonsterGroup	432	160	14	2	156
-5E730000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5E730000	20	12	lz10/table	Shop	128	76	6	1	28
-5E730000	21	12	lz10/table	ShopItem	272	112	10	4	44
-5E730000	22	3	lz10/table	TableResource	192	164	15	26	4
-5E730000	23	12	lz10/table	TreasureGroup	336	108	15	3	80
-5E730000	24	3	lz10/table		1760	656	0	9	155
-5E730000	25	3	lz10/table		76	80	235983835	2729450724	0
+5E720000	30	11	lz10/table	d01_msg	3072	1704	15	12	2607
+5E720000	31	11	lz10/table	MapPartsCaveB	4368	812	67	64	15
+5E720000	32	1	lz10/table	MapStage	264	184	1	64	61
+5E720000	33	12	lz10/table	MessageContents	280	220	2	12	117
+5E720000	34	6	lz10/?		33448	13872	1129464147	4278124564	128
+5E730000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5E730000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5E730000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5E730000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5E730000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5E730000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5E730000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5E730000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5E730000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5E730000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5E730000	10	12	lz10/table	MapChara	224	92	3	48	10
+5E730000	11	12	lz10/table	MapData	112	68	1	12	9
+5E730000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5E730000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5E730000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5E730000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5E730000	16	12	lz10/table	MapResource	192	112	2	56	13
+5E730000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5E730000	18	12	lz10/table	MonsterGroup	432	160	2	156	14
+5E730000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5E730000	20	12	lz10/table	Shop	128	76	1	28	6
+5E730000	21	12	lz10/table	ShopItem	272	112	4	44	10
+5E730000	22	3	lz10/table	TableResource	192	164	26	4	15
+5E730000	23	12	lz10/table	TreasureGroup	336	108	3	80	15
+5E730000	24	3	lz10/?		1760	656	9	205829502	0
+5E730000	25	3	lz10/?		76	80	2729450724	1655719032	235983835
 5E730000	26	3	lz10/?		0	0			
 5E730000	27	1	zip	contents0026.cro	20480	3898			
 5E730000	28	1	zip	d01_EventObject.bin	608	97			
 5E730000	29	1	zip	d01_StaticEvent.bin	112	41			
-5E730000	30	11	lz10/table		3136	1716	2669	15	12
-5E730000	31	11	lz10/table	MapPartsVolcanoA	4384	760	18	67	64
-5E730000	32	1	lz10/table	j0W0	264	180	61	1	64
-5E730000	33	12	lz10/table	j0W0	280	220	117	2	12
-5E730000	34	6	lz10/table		33448	12608	128	1129464147	1
-5E760000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5E760000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5E760000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5E760000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5E760000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5E760000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5E760000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5E760000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5E760000	8	12	lz10/table	symbol	260	108	25	2	72
-5E760000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5E760000	10	12	lz10/table	MapChara	224	92	10	3	48
-5E760000	11	12	lz10/table	MapData	112	68	9	1	12
-5E760000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5E760000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5E760000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5E760000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5E760000	16	12	lz10/table	MapResource	192	100	13	2	56
-5E760000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5E760000	18	12	lz10/table	MonsterGroup	432	164	14	2	156
-5E760000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5E760000	20	12	lz10/table	Shop	128	76	6	1	28
-5E760000	21	12	lz10/table	ShopItem	272	112	10	4	44
-5E760000	22	3	lz10/table	TableResource	192	164	15	26	4
-5E760000	23	12	lz10/table	TreasureGroup	336	108	15	3	80
-5E760000	24	3	lz10/table		1632	644	0	9	106
-5E760000	25	3	lz10/table		76	76	3705371318	2621253731	1
+5E730000	30	11	lz10/table	d01_msg	3136	1716	15	12	2669
+5E730000	31	11	lz10/table	MapPartsVolcanoA	4384	760	67	64	18
+5E730000	32	1	lz10/table	MapStage	264	180	1	64	61
+5E730000	33	12	lz10/table	MessageContents	280	220	2	12	117
+5E730000	34	6	lz10/?		33448	12608	1129464147	4278124564	128
+5E760000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5E760000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5E760000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5E760000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5E760000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5E760000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5E760000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5E760000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5E760000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5E760000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5E760000	10	12	lz10/table	MapChara	224	92	3	48	10
+5E760000	11	12	lz10/table	MapData	112	68	1	12	9
+5E760000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5E760000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5E760000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5E760000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5E760000	16	12	lz10/table	MapResource	192	100	2	56	13
+5E760000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5E760000	18	12	lz10/table	MonsterGroup	432	164	2	156	14
+5E760000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5E760000	20	12	lz10/table	Shop	128	76	1	28	6
+5E760000	21	12	lz10/table	ShopItem	272	112	4	44	10
+5E760000	22	3	lz10/table	TableResource	192	164	26	4	15
+5E760000	23	12	lz10/table	TreasureGroup	336	108	3	80	15
+5E760000	24	3	lz10/?		1632	644	9	115269721	0
+5E760000	25	3	lz10/?		76	76	2621253731	479661765	3705371318
 5E760000	26	3	lz10/?		0	0			
 5E760000	27	1	zip	contents0029.cro	20480	3898			
 5E760000	28	1	zip	d01_EventObject.bin	608	96			
 5E760000	29	1	zip	d01_StaticEvent.bin	112	41			
-5E760000	30	11	lz10/table		3216	1736	2739	15	12
-5E760000	31	11	lz10/table	MapPartsRuinsA	4368	772	16	67	64
-5E760000	32	1	lz10/table	j0W0	264	184	61	1	64
-5E760000	33	12	lz10/table	j0W0	280	220	117	2	12
-5E760000	34	6	lz10/table		33448	13464	128	1129464147	1
-5E7C0000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5E7C0000	1	12	lz10/table	BattleFieldContents	128	80	21	1	12
-5E7C0000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5E7C0000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5E7C0000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5E7C0000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5E7C0000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5E7C0000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5E7C0000	8	12	lz10/table	symbol	260	108	25	2	72
-5E7C0000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5E7C0000	10	12	lz10/table	MapChara	224	92	10	3	48
-5E7C0000	11	12	lz10/table	MapData	112	68	9	1	12
-5E7C0000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5E7C0000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5E7C0000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5E7C0000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5E7C0000	16	12	lz10/table	MapResource	192	92	13	2	56
-5E7C0000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5E7C0000	18	12	lz10/table	MonsterGroup	432	160	14	2	156
-5E7C0000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5E7C0000	20	12	lz10/table	Shop	128	76	6	1	28
-5E7C0000	21	12	lz10/table	ShopItem	384	120	10	6	44
-5E7C0000	22	3	lz10/table	TableResource	192	164	15	26	4
-5E7C0000	23	12	lz10/table	TreasureGroup	256	104	15	2	80
-5E7C0000	24	3	lz10/table		1392	508	0	9	111
-5E7C0000	25	3	lz10/table		76	76	3705371318	2621253731	1
+5E760000	30	11	lz10/table	d01_msg	3216	1736	15	12	2739
+5E760000	31	11	lz10/table	MapPartsRuinsA	4368	772	67	64	16
+5E760000	32	1	lz10/table	MapStage	264	184	1	64	61
+5E760000	33	12	lz10/table	MessageContents	280	220	2	12	117
+5E760000	34	6	lz10/?		33448	13464	1129464147	4278124564	128
+5E7C0000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5E7C0000	1	12	lz10/table	BattleFieldContents	128	80	1	12	21
+5E7C0000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5E7C0000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5E7C0000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5E7C0000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5E7C0000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5E7C0000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5E7C0000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5E7C0000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5E7C0000	10	12	lz10/table	MapChara	224	92	3	48	10
+5E7C0000	11	12	lz10/table	MapData	112	68	1	12	9
+5E7C0000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5E7C0000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5E7C0000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5E7C0000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5E7C0000	16	12	lz10/table	MapResource	192	92	2	56	13
+5E7C0000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5E7C0000	18	12	lz10/table	MonsterGroup	432	160	2	156	14
+5E7C0000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5E7C0000	20	12	lz10/table	Shop	128	76	1	28	6
+5E7C0000	21	12	lz10/table	ShopItem	384	120	6	44	10
+5E7C0000	22	3	lz10/table	TableResource	192	164	26	4	15
+5E7C0000	23	12	lz10/table	TreasureGroup	256	104	2	80	15
+5E7C0000	24	3	lz10/?		1392	508	9	115269721	0
+5E7C0000	25	3	lz10/?		76	76	2621253731	479661765	3705371318
 5E7C0000	26	3	lz10/?		0	0			
 5E7C0000	27	1	zip	contents0023.cro	20480	3953			
 5E7C0000	28	1	zip	d01_EventObject.bin	704	106			
 5E7C0000	29	1	zip	d01_StaticEvent.bin	112	41			
-5E7C0000	30	11	lz10/table		2544	1464	2079	15	12
-5E7C0000	31	11	lz10/table	MapPartsRelic	4368	740	15	67	64
-5E7C0000	32	1	lz10/table	j0W0	264	180	61	1	64
-5E7C0000	33	12	lz10/table	j0W0	280	220	117	2	12
+5E7C0000	30	11	lz10/table	d01_msg	2544	1464	15	12	2079
+5E7C0000	31	11	lz10/table	MapPartsRelic	4368	740	67	64	15
+5E7C0000	32	1	lz10/table	MapStage	264	180	1	64	61
+5E7C0000	33	12	lz10/table	MessageContents	280	220	2	12	117
 5E7C0000	34	6	zip	Stage_symbol01.arc	33448	9771			
-5E7D0000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5E7D0000	1	12	lz10/table	BattleFieldContents	208	124	21	6	12
-5E7D0000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5E7D0000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5E7D0000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5E7D0000	5	12	lz10/table	DebugMapJump	400	180	14	6	48
-5E7D0000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5E7D0000	7	12	lz10/table	FishingPoint	912	304	14	16	52
-5E7D0000	8	1	lz10/table	FishingPointSetting	224	156	21	15	8
-5E7D0000	9	12	lz10/table	symbol	260	108	25	2	72
-5E7D0000	10	12	lz10/table	MapCamera	144	76	11	4	16
-5E7D0000	11	12	lz10/table	MapChara	896	196	10	17	48
-5E7D0000	12	12	lz10/table	MapData	144	108	9	4	12
-5E7D0000	13	12	lz10/table	MapDataResource	112	64	17	2	4
-5E7D0000	14	12	lz10/table	MapEnv	160	88	8	3	24
-5E7D0000	15	12	lz10/table	MapGroup	176	104	10	2	44
-5E7D0000	16	12	lz10/table	MapPartsType	96	64	14	3	4
-5E7D0000	17	12	lz10/table	MapResource	304	164	13	4	56
-5E7D0000	18	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5E7D0000	19	12	lz10/table	MonsterGroup	272	100	14	1	156
-5E7D0000	20	12	lz10/table	PlantPoint	112	56	12	1	24
-5E7D0000	21	12	lz10/table	Shop	576	204	6	15	28
-5E7D0000	22	12	lz10/table	ShopItem	5840	1160	10	120	44
-5E7D0000	23	3	lz10/table	TableResource	192	164	15	26	4
-5E7D0000	24	12	lz10/table	TreasureGroup	256	92	15	2	80
-5E7D0000	25	3	lz10/table		12864	3684	792	54	96
-5E7D0000	26	3	lz10/table		456	352	3363845542	2388111474	1
+5E7D0000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5E7D0000	1	12	lz10/table	BattleFieldContents	208	124	6	12	21
+5E7D0000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5E7D0000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5E7D0000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5E7D0000	5	12	lz10/table	DebugMapJump	400	180	6	48	14
+5E7D0000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5E7D0000	7	12	lz10/table	FishingPoint	912	304	16	52	14
+5E7D0000	8	1	lz10/table	FishingPointSetting	224	156	15	8	21
+5E7D0000	9	12	lz10/table	layout_contents	260	108	2	72	25
+5E7D0000	10	12	lz10/table	MapCamera	144	76	4	16	11
+5E7D0000	11	12	lz10/table	MapChara	896	196	17	48	10
+5E7D0000	12	12	lz10/table	MapData	144	108	4	12	9
+5E7D0000	13	12	lz10/table	MapDataResource	112	64	2	4	17
+5E7D0000	14	12	lz10/table	MapEnv	160	88	3	24	8
+5E7D0000	15	12	lz10/table	MapGroup	176	104	2	44	10
+5E7D0000	16	12	lz10/table	MapPartsType	96	64	3	4	14
+5E7D0000	17	12	lz10/table	MapResource	304	164	4	56	13
+5E7D0000	18	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5E7D0000	19	12	lz10/table	MonsterGroup	272	100	1	156	14
+5E7D0000	20	12	lz10/table	PlantPoint	112	56	1	24	12
+5E7D0000	21	12	lz10/table	Shop	576	204	15	28	6
+5E7D0000	22	12	lz10/table	ShopItem	5840	1160	120	44	10
+5E7D0000	23	3	lz10/table	TableResource	192	164	26	4	15
+5E7D0000	24	12	lz10/table	TreasureGroup	256	92	2	80	15
+5E7D0000	25	3	lz10/?		12864	3684	54	72791570	792
+5E7D0000	26	3	lz10/?		456	352	2388111474	616311082	3363845542
 5E7D0000	27	3	lz10/?		0	0			
 5E7D0000	28	1	zip	contents0024.cro	28672	8632			
 5E7D0000	29	1	zip	s01_EventObject.bin	5296	453			
 5E7D0000	30	1	zip	s01_StaticEvent.bin	112	50			
-5E7D0000	31	11	lz10/table	MapPartsForestA	4384	792	17	67	64
-5E7D0000	32	11	lz10/table	MapPartsGreen	4368	608	15	67	64
-5E7D0000	33	1	lz10/table	j0W0	264	180	61	1	64
-5E7D0000	34	12	lz10/table	j0W0	280	220	117	2	12
-5E7D0000	35	11	lz10/table		12424	4364	11271	44	12
-5E7D0000	36	6	lz10/table		33448	10724	128	1129464147	1
-5E7F0000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5E7F0000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5E7F0000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5E7F0000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5E7F0000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5E7F0000	5	12	lz10/table	DebugMapJump	400	184	14	6	48
-5E7F0000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5E7F0000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5E7F0000	8	12	lz10/table	symbol	260	108	25	2	72
-5E7F0000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5E7F0000	10	12	lz10/table	MapChara	560	156	10	10	48
-5E7F0000	11	12	lz10/table	MapData	112	68	9	1	12
-5E7F0000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5E7F0000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5E7F0000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5E7F0000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5E7F0000	16	12	lz10/table	MapResource	192	84	13	2	56
-5E7F0000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5E7F0000	18	12	lz10/table	MonsterGroup	432	148	14	2	156
-5E7F0000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5E7F0000	20	12	lz10/table	Shop	128	76	6	1	28
-5E7F0000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5E7F0000	22	3	lz10/table	TableResource	192	164	15	26	4
-5E7F0000	23	12	lz10/table	TreasureGroup	336	108	15	3	80
-5E7F0000	24	3	lz10/table		4644	1644	32	54	72
-5E7F0000	25	3	lz10/table		456	356	235983835	2729450724	0
+5E7D0000	31	11	lz10/table	MapPartsForestA	4384	792	67	64	17
+5E7D0000	32	11	lz10/table	MapPartsGreen	4368	608	67	64	15
+5E7D0000	33	1	lz10/table	MapStage	264	180	1	64	61
+5E7D0000	34	12	lz10/table	MessageContents	280	220	2	12	117
+5E7D0000	35	11	lz10/table	s01_msg	12424	4364	44	12	11271
+5E7D0000	36	6	lz10/?		33448	10724	1129464147	4278124564	128
+5E7F0000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5E7F0000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5E7F0000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5E7F0000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5E7F0000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5E7F0000	5	12	lz10/table	DebugMapJump	400	184	6	48	14
+5E7F0000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5E7F0000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5E7F0000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5E7F0000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5E7F0000	10	12	lz10/table	MapChara	560	156	10	48	10
+5E7F0000	11	12	lz10/table	MapData	112	68	1	12	9
+5E7F0000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5E7F0000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5E7F0000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5E7F0000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5E7F0000	16	12	lz10/table	MapResource	192	84	2	56	13
+5E7F0000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5E7F0000	18	12	lz10/table	MonsterGroup	432	148	2	156	14
+5E7F0000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5E7F0000	20	12	lz10/table	Shop	128	76	1	28	6
+5E7F0000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5E7F0000	22	3	lz10/table	TableResource	192	164	26	4	15
+5E7F0000	23	12	lz10/table	TreasureGroup	336	108	3	80	15
+5E7F0000	24	3	lz10/?		4644	1644	54	104888564	32
+5E7F0000	25	3	lz10/?		456	356	2729450724	1655719032	235983835
 5E7F0000	26	3	lz10/?		0	0			
 5E7F0000	27	1	zip	contents0022.cro	32768	9946			
 5E7F0000	28	1	zip	d01_EventObject.bin	3600	251			
 5E7F0000	29	1	zip	d01_StaticEvent.bin	112	41			
-5E7F0000	30	11	lz10/table		8784	4152	7407	53	12
-5E7F0000	31	11	lz10/table	MapPartsCaveD	4368	668	15	67	64
-5E7F0000	32	1	lz10/table	j0W0	264	184	61	1	64
-5E7F0000	33	12	lz10/table	j0W0	280	220	117	2	12
-5E7F0000	34	6	lz10/table		33448	11780	128	1129464147	1
-5EF00000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5EF00000	1	12	lz10/table	BattleFieldContents	256	148	21	9	12
-5EF00000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5EF00000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5EF00000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5EF00000	5	12	lz10/table	DebugMapJump	656	264	14	11	48
-5EF00000	6	12	lz10/table	DesignedMap	176	96	13	3	28
-5EF00000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5EF00000	8	12	lz10/table	symbol	260	108	25	2	72
-5EF00000	9	12	lz10/table	MapCamera	160	76	11	5	16
-5EF00000	10	12	lz10/table	MapChara	608	164	10	11	48
-5EF00000	11	12	lz10/table	MapData	144	100	9	4	12
-5EF00000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5EF00000	13	12	lz10/table	MapEnv	176	88	8	4	24
-5EF00000	14	12	lz10/table	MapGroup	224	140	10	3	44
-5EF00000	15	12	lz10/table	MapPartsType	96	68	14	4	4
-5EF00000	16	12	lz10/table	MapResource	368	172	13	5	56
-5EF00000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5EF00000	18	12	lz10/table	MonsterGroup	2624	644	14	15	156
-5EF00000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5EF00000	20	12	lz10/table	Shop	128	76	6	1	28
-5EF00000	21	12	lz10/table	ShopItem	720	204	10	13	44
-5EF00000	22	3	lz10/table	TableResource	192	168	15	26	4
-5EF00000	23	12	lz10/table	TreasureGroup	1520	344	15	17	80
-5EF00000	24	3	lz10/table		22160	6632	32	81	25
-5EF00000	25	3	lz10/table		684	524	235983835	2729450724	0
+5E7F0000	30	11	lz10/table	d01_msg	8784	4152	53	12	7407
+5E7F0000	31	11	lz10/table	MapPartsCaveD	4368	668	67	64	15
+5E7F0000	32	1	lz10/table	MapStage	264	184	1	64	61
+5E7F0000	33	12	lz10/table	MessageContents	280	220	2	12	117
+5E7F0000	34	6	lz10/?		33448	11780	1129464147	4278124564	128
+5EF00000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5EF00000	1	12	lz10/table	BattleFieldContents	256	148	9	12	21
+5EF00000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5EF00000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5EF00000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5EF00000	5	12	lz10/table	DebugMapJump	656	264	11	48	14
+5EF00000	6	12	lz10/table	DesignedMap	176	96	3	28	13
+5EF00000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5EF00000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5EF00000	9	12	lz10/table	MapCamera	160	76	5	16	11
+5EF00000	10	12	lz10/table	MapChara	608	164	11	48	10
+5EF00000	11	12	lz10/table	MapData	144	100	4	12	9
+5EF00000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5EF00000	13	12	lz10/table	MapEnv	176	88	4	24	8
+5EF00000	14	12	lz10/table	MapGroup	224	140	3	44	10
+5EF00000	15	12	lz10/table	MapPartsType	96	68	4	4	14
+5EF00000	16	12	lz10/table	MapResource	368	172	5	56	13
+5EF00000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5EF00000	18	12	lz10/table	MonsterGroup	2624	644	15	156	14
+5EF00000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5EF00000	20	12	lz10/table	Shop	128	76	1	28	6
+5EF00000	21	12	lz10/table	ShopItem	720	204	13	44	10
+5EF00000	22	3	lz10/table	TableResource	192	168	26	4	15
+5EF00000	23	12	lz10/table	TreasureGroup	1520	344	17	80	15
+5EF00000	24	3	lz10/?		22160	6632	81	104888564	32
+5EF00000	25	3	lz10/?		684	524	2729450724	1655719032	235983835
 5EF00000	26	3	lz10/?		0	0			
 5EF00000	27	1	zip	contents0005.cro	40960	12311			
 5EF00000	28	1	zip	s01_EventObject.bin	1696	226			
 5EF00000	29	1	zip	s01_StaticEvent.bin	112	41			
 5EF00000	30	1	zip	d01_EventObject.bin	5904	533			
 5EF00000	31	1	zip	d01_StaticEvent.bin	112	41			
-5EF00000	32	11	lz10/table		31232	11564	28017	129	12
-5EF00000	33	11	lz10/table	MapPartsCaveA	4368	696	15	67	64
-5EF00000	34	11	lz10/table	MapPartsCaveB	4368	812	15	67	64
-5EF00000	35	11	lz10/table	MapPartsForestA	4384	792	17	67	64
-5EF00000	36	11	lz10/table	MapPartsRelic	4368	736	15	67	64
-5EF00000	37	1	lz10/table	j0W0	264	184	61	1	64
-5EF00000	38	12	lz10/table	j0W0	280	220	117	2	12
-5EF00000	39	11	lz10/table		5648	2288	5269	11	12
-5EF00000	40	6	lz10/table		33448	13324	128	1129464147	1
-5EF10000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5EF10000	1	12	lz10/table	BattleFieldContents	160	92	21	3	12
-5EF10000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5EF10000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5EF10000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5EF10000	5	12	lz10/table	DebugMapJump	448	200	14	7	48
-5EF10000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5EF10000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5EF10000	8	12	lz10/table	symbol	260	108	25	2	72
-5EF10000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5EF10000	10	12	lz10/table	MapChara	1040	228	10	20	48
-5EF10000	11	12	lz10/table	MapData	144	84	9	3	12
-5EF10000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5EF10000	13	12	lz10/table	MapEnv	160	84	8	3	24
-5EF10000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5EF10000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5EF10000	16	12	lz10/table	MapResource	192	108	13	2	56
-5EF10000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5EF10000	18	12	lz10/table	MonsterGroup	5312	1144	14	31	156
-5EF10000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5EF10000	20	12	lz10/table	Shop	128	76	6	1	28
-5EF10000	21	12	lz10/table	ShopItem	720	208	10	13	44
-5EF10000	22	3	lz10/table	TableResource	192	164	15	26	4
-5EF10000	23	12	lz10/table	TreasureGroup	1600	376	15	18	80
-5EF10000	24	3	lz10/table		21832	6976	660	72	23
-5EF10000	25	3	lz10/table		608	460	235983835	2729450724	0
+5EF00000	32	11	lz10/table	d01_msg	31232	11564	129	12	28017
+5EF00000	33	11	lz10/table	MapPartsCaveA	4368	696	67	64	15
+5EF00000	34	11	lz10/table	MapPartsCaveB	4368	812	67	64	15
+5EF00000	35	11	lz10/table	MapPartsForestA	4384	792	67	64	17
+5EF00000	36	11	lz10/table	MapPartsRelic	4368	736	67	64	15
+5EF00000	37	1	lz10/table	MapStage	264	184	1	64	61
+5EF00000	38	12	lz10/table	MessageContents	280	220	2	12	117
+5EF00000	39	11	lz10/table	s01_msg	5648	2288	11	12	5269
+5EF00000	40	6	lz10/?		33448	13324	1129464147	4278124564	128
+5EF10000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5EF10000	1	12	lz10/table	BattleFieldContents	160	92	3	12	21
+5EF10000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5EF10000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5EF10000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5EF10000	5	12	lz10/table	DebugMapJump	448	200	7	48	14
+5EF10000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5EF10000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5EF10000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5EF10000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5EF10000	10	12	lz10/table	MapChara	1040	228	20	48	10
+5EF10000	11	12	lz10/table	MapData	144	84	3	12	9
+5EF10000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5EF10000	13	12	lz10/table	MapEnv	160	84	3	24	8
+5EF10000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5EF10000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5EF10000	16	12	lz10/table	MapResource	192	108	2	56	13
+5EF10000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5EF10000	18	12	lz10/table	MonsterGroup	5312	1144	31	156	14
+5EF10000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5EF10000	20	12	lz10/table	Shop	128	76	1	28	6
+5EF10000	21	12	lz10/table	ShopItem	720	208	13	44	10
+5EF10000	22	3	lz10/table	TableResource	192	164	26	4	15
+5EF10000	23	12	lz10/table	TreasureGroup	1600	376	18	80	15
+5EF10000	24	3	lz10/?		21832	6976	72	173240142	660
+5EF10000	25	3	lz10/?		608	460	2729450724	1655719032	235983835
 5EF10000	26	3	lz10/?		0	0			
 5EF10000	27	1	zip	contents0006.cro	45056	13512			
 5EF10000	28	1	zip	d01_EventObject.bin	9904	819			
 5EF10000	29	1	zip	d01_StaticEvent.bin	112	47			
-5EF10000	30	11	lz10/table		34760	11776	32289	98	12
-5EF10000	31	11	lz10/table	MapPartsIceA	4368	748	14	67	64
-5EF10000	32	1	lz10/table	j0W0	264	184	61	1	64
-5EF10000	33	12	lz10/table	j0W0	280	220	117	2	12
+5EF10000	30	11	lz10/table	d01_msg	34760	11776	98	12	32289
+5EF10000	31	11	lz10/table	MapPartsIceA	4368	748	67	64	14
+5EF10000	32	1	lz10/table	MapStage	264	184	1	64	61
+5EF10000	33	12	lz10/table	MessageContents	280	220	2	12	117
 5EF10000	34	6	zip	Stage_symbol01.arc	33448	8302			
-5EF20000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5EF20000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5EF20000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5EF20000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5EF20000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5EF20000	5	12	lz10/table	DebugMapJump	608	252	14	10	48
-5EF20000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5EF20000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5EF20000	8	12	lz10/table	symbol	260	108	25	2	72
-5EF20000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5EF20000	10	12	lz10/table	MapChara	608	168	10	11	48
-5EF20000	11	12	lz10/table	MapData	128	80	9	2	12
-5EF20000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5EF20000	13	12	lz10/table	MapEnv	160	88	8	3	24
-5EF20000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5EF20000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5EF20000	16	12	lz10/table	MapResource	192	100	13	2	56
-5EF20000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5EF20000	18	12	lz10/table	MonsterGroup	1616	364	14	9	156
-5EF20000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5EF20000	20	12	lz10/table	Shop	128	76	6	1	28
-5EF20000	21	12	lz10/table	ShopItem	768	216	10	14	44
-5EF20000	22	3	lz10/table	TableResource	192	164	15	26	4
-5EF20000	23	12	lz10/table	TreasureGroup	928	220	15	10	80
-5EF20000	24	3	lz10/table		10660	2940	24	81	119
-5EF20000	25	3	lz10/table		684	500	3705371318	2621253731	1
+5EF20000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5EF20000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5EF20000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5EF20000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5EF20000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5EF20000	5	12	lz10/table	DebugMapJump	608	252	10	48	14
+5EF20000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5EF20000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5EF20000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5EF20000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5EF20000	10	12	lz10/table	MapChara	608	168	11	48	10
+5EF20000	11	12	lz10/table	MapData	128	80	2	12	9
+5EF20000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5EF20000	13	12	lz10/table	MapEnv	160	88	3	24	8
+5EF20000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5EF20000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5EF20000	16	12	lz10/table	MapResource	192	100	2	56	13
+5EF20000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5EF20000	18	12	lz10/table	MonsterGroup	1616	364	9	156	14
+5EF20000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5EF20000	20	12	lz10/table	Shop	128	76	1	28	6
+5EF20000	21	12	lz10/table	ShopItem	768	216	14	44	10
+5EF20000	22	3	lz10/table	TableResource	192	164	26	4	15
+5EF20000	23	12	lz10/table	TreasureGroup	928	220	10	80	15
+5EF20000	24	3	lz10/?		10660	2940	81	1799791	24
+5EF20000	25	3	lz10/?		684	500	2621253731	479661765	3705371318
 5EF20000	26	3	lz10/?		0	0			
 5EF20000	27	1	zip	contents0007.cro	40960	13148			
 5EF20000	28	1	zip	d01_EventObject.bin	5600	629			
 5EF20000	29	1	zip	d01_StaticEvent.bin	112	41			
-5EF20000	30	11	lz10/table	5	40192	15208	35983	171	12
-5EF20000	31	11	lz10/table	MapPartsRuinsA	4368	764	16	67	64
-5EF20000	32	1	lz10/table	j0W0	264	184	61	1	64
-5EF20000	33	12	lz10/table	j0W0	280	220	117	2	12
-5EF20000	34	6	lz10/table		33448	13048	128	1129464147	1
-5EF30000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5EF30000	1	12	lz10/table	BattleFieldContents	208	124	21	6	12
-5EF30000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5EF30000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5EF30000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5EF30000	5	12	lz10/table	DebugMapJump	608	244	14	10	48
-5EF30000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5EF30000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5EF30000	8	12	lz10/table	symbol	260	108	25	2	72
-5EF30000	9	12	lz10/table	MapCamera	128	68	11	3	16
-5EF30000	10	12	lz10/table	MapChara	656	172	10	12	48
-5EF30000	11	12	lz10/table	MapData	128	88	9	2	12
-5EF30000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5EF30000	13	12	lz10/table	MapEnv	160	88	8	3	24
-5EF30000	14	12	lz10/table	MapGroup	224	140	10	3	44
-5EF30000	15	12	lz10/table	MapPartsType	96	60	14	2	4
-5EF30000	16	12	lz10/table	MapResource	256	140	13	3	56
-5EF30000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5EF30000	18	12	lz10/table	MonsterGroup	2288	576	14	13	156
-5EF30000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5EF30000	20	12	lz10/table	Shop	128	76	6	1	28
-5EF30000	21	12	lz10/table	ShopItem	848	244	10	16	44
-5EF30000	22	3	lz10/table	TableResource	192	164	15	26	4
-5EF30000	23	12	lz10/table	TreasureGroup	2768	568	15	32	80
-5EF30000	24	3	lz10/table		19884	5916	8	72	51
-5EF30000	25	3	lz10/table		608	472	681235600	782233110	2
+5EF20000	30	11	lz10/table	d01_msg	40192	15208	171	12	35983
+5EF20000	31	11	lz10/table	MapPartsRuinsA	4368	764	67	64	16
+5EF20000	32	1	lz10/table	MapStage	264	184	1	64	61
+5EF20000	33	12	lz10/table	MessageContents	280	220	2	12	117
+5EF20000	34	6	lz10/?		33448	13048	1129464147	4278124564	128
+5EF30000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5EF30000	1	12	lz10/table	BattleFieldContents	208	124	6	12	21
+5EF30000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5EF30000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5EF30000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5EF30000	5	12	lz10/table	DebugMapJump	608	244	10	48	14
+5EF30000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5EF30000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5EF30000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5EF30000	9	12	lz10/table	MapCamera	128	68	3	16	11
+5EF30000	10	12	lz10/table	MapChara	656	172	12	48	10
+5EF30000	11	12	lz10/table	MapData	128	88	2	12	9
+5EF30000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5EF30000	13	12	lz10/table	MapEnv	160	88	3	24	8
+5EF30000	14	12	lz10/table	MapGroup	224	140	3	44	10
+5EF30000	15	12	lz10/table	MapPartsType	96	60	2	4	14
+5EF30000	16	12	lz10/table	MapResource	256	140	3	56	13
+5EF30000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5EF30000	18	12	lz10/table	MonsterGroup	2288	576	13	156	14
+5EF30000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5EF30000	20	12	lz10/table	Shop	128	76	1	28	6
+5EF30000	21	12	lz10/table	ShopItem	848	244	16	44	10
+5EF30000	22	3	lz10/table	TableResource	192	164	26	4	15
+5EF30000	23	12	lz10/table	TreasureGroup	2768	568	32	80	15
+5EF30000	24	3	lz10/?		19884	5916	72	1447414	8
+5EF30000	25	3	lz10/?		608	472	782233110	2818317108	681235600
 5EF30000	26	3	lz10/?		0	0			
 5EF30000	27	1	zip	contents0008.cro	45056	12825			
 5EF30000	28	1	zip	f01_EventObject.bin	896	112			
 5EF30000	29	1	zip	f01_StaticEvent.bin	112	41			
 5EF30000	30	1	zip	k01_EventObject.bin	9808	859			
 5EF30000	31	1	zip	k01_StaticEvent.bin	112	41			
-5EF30000	32	11	lz10/table		21536	8148	19815	67	12
-5EF30000	33	11	lz10/table		8872	2920	8325	18	12
-5EF30000	34	11	lz10/table	MapPartsForestA	4384	792	17	67	64
-5EF30000	35	11	lz10/table	MapPartsRuinsB	4368	716	16	67	64
-5EF30000	36	1	lz10/table	j0W0	264	184	61	1	64
-5EF30000	37	12	lz10/table	j0W0	280	220	117	2	12
-5EF30000	38	6	lz10/table		33448	8840	128	1129464147	1
-5EF40000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5EF40000	1	12	lz10/table	BattleFieldContents	288	168	21	12	12
-5EF40000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5EF40000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5EF40000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5EF40000	5	12	lz10/table	DebugMapJump	560	236	14	9	48
-5EF40000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5EF40000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5EF40000	8	12	lz10/table	symbol	428	156	41	4	72
-5EF40000	9	12	lz10/table	MapCamera	160	76	11	5	16
-5EF40000	10	12	lz10/table	MapChara	656	168	10	12	48
-5EF40000	11	12	lz10/table	MapData	144	92	9	4	12
-5EF40000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5EF40000	13	12	lz10/table	MapEnv	224	104	8	6	24
-5EF40000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5EF40000	15	12	lz10/table	MapPartsType	96	64	14	3	4
-5EF40000	16	12	lz10/table	MapResource	304	152	13	4	56
-5EF40000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5EF40000	18	12	lz10/table	MonsterGroup	2624	644	14	15	156
-5EF40000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5EF40000	20	12	lz10/table	Shop	128	76	6	1	28
-5EF40000	21	12	lz10/table	ShopItem	816	232	10	15	44
-5EF40000	22	3	lz10/table	TableResource	192	164	15	26	4
-5EF40000	23	12	lz10/table	TreasureGroup	1600	408	15	18	80
-5EF40000	24	3	lz10/table		14636	4300	64	81	158
-5EF40000	25	3	lz10/table		684	520	3705371318	2621253731	1
+5EF30000	32	11	lz10/table	d01_msg	21536	8148	67	12	19815
+5EF30000	33	11	lz10/table	f01_msg	8872	2920	18	12	8325
+5EF30000	34	11	lz10/table	MapPartsForestA	4384	792	67	64	17
+5EF30000	35	11	lz10/table	MapPartsRuinsB	4368	716	67	64	16
+5EF30000	36	1	lz10/table	MapStage	264	184	1	64	61
+5EF30000	37	12	lz10/table	MessageContents	280	220	2	12	117
+5EF30000	38	6	lz10/?		33448	8840	1129464147	4278124564	128
+5EF40000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5EF40000	1	12	lz10/table	BattleFieldContents	288	168	12	12	21
+5EF40000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5EF40000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5EF40000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5EF40000	5	12	lz10/table	DebugMapJump	560	236	9	48	14
+5EF40000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5EF40000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5EF40000	8	12	lz10/table	layout_contents	428	156	4	72	41
+5EF40000	9	12	lz10/table	MapCamera	160	76	5	16	11
+5EF40000	10	12	lz10/table	MapChara	656	168	12	48	10
+5EF40000	11	12	lz10/table	MapData	144	92	4	12	9
+5EF40000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5EF40000	13	12	lz10/table	MapEnv	224	104	6	24	8
+5EF40000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5EF40000	15	12	lz10/table	MapPartsType	96	64	3	4	14
+5EF40000	16	12	lz10/table	MapResource	304	152	4	56	13
+5EF40000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5EF40000	18	12	lz10/table	MonsterGroup	2624	644	15	156	14
+5EF40000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5EF40000	20	12	lz10/table	Shop	128	76	1	28	6
+5EF40000	21	12	lz10/table	ShopItem	816	232	15	44	10
+5EF40000	22	3	lz10/table	TableResource	192	164	26	4	15
+5EF40000	23	12	lz10/table	TreasureGroup	1600	408	18	80	15
+5EF40000	24	3	lz10/?		14636	4300	81	54003092	64
+5EF40000	25	3	lz10/?		684	520	2621253731	479661765	3705371318
 5EF40000	26	1	zip	contents0009.cro	36864	10688			
 5EF40000	27	1	zip	d01_EventObject.bin	6704	679			
 5EF40000	28	1	zip	d01_StaticEvent.bin	112	41			
-5EF40000	29	11	lz10/table		38360	11888	35221	126	12
-5EF40000	30	11	lz10/table	MapPartsForestA	4384	792	17	67	64
+5EF40000	29	11	lz10/table	d01_msg	38360	11888	126	12	35221
+5EF40000	30	11	lz10/table	MapPartsForestA	4384	792	67	64	17
 5EF40000	31	11	lz10/?		0	0			
-5EF40000	32	11	lz10/table	MapPartsTowerA	4368	760	16	67	64
-5EF40000	33	11	lz10/table	MapPartsTowerB	4368	652	16	67	64
-5EF40000	34	1	lz10/table	j0W0	264	184	61	1	64
-5EF40000	35	12	lz10/table	j0W0	280	220	117	2	12
-5EF40000	36	6	lz10/table		33448	11876	128	1129464147	1
+5EF40000	32	11	lz10/table	MapPartsTowerA	4368	760	67	64	16
+5EF40000	33	11	lz10/table	MapPartsTowerB	4368	652	67	64	16
+5EF40000	34	1	lz10/table	MapStage	264	184	1	64	61
+5EF40000	35	12	lz10/table	MessageContents	280	220	2	12	117
+5EF40000	36	6	lz10/?		33448	11876	1129464147	4278124564	128
 5EF40000	37	6	lz10/?		0	0			
-5EFB0000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5EFB0000	1	12	lz10/table	BattleFieldContents	128	80	21	1	12
-5EFB0000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5EFB0000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5EFB0000	4	12	lz10/table	ContentsDef	96	56	13	4	4
-5EFB0000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5EFB0000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5EFB0000	7	12	lz10/table	FishingPoint	1184	236	14	21	52
-5EFB0000	8	12	lz10/table	MapCamera	160	88	11	5	16
-5EFB0000	9	12	lz10/table	MapChara	800	180	10	15	48
-5EFB0000	10	12	lz10/table	MapData	192	112	9	6	12
-5EFB0000	11	12	lz10/table	MapDataResource	112	64	17	2	4
-5EFB0000	12	12	lz10/table	MapEnv	112	48	8	1	24
-5EFB0000	13	12	lz10/table	MapGroup	256	132	10	4	44
-5EFB0000	14	12	lz10/table	MapPartsType	96	60	14	2	4
-5EFB0000	15	12	lz10/table	MapResource	256	144	13	3	56
-5EFB0000	16	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5EFB0000	17	12	lz10/table	MonsterGroup	272	100	14	1	156
-5EFB0000	18	12	lz10/table	PlantPoint	112	56	12	1	24
-5EFB0000	19	12	lz10/table	Shop	320	188	6	7	28
-5EFB0000	20	12	lz10/table	ShopItem	13328	2820	10	276	44
-5EFB0000	21	3	lz10/table	TableResource	192	160	15	26	4
-5EFB0000	22	12	lz10/table	TreasureGroup	336	108	15	3	80
-5EFB0000	23	3	lz10/table		14184	3172	0	54	37
-5EFB0000	24	3	lz10/table		456	344	351550559	4194449918	0
+5EFB0000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5EFB0000	1	12	lz10/table	BattleFieldContents	128	80	1	12	21
+5EFB0000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5EFB0000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5EFB0000	4	12	lz10/table	ContentsDef	96	56	4	4	13
+5EFB0000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5EFB0000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5EFB0000	7	12	lz10/table	FishingPoint	1184	236	21	52	14
+5EFB0000	8	12	lz10/table	MapCamera	160	88	5	16	11
+5EFB0000	9	12	lz10/table	MapChara	800	180	15	48	10
+5EFB0000	10	12	lz10/table	MapData	192	112	6	12	9
+5EFB0000	11	12	lz10/table	MapDataResource	112	64	2	4	17
+5EFB0000	12	12	lz10/table	MapEnv	112	48	1	24	8
+5EFB0000	13	12	lz10/table	MapGroup	256	132	4	44	10
+5EFB0000	14	12	lz10/table	MapPartsType	96	60	2	4	14
+5EFB0000	15	12	lz10/table	MapResource	256	144	3	56	13
+5EFB0000	16	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5EFB0000	17	12	lz10/table	MonsterGroup	272	100	1	156	14
+5EFB0000	18	12	lz10/table	PlantPoint	112	56	1	24	12
+5EFB0000	19	12	lz10/table	Shop	320	188	7	28	6
+5EFB0000	20	12	lz10/table	ShopItem	13328	2820	276	44	10
+5EFB0000	21	3	lz10/table	TableResource	192	160	26	4	15
+5EFB0000	22	12	lz10/table	TreasureGroup	336	108	3	80	15
+5EFB0000	23	3	lz10/?		14184	3172	54	39122309	0
+5EFB0000	24	3	lz10/?		456	344	4194449918	1662319810	351550559
 5EFB0000	25	1	zip	contents0000.cro	65536	20755			
 5EFB0000	26	1	zip	m02_EventObject.bin	2896	166			
 5EFB0000	27	1	zip	m02_StaticEvent.bin	144	70			
 5EFB0000	28	1	zip	h01_EventObject.bin	1200	97			
 5EFB0000	29	1	zip	h01_StaticEvent.bin	144	63			
-5EFB0000	30	11	lz10/table		57112	19712	52251	198	12
-5EFB0000	31	11	lz10/table	MapPartsForestA	4384	792	17	67	64
-5EFB0000	32	11	lz10/table	MapPartsMyland	4368	620	16	67	64
-5EFB0000	33	1	lz10/table	j0W0	356	204	79	2	64
-5EFB0000	34	12	lz10/table	j0W0	280	200	113	2	12
-5EFB0000	35	6	lz10/table		33448	16568	128	1129464147	1
-5EFC0000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5EFC0000	1	12	lz10/table	BattleFieldContents	160	92	21	3	12
-5EFC0000	2	12	lz10/table	CannonParameter	128	60	17	1	28
-5EFC0000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5EFC0000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5EFC0000	5	12	lz10/table	DebugMapJump	288	124	14	4	48
-5EFC0000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5EFC0000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5EFC0000	8	12	lz10/table	symbol	360	144	33	3	72
-5EFC0000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5EFC0000	10	12	lz10/table	MapChara	368	124	10	6	48
-5EFC0000	11	12	lz10/table	MapData	128	76	9	2	12
-5EFC0000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5EFC0000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5EFC0000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5EFC0000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5EFC0000	16	12	lz10/table	MapResource	192	88	13	2	56
-5EFC0000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5EFC0000	18	12	lz10/table	MonsterGroup	1280	332	14	7	156
-5EFC0000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5EFC0000	20	12	lz10/table	Shop	128	76	6	1	28
-5EFC0000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5EFC0000	22	3	lz10/table	TableResource	192	164	15	26	4
-5EFC0000	23	12	lz10/table	TreasureGroup	1184	320	15	13	80
-5EFC0000	24	3	lz10/table		5780	1960	1880	18	136
-5EFC0000	25	3	lz10/table		152	140	235983835	2729450724	0
+5EFB0000	30	11	lz10/table	m01_msg	57112	19712	198	12	52251
+5EFB0000	31	11	lz10/table	MapPartsForestA	4384	792	67	64	17
+5EFB0000	32	11	lz10/table	MapPartsMyland	4368	620	67	64	16
+5EFB0000	33	1	lz10/table	MapStage	356	204	2	64	79
+5EFB0000	34	12	lz10/table	MessageContents	280	200	2	12	113
+5EFB0000	35	6	lz10/?		33448	16568	1129464147	4278124564	128
+5EFC0000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5EFC0000	1	12	lz10/table	BattleFieldContents	160	92	3	12	21
+5EFC0000	2	12	lz10/table	CannonParameter	128	60	1	28	17
+5EFC0000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5EFC0000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5EFC0000	5	12	lz10/table	DebugMapJump	288	124	4	48	14
+5EFC0000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5EFC0000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5EFC0000	8	12	lz10/table	layout_contents	360	144	3	72	33
+5EFC0000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5EFC0000	10	12	lz10/table	MapChara	368	124	6	48	10
+5EFC0000	11	12	lz10/table	MapData	128	76	2	12	9
+5EFC0000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5EFC0000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5EFC0000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5EFC0000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5EFC0000	16	12	lz10/table	MapResource	192	88	2	56	13
+5EFC0000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5EFC0000	18	12	lz10/table	MonsterGroup	1280	332	7	156	14
+5EFC0000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5EFC0000	20	12	lz10/table	Shop	128	76	1	28	6
+5EFC0000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5EFC0000	22	3	lz10/table	TableResource	192	164	26	4	15
+5EFC0000	23	12	lz10/table	TreasureGroup	1184	320	13	80	15
+5EFC0000	24	3	lz10/?		5780	1960	18	173240142	1880
+5EFC0000	25	3	lz10/?		152	140	2729450724	1655719032	235983835
 5EFC0000	26	1	zip	contents0001.cro	28672	7280			
 5EFC0000	27	1	zip	d01_EventObject.bin	3008	357			
 5EFC0000	28	1	zip	d01_StaticEvent.bin	112	41			
-5EFC0000	29	11	lz10/table		29704	12688	26083	146	12
-5EFC0000	30	11	lz10/table	MapPartsCaveA	4368	696	15	67	64
-5EFC0000	31	1	lz10/table	j0W0	264	172	61	1	64
-5EFC0000	32	12	lz10/table	j0W0	176	116	39	1	12
-5EFC0000	33	6	lz10/table		33448	12732	128	1129464147	1
-5EFC0000	34	6	lz10/table		527400	71352	384	1129464147	1
-5EFD0000	0	12	lz10/table	AreaInfo	144	80	10	3	12
-5EFD0000	1	12	lz10/table	BattleFieldContents	288	168	21	12	12
-5EFD0000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5EFD0000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5EFD0000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5EFD0000	5	12	lz10/table	DebugMapJump	656	256	14	11	48
-5EFD0000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5EFD0000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5EFD0000	8	12	lz10/table	symbol	360	144	33	3	72
-5EFD0000	9	12	lz10/table	MapCamera	160	80	11	5	16
-5EFD0000	10	12	lz10/table	MapChara	704	176	10	13	48
-5EFD0000	11	12	lz10/table	MapData	208	132	9	7	12
-5EFD0000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5EFD0000	13	12	lz10/table	MapEnv	176	92	8	4	24
-5EFD0000	14	12	lz10/table	MapGroup	304	212	10	5	44
-5EFD0000	15	12	lz10/table	MapPartsType	96	64	14	4	4
-5EFD0000	16	12	lz10/table	MapResource	480	188	13	7	56
-5EFD0000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5EFD0000	18	12	lz10/table	MonsterGroup	1424	428	14	8	156
-5EFD0000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5EFD0000	20	12	lz10/table	Shop	128	76	6	1	28
-5EFD0000	21	12	lz10/table	ShopItem	432	152	10	7	44
-5EFD0000	22	3	lz10/table	TableResource	192	164	15	26	4
-5EFD0000	23	12	lz10/table	TreasureGroup	2192	468	15	25	80
-5EFD0000	24	3	lz10/table		242124	32532	32	82	91
-5EFD0000	25	3	lz10/table		684	544	3705371318	2621253731	1
+5EFC0000	29	11	lz10/table	d01_msg	29704	12688	146	12	26083
+5EFC0000	30	11	lz10/table	MapPartsCaveA	4368	696	67	64	15
+5EFC0000	31	1	lz10/table	MapStage	264	172	1	64	61
+5EFC0000	32	12	lz10/table	MessageContents	176	116	1	12	39
+5EFC0000	33	6	lz10/?		33448	12732	1129464147	4278124564	128
+5EFC0000	34	6	lz10/?		527400	71352	1129464147	4278124564	384
+5EFD0000	0	12	lz10/table	AreaInfo	144	80	3	12	10
+5EFD0000	1	12	lz10/table	BattleFieldContents	288	168	12	12	21
+5EFD0000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5EFD0000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5EFD0000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5EFD0000	5	12	lz10/table	DebugMapJump	656	256	11	48	14
+5EFD0000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5EFD0000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5EFD0000	8	12	lz10/table	layout_contents	360	144	3	72	33
+5EFD0000	9	12	lz10/table	MapCamera	160	80	5	16	11
+5EFD0000	10	12	lz10/table	MapChara	704	176	13	48	10
+5EFD0000	11	12	lz10/table	MapData	208	132	7	12	9
+5EFD0000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5EFD0000	13	12	lz10/table	MapEnv	176	92	4	24	8
+5EFD0000	14	12	lz10/table	MapGroup	304	212	5	44	10
+5EFD0000	15	12	lz10/table	MapPartsType	96	64	4	4	14
+5EFD0000	16	12	lz10/table	MapResource	480	188	7	56	13
+5EFD0000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5EFD0000	18	12	lz10/table	MonsterGroup	1424	428	8	156	14
+5EFD0000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5EFD0000	20	12	lz10/table	Shop	128	76	1	28	6
+5EFD0000	21	12	lz10/table	ShopItem	432	152	7	44	10
+5EFD0000	22	3	lz10/table	TableResource	192	164	26	4	15
+5EFD0000	23	12	lz10/table	TreasureGroup	2192	468	25	80	15
+5EFD0000	24	3	lz10/?		242124	32532	82	115269721	32
+5EFD0000	25	3	lz10/?		684	544	2621253731	479661765	3705371318
 5EFD0000	26	3	lz10/?		0	0			
 5EFD0000	27	1	zip	contents0002.cro	45056	13607			
 5EFD0000	28	1	zip	s01_EventObject.bin	3296	364			
@@ -2752,42 +2752,42 @@ archive	section	kind	encoding	name	size	stored	table_type	records	rec_size
 5EFD0000	33	1	zip	d02_StaticEvent.bin	112	41			
 5EFD0000	34	1	zip	w01_EventObject.bin	496	112			
 5EFD0000	35	1	zip	w01_StaticEvent.bin	112	41			
-5EFD0000	36	11	lz10/table		30392	12796	26777	146	12
-5EFD0000	37	11	lz10/table		4896	2212	4421	15	12
-5EFD0000	38	11	lz10/table	MapPartsCaveA	4368	696	15	67	64
-5EFD0000	39	11	lz10/table	MapPartsForestA	4384	792	17	67	64
-5EFD0000	40	11	lz10/table	MapPartsIceA	4368	748	14	67	64
-5EFD0000	41	1	lz10/table	j0W0	264	184	61	1	64
-5EFD0000	42	12	lz10/table	j0W0	440	364	283	2	12
-5EFD0000	43	11	lz10/table		22096	7860	20281	71	12
-5EFD0000	44	6	lz10/table		33448	13768	128	1129464147	1
-5EFD0000	45	6	lz10/table		527400	63908	384	1129464147	1
-5EFE0000	0	12	lz10/table	AreaInfo	128	76	10	2	12
-5EFE0000	1	12	lz10/table	BattleFieldContents	352	196	21	15	12
-5EFE0000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5EFE0000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5EFE0000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5EFE0000	5	12	lz10/table	DebugMapJump	496	208	14	8	48
-5EFE0000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5EFE0000	7	12	lz10/table	FishingPoint	192	96	14	2	52
-5EFE0000	8	12	lz10/table	symbol	360	144	33	3	72
-5EFE0000	9	12	lz10/table	MapCamera	208	88	11	8	16
-5EFE0000	10	12	lz10/table	MapChara	704	176	10	13	48
-5EFE0000	11	12	lz10/table	MapData	272	164	9	12	12
-5EFE0000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5EFE0000	13	12	lz10/table	MapEnv	208	100	8	5	24
-5EFE0000	14	12	lz10/table	MapGroup	304	216	10	5	44
-5EFE0000	15	12	lz10/table	MapPartsType	112	72	14	6	4
-5EFE0000	16	12	lz10/table	MapResource	480	220	13	7	56
-5EFE0000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5EFE0000	18	12	lz10/table	MonsterGroup	2288	612	14	13	156
-5EFE0000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5EFE0000	20	12	lz10/table	Shop	128	76	6	1	28
-5EFE0000	21	12	lz10/table	ShopItem	528	172	10	9	44
-5EFE0000	22	3	lz10/table	TableResource	192	164	15	26	4
-5EFE0000	23	12	lz10/table	TreasureGroup	1600	376	15	18	80
-5EFE0000	24	3	lz10/table		244824	32552	0	64	15
-5EFE0000	25	3	lz10/table		532	432	235983835	2729450724	0
+5EFD0000	36	11	lz10/table	d01_msg	30392	12796	146	12	26777
+5EFD0000	37	11	lz10/table	d02_msg	4896	2212	15	12	4421
+5EFD0000	38	11	lz10/table	MapPartsCaveA	4368	696	67	64	15
+5EFD0000	39	11	lz10/table	MapPartsForestA	4384	792	67	64	17
+5EFD0000	40	11	lz10/table	MapPartsIceA	4368	748	67	64	14
+5EFD0000	41	1	lz10/table	MapStage	264	184	1	64	61
+5EFD0000	42	12	lz10/table	MessageContents	440	364	2	12	283
+5EFD0000	43	11	lz10/table	s01outf01_msg	22096	7860	71	12	20281
+5EFD0000	44	6	lz10/?		33448	13768	1129464147	4278124564	128
+5EFD0000	45	6	lz10/?		527400	63908	1129464147	4278124564	384
+5EFE0000	0	12	lz10/table	AreaInfo	128	76	2	12	10
+5EFE0000	1	12	lz10/table	BattleFieldContents	352	196	15	12	21
+5EFE0000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5EFE0000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5EFE0000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5EFE0000	5	12	lz10/table	DebugMapJump	496	208	8	48	14
+5EFE0000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5EFE0000	7	12	lz10/table	FishingPoint	192	96	2	52	14
+5EFE0000	8	12	lz10/table	layout_contents	360	144	3	72	33
+5EFE0000	9	12	lz10/table	MapCamera	208	88	8	16	11
+5EFE0000	10	12	lz10/table	MapChara	704	176	13	48	10
+5EFE0000	11	12	lz10/table	MapData	272	164	12	12	9
+5EFE0000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5EFE0000	13	12	lz10/table	MapEnv	208	100	5	24	8
+5EFE0000	14	12	lz10/table	MapGroup	304	216	5	44	10
+5EFE0000	15	12	lz10/table	MapPartsType	112	72	6	4	14
+5EFE0000	16	12	lz10/table	MapResource	480	220	7	56	13
+5EFE0000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5EFE0000	18	12	lz10/table	MonsterGroup	2288	612	13	156	14
+5EFE0000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5EFE0000	20	12	lz10/table	Shop	128	76	1	28	6
+5EFE0000	21	12	lz10/table	ShopItem	528	172	9	44	10
+5EFE0000	22	3	lz10/table	TableResource	192	164	26	4	15
+5EFE0000	23	12	lz10/table	TreasureGroup	1600	376	18	80	15
+5EFE0000	24	3	lz10/?		244824	32552	64	160769650	0
+5EFE0000	25	3	lz10/?		532	432	2729450724	1655719032	235983835
 5EFE0000	26	3	lz10/?		0	0			
 5EFE0000	27	1	zip	contents0003.cro	57344	18290			
 5EFE0000	28	1	zip	d01_EventObject.bin	1008	109			
@@ -2798,690 +2798,690 @@ archive	section	kind	encoding	name	size	stored	table_type	records	rec_size
 5EFE0000	33	1	zip	w01_StaticEvent.bin	112	41			
 5EFE0000	34	1	zip	f01_EventObject.bin	1808	236			
 5EFE0000	35	1	zip	f01_StaticEvent.bin	112	41			
-5EFE0000	36	11	lz10/table		11328	4208	10275	39	12
-5EFE0000	37	11	lz10/table		31560	12896	27555	162	12
-5EFE0000	38	11	lz10/table		3728	1552	3395	9	12
-5EFE0000	39	11	lz10/table	MapPartsCaveB	4368	812	15	67	64
-5EFE0000	40	11	lz10/table	MapPartsForestA	4384	792	17	67	64
-5EFE0000	41	11	lz10/table	MapPartsGreen	4368	608	15	67	64
-5EFE0000	42	11	lz10/table	MapPartsTempleB	4384	708	17	67	64
-5EFE0000	43	1	lz10/table	j0W0	264	184	61	1	64
-5EFE0000	44	12	lz10/table	j0W0	280	220	117	2	12
-5EFE0000	45	11	lz10/table		11160	4324	10237	34	12
-5EFE0000	46	11	lz10/table		3952	1348	3669	7	12
-5EFE0000	47	11	lz10/table		256	184	127	1	12
+5EFE0000	36	11	lz10/table	d01_msg	11328	4208	39	12	10275
+5EFE0000	37	11	lz10/table	d02_msg	31560	12896	162	12	27555
+5EFE0000	38	11	lz10/table	f01_msg	3728	1552	9	12	3395
+5EFE0000	39	11	lz10/table	MapPartsCaveB	4368	812	67	64	15
+5EFE0000	40	11	lz10/table	MapPartsForestA	4384	792	67	64	17
+5EFE0000	41	11	lz10/table	MapPartsGreen	4368	608	67	64	15
+5EFE0000	42	11	lz10/table	MapPartsTempleB	4384	708	67	64	17
+5EFE0000	43	1	lz10/table	MapStage	264	184	1	64	61
+5EFE0000	44	12	lz10/table	MessageContents	280	220	2	12	117
+5EFE0000	45	11	lz10/table	s01_msg	11160	4324	34	12	10237
+5EFE0000	46	11	lz10/table	s02_msg	3952	1348	7	12	3669
+5EFE0000	47	11	lz10/table	w01_msg	256	184	1	12	127
 5EFE0000	48	6	zip	Stage_symbol01.arc	33448	8324			
 5EFE0000	49	6	zip	worldmap.arc	527400	2823			
-5EFF0000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5EFF0000	1	12	lz10/table	BattleFieldContents	160	92	21	3	12
-5EFF0000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5EFF0000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5EFF0000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5EFF0000	5	12	lz10/table	DebugMapJump	352	160	14	5	48
-5EFF0000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5EFF0000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5EFF0000	8	12	lz10/table	symbol	260	108	25	2	72
-5EFF0000	9	12	lz10/table	MapCamera	128	76	11	3	16
-5EFF0000	10	12	lz10/table	MapChara	800	200	10	15	48
-5EFF0000	11	12	lz10/table	MapData	192	108	9	6	12
-5EFF0000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5EFF0000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5EFF0000	14	12	lz10/table	MapGroup	224	140	10	3	44
-5EFF0000	15	12	lz10/table	MapPartsType	96	60	14	2	4
-5EFF0000	16	12	lz10/table	MapResource	256	140	13	3	56
-5EFF0000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5EFF0000	18	12	lz10/table	MonsterGroup	1104	300	14	6	156
-5EFF0000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5EFF0000	20	12	lz10/table	Shop	128	76	6	1	28
-5EFF0000	21	12	lz10/table	ShopItem	624	188	10	11	44
-5EFF0000	22	3	lz10/table	TableResource	192	164	15	26	4
-5EFF0000	23	12	lz10/table	TreasureGroup	1184	296	15	13	80
-5EFF0000	24	3	lz10/table		10192	3320	320	54	76
-5EFF0000	25	3	lz10/table		456	356	3705371318	2621253731	1
+5EFF0000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5EFF0000	1	12	lz10/table	BattleFieldContents	160	92	3	12	21
+5EFF0000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5EFF0000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5EFF0000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5EFF0000	5	12	lz10/table	DebugMapJump	352	160	5	48	14
+5EFF0000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5EFF0000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5EFF0000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5EFF0000	9	12	lz10/table	MapCamera	128	76	3	16	11
+5EFF0000	10	12	lz10/table	MapChara	800	200	15	48	10
+5EFF0000	11	12	lz10/table	MapData	192	108	6	12	9
+5EFF0000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5EFF0000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5EFF0000	14	12	lz10/table	MapGroup	224	140	3	44	10
+5EFF0000	15	12	lz10/table	MapPartsType	96	60	2	4	14
+5EFF0000	16	12	lz10/table	MapResource	256	140	3	56	13
+5EFF0000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5EFF0000	18	12	lz10/table	MonsterGroup	1104	300	6	156	14
+5EFF0000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5EFF0000	20	12	lz10/table	Shop	128	76	1	28	6
+5EFF0000	21	12	lz10/table	ShopItem	624	188	11	44	10
+5EFF0000	22	3	lz10/table	TableResource	192	164	26	4	15
+5EFF0000	23	12	lz10/table	TreasureGroup	1184	296	13	80	15
+5EFF0000	24	3	lz10/?		10192	3320	54	115269721	320
+5EFF0000	25	3	lz10/?		456	356	2621253731	479661765	3705371318
 5EFF0000	26	3	lz10/?		0	0			
 5EFF0000	27	1	zip	contents0004.cro	61440	20179			
 5EFF0000	28	1	zip	s01_EventObject.bin	3296	338			
 5EFF0000	29	1	zip	s01_StaticEvent.bin	112	41			
 5EFF0000	30	1	zip	d01_EventObject.bin	3200	365			
 5EFF0000	31	1	zip	d01_StaticEvent.bin	112	41			
-5EFF0000	32	11	lz10/table		62592	25952	55349	297	12
-5EFF0000	33	11	lz10/table	MapPartsCaveB	4368	812	15	67	64
-5EFF0000	34	11	lz10/table	MapPartsForestA	4384	792	17	67	64
-5EFF0000	35	1	lz10/table	j0W0	264	184	61	1	64
-5EFF0000	36	12	lz10/table	j0W0	280	220	117	2	12
-5EFF0000	37	11	lz10/table		28016	10040	25819	87	12
-5EFF0000	38	6	lz10/table		33448	13592	128	1129464147	1
-5F300000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5F300000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5F300000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5F300000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5F300000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5F300000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5F300000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5F300000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5F300000	8	12	lz10/table	symbol	260	108	25	2	72
-5F300000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5F300000	10	12	lz10/table	MapChara	176	92	10	2	48
-5F300000	11	12	lz10/table	MapData	112	68	9	1	12
-5F300000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5F300000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5F300000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5F300000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5F300000	16	12	lz10/table	MapResource	192	88	13	2	56
-5F300000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5F300000	18	12	lz10/table	MonsterGroup	432	140	14	2	156
-5F300000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5F300000	20	12	lz10/table	Shop	128	76	6	1	28
-5F300000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5F300000	22	3	lz10/table	TableResource	192	164	15	26	4
-5F300000	23	12	lz10/table	TreasureGroup	416	132	15	4	80
-5F300000	24	3	lz10/table		1236	516	0	9	82
-5F300000	25	3	lz10/table		76	76	3705371318	2621253731	1
+5EFF0000	32	11	lz10/table	d01_msg	62592	25952	297	12	55349
+5EFF0000	33	11	lz10/table	MapPartsCaveB	4368	812	67	64	15
+5EFF0000	34	11	lz10/table	MapPartsForestA	4384	792	67	64	17
+5EFF0000	35	1	lz10/table	MapStage	264	184	1	64	61
+5EFF0000	36	12	lz10/table	MessageContents	280	220	2	12	117
+5EFF0000	37	11	lz10/table	s01_msg	28016	10040	87	12	25819
+5EFF0000	38	6	lz10/?		33448	13592	1129464147	4278124564	128
+5F300000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5F300000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5F300000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5F300000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5F300000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5F300000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5F300000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5F300000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5F300000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5F300000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5F300000	10	12	lz10/table	MapChara	176	92	2	48	10
+5F300000	11	12	lz10/table	MapData	112	68	1	12	9
+5F300000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5F300000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5F300000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5F300000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5F300000	16	12	lz10/table	MapResource	192	88	2	56	13
+5F300000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5F300000	18	12	lz10/table	MonsterGroup	432	140	2	156	14
+5F300000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5F300000	20	12	lz10/table	Shop	128	76	1	28	6
+5F300000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5F300000	22	3	lz10/table	TableResource	192	164	26	4	15
+5F300000	23	12	lz10/table	TreasureGroup	416	132	4	80	15
+5F300000	24	3	lz10/?		1236	516	9	115269721	0
+5F300000	25	3	lz10/?		76	76	2621253731	479661765	3705371318
 5F300000	26	3	lz10/?		0	0			
 5F300000	27	1	zip	contents0053.cro	20480	6307			
 5F300000	28	1	zip	d01_EventObject.bin	704	119			
 5F300000	29	1	zip	d01_StaticEvent.bin	112	41			
-5F300000	30	11	lz10/table		5160	2040	4713	14	12
-5F300000	31	11	lz10/table	MapPartsTowerA	4368	760	16	67	64
-5F300000	32	1	lz10/table	j0W0	264	184	61	1	64
-5F300000	33	12	lz10/table	j0W0	280	220	117	2	12
+5F300000	30	11	lz10/table	d01_msg	5160	2040	14	12	4713
+5F300000	31	11	lz10/table	MapPartsTowerA	4368	760	67	64	16
+5F300000	32	1	lz10/table	MapStage	264	184	1	64	61
+5F300000	33	12	lz10/table	MessageContents	280	220	2	12	117
 5F300000	34	6	zip	Stage_symbol01.arc	33448	5895			
-5F310000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5F310000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5F310000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5F310000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5F310000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5F310000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5F310000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5F310000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5F310000	8	12	lz10/table	symbol	260	108	25	2	72
-5F310000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5F310000	10	12	lz10/table	MapChara	128	64	10	1	48
-5F310000	11	12	lz10/table	MapData	112	68	9	1	12
-5F310000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5F310000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5F310000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5F310000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5F310000	16	12	lz10/table	MapResource	192	88	13	2	56
-5F310000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5F310000	18	12	lz10/table	MonsterGroup	608	192	14	3	156
-5F310000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5F310000	20	12	lz10/table	Shop	128	76	6	1	28
-5F310000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5F310000	22	3	lz10/table	TableResource	192	164	15	26	4
-5F310000	23	12	lz10/table	TreasureGroup	512	152	15	5	80
-5F310000	24	3	lz10/table		1916	732	0	9	148
-5F310000	25	3	lz10/table		76	80	235983835	2729450724	0
+5F310000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5F310000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5F310000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5F310000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5F310000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5F310000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5F310000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5F310000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5F310000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5F310000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5F310000	10	12	lz10/table	MapChara	128	64	1	48	10
+5F310000	11	12	lz10/table	MapData	112	68	1	12	9
+5F310000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5F310000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5F310000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5F310000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5F310000	16	12	lz10/table	MapResource	192	88	2	56	13
+5F310000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5F310000	18	12	lz10/table	MonsterGroup	608	192	3	156	14
+5F310000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5F310000	20	12	lz10/table	Shop	128	76	1	28	6
+5F310000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5F310000	22	3	lz10/table	TableResource	192	164	26	4	15
+5F310000	23	12	lz10/table	TreasureGroup	512	152	5	80	15
+5F310000	24	3	lz10/?		1916	732	9	205829502	0
+5F310000	25	3	lz10/?		76	80	2729450724	1655719032	235983835
 5F310000	26	3	lz10/?		0	0			
 5F310000	27	1	zip	contents0052.cro	20480	5441			
 5F310000	28	1	zip	d01_EventObject.bin	704	118			
 5F310000	29	1	zip	d01_StaticEvent.bin	112	41			
-5F310000	30	11	lz10/table		1904	844	1627	7	12
-5F310000	31	11	lz10/table	MapPartsCaveA	4368	696	15	67	64
-5F310000	32	1	lz10/table	j0W0	264	180	61	1	64
-5F310000	33	12	lz10/table	j0W0	280	220	117	2	12
+5F310000	30	11	lz10/table	d01_msg	1904	844	7	12	1627
+5F310000	31	11	lz10/table	MapPartsCaveA	4368	696	67	64	15
+5F310000	32	1	lz10/table	MapStage	264	180	1	64	61
+5F310000	33	12	lz10/table	MessageContents	280	220	2	12	117
 5F310000	34	6	zip	Stage_symbol01.arc	33448	6778			
-5F320000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5F320000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5F320000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5F320000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5F320000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5F320000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5F320000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5F320000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5F320000	8	12	lz10/table	symbol	260	108	25	2	72
-5F320000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5F320000	10	12	lz10/table	MapChara	176	92	10	2	48
-5F320000	11	12	lz10/table	MapData	112	68	9	1	12
-5F320000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5F320000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5F320000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5F320000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5F320000	16	12	lz10/table	MapResource	192	104	13	2	56
-5F320000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5F320000	18	12	lz10/table	MonsterGroup	432	140	14	2	156
-5F320000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5F320000	20	12	lz10/table	Shop	128	76	6	1	28
-5F320000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5F320000	22	3	lz10/table	TableResource	192	164	15	26	4
-5F320000	23	12	lz10/table	TreasureGroup	512	152	15	5	80
-5F320000	24	3	lz10/table		1840	632	0	9	173
-5F320000	25	3	lz10/table		76	80	235983835	2729450724	0
+5F320000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5F320000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5F320000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5F320000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5F320000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5F320000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5F320000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5F320000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5F320000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5F320000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5F320000	10	12	lz10/table	MapChara	176	92	2	48	10
+5F320000	11	12	lz10/table	MapData	112	68	1	12	9
+5F320000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5F320000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5F320000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5F320000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5F320000	16	12	lz10/table	MapResource	192	104	2	56	13
+5F320000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5F320000	18	12	lz10/table	MonsterGroup	432	140	2	156	14
+5F320000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5F320000	20	12	lz10/table	Shop	128	76	1	28	6
+5F320000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5F320000	22	3	lz10/table	TableResource	192	164	26	4	15
+5F320000	23	12	lz10/table	TreasureGroup	512	152	5	80	15
+5F320000	24	3	lz10/?		1840	632	9	205829502	0
+5F320000	25	3	lz10/?		76	80	2729450724	1655719032	235983835
 5F320000	26	3	lz10/?		0	0			
 5F320000	27	1	zip	contents0055.cro	20480	6305			
 5F320000	28	1	zip	d01_EventObject.bin	800	136			
 5F320000	29	1	zip	d01_StaticEvent.bin	112	41			
-5F320000	30	11	lz10/table		4392	1764	3947	14	12
-5F320000	31	11	lz10/table	MapPartsTemple	4368	868	16	67	64
-5F320000	32	1	lz10/table	j0W0	264	184	61	1	64
-5F320000	33	12	lz10/table	j0W0	280	220	117	2	12
+5F320000	30	11	lz10/table	d01_msg	4392	1764	14	12	3947
+5F320000	31	11	lz10/table	MapPartsTemple	4368	868	67	64	16
+5F320000	32	1	lz10/table	MapStage	264	184	1	64	61
+5F320000	33	12	lz10/table	MessageContents	280	220	2	12	117
 5F320000	34	6	zip	Stage_symbol01.arc	33448	7410			
-5F330000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5F330000	1	12	lz10/table	BattleFieldContents	160	92	21	3	12
-5F330000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5F330000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5F330000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5F330000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5F330000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5F330000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5F330000	8	12	lz10/table	symbol	260	108	25	2	72
-5F330000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5F330000	10	12	lz10/table	MapChara	128	64	10	1	48
-5F330000	11	12	lz10/table	MapData	112	68	9	1	12
-5F330000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5F330000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5F330000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5F330000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5F330000	16	12	lz10/table	MapResource	192	96	13	2	56
-5F330000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5F330000	18	12	lz10/table	MonsterGroup	432	140	14	2	156
-5F330000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5F330000	20	12	lz10/table	Shop	128	76	6	1	28
-5F330000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5F330000	22	3	lz10/table	TableResource	192	164	15	26	4
-5F330000	23	12	lz10/table	TreasureGroup	512	160	15	5	80
-5F330000	24	3	lz10/table		2308	668	0	9	228
-5F330000	25	3	lz10/table		76	80	235983835	2729450724	0
+5F330000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5F330000	1	12	lz10/table	BattleFieldContents	160	92	3	12	21
+5F330000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5F330000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5F330000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5F330000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5F330000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5F330000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5F330000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5F330000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5F330000	10	12	lz10/table	MapChara	128	64	1	48	10
+5F330000	11	12	lz10/table	MapData	112	68	1	12	9
+5F330000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5F330000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5F330000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5F330000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5F330000	16	12	lz10/table	MapResource	192	96	2	56	13
+5F330000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5F330000	18	12	lz10/table	MonsterGroup	432	140	2	156	14
+5F330000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5F330000	20	12	lz10/table	Shop	128	76	1	28	6
+5F330000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5F330000	22	3	lz10/table	TableResource	192	164	26	4	15
+5F330000	23	12	lz10/table	TreasureGroup	512	160	5	80	15
+5F330000	24	3	lz10/?		2308	668	9	205829502	0
+5F330000	25	3	lz10/?		76	80	2729450724	1655719032	235983835
 5F330000	26	3	lz10/?		0	0			
 5F330000	27	1	zip	contents0054.cro	20480	5334			
 5F330000	28	1	zip	d01_EventObject.bin	704	118			
 5F330000	29	1	zip	d01_StaticEvent.bin	112	41			
-5F330000	30	11	lz10/table		2256	856	1969	7	12
-5F330000	31	11	lz10/table	MapPartsCaveC	4368	700	15	67	64
-5F330000	32	1	lz10/table	j0W0	264	184	61	1	64
-5F330000	33	12	lz10/table	j0W0	280	220	117	2	12
+5F330000	30	11	lz10/table	d01_msg	2256	856	7	12	1969
+5F330000	31	11	lz10/table	MapPartsCaveC	4368	700	67	64	15
+5F330000	32	1	lz10/table	MapStage	264	184	1	64	61
+5F330000	33	12	lz10/table	MessageContents	280	220	2	12	117
 5F330000	34	6	zip	Stage_symbol01.arc	33448	6049			
-5F360000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5F360000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5F360000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5F360000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5F360000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5F360000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5F360000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5F360000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5F360000	8	12	lz10/table	symbol	260	108	25	2	72
-5F360000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5F360000	10	12	lz10/table	MapChara	128	64	10	1	48
-5F360000	11	12	lz10/table	MapData	112	68	9	1	12
-5F360000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5F360000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5F360000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5F360000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5F360000	16	12	lz10/table	MapResource	192	96	13	2	56
-5F360000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5F360000	18	12	lz10/table	MonsterGroup	432	144	14	2	156
-5F360000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5F360000	20	12	lz10/table	Shop	128	76	6	1	28
-5F360000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5F360000	22	3	lz10/table	TableResource	192	164	15	26	4
-5F360000	23	12	lz10/table	TreasureGroup	416	132	15	4	80
-5F360000	24	3	lz10/table		964	380	0	9	57
-5F360000	25	3	lz10/table		76	76	3705371318	2621253731	1
+5F360000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5F360000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5F360000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5F360000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5F360000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5F360000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5F360000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5F360000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5F360000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5F360000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5F360000	10	12	lz10/table	MapChara	128	64	1	48	10
+5F360000	11	12	lz10/table	MapData	112	68	1	12	9
+5F360000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5F360000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5F360000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5F360000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5F360000	16	12	lz10/table	MapResource	192	96	2	56	13
+5F360000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5F360000	18	12	lz10/table	MonsterGroup	432	144	2	156	14
+5F360000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5F360000	20	12	lz10/table	Shop	128	76	1	28	6
+5F360000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5F360000	22	3	lz10/table	TableResource	192	164	26	4	15
+5F360000	23	12	lz10/table	TreasureGroup	416	132	4	80	15
+5F360000	24	3	lz10/?		964	380	9	115269721	0
+5F360000	25	3	lz10/?		76	76	2621253731	479661765	3705371318
 5F360000	26	3	lz10/?		0	0			
 5F360000	27	1	zip	contents0051.cro	20480	5353			
 5F360000	28	1	zip	d01_EventObject.bin	608	110			
 5F360000	29	1	zip	d01_StaticEvent.bin	112	41			
-5F360000	30	11	lz10/table		2000	820	1719	7	12
-5F360000	31	11	lz10/table	MapPartsTowerB	4368	652	16	67	64
-5F360000	32	1	lz10/table	j0W0	264	184	61	1	64
-5F360000	33	12	lz10/table	j0W0	280	220	117	2	12
+5F360000	30	11	lz10/table	d01_msg	2000	820	7	12	1719
+5F360000	31	11	lz10/table	MapPartsTowerB	4368	652	67	64	16
+5F360000	32	1	lz10/table	MapStage	264	184	1	64	61
+5F360000	33	12	lz10/table	MessageContents	280	220	2	12	117
 5F360000	34	6	zip	Stage_symbol01.arc	33448	4583			
-5F370000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5F370000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5F370000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5F370000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5F370000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5F370000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5F370000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5F370000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5F370000	8	12	lz10/table	symbol	260	108	25	2	72
-5F370000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5F370000	10	12	lz10/table	MapChara	128	64	10	1	48
-5F370000	11	12	lz10/table	MapData	112	68	9	1	12
-5F370000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5F370000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5F370000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5F370000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5F370000	16	12	lz10/table	MapResource	192	88	13	2	56
-5F370000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5F370000	18	12	lz10/table	MonsterGroup	432	140	14	2	156
-5F370000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5F370000	20	12	lz10/table	Shop	128	76	6	1	28
-5F370000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5F370000	22	3	lz10/table	TableResource	192	164	15	26	4
-5F370000	23	12	lz10/table	TreasureGroup	1008	276	15	11	80
-5F370000	24	3	lz10/table		1912	664	0	9	144
-5F370000	25	3	lz10/table		76	76	3705371318	2621253731	1
+5F370000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5F370000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5F370000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5F370000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5F370000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5F370000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5F370000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5F370000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5F370000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5F370000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5F370000	10	12	lz10/table	MapChara	128	64	1	48	10
+5F370000	11	12	lz10/table	MapData	112	68	1	12	9
+5F370000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5F370000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5F370000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5F370000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5F370000	16	12	lz10/table	MapResource	192	88	2	56	13
+5F370000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5F370000	18	12	lz10/table	MonsterGroup	432	140	2	156	14
+5F370000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5F370000	20	12	lz10/table	Shop	128	76	1	28	6
+5F370000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5F370000	22	3	lz10/table	TableResource	192	164	26	4	15
+5F370000	23	12	lz10/table	TreasureGroup	1008	276	11	80	15
+5F370000	24	3	lz10/?		1912	664	9	115269721	0
+5F370000	25	3	lz10/?		76	76	2621253731	479661765	3705371318
 5F370000	26	3	lz10/?		0	0			
 5F370000	27	1	zip	contents0050.cro	20480	5444			
 5F370000	28	1	zip	d01_EventObject.bin	1296	165			
 5F370000	29	1	zip	d01_StaticEvent.bin	112	41			
-5F370000	30	11	lz10/table		768	440	483	7	12
-5F370000	31	11	lz10/table	MapPartsTowerA	4368	760	16	67	64
-5F370000	32	1	lz10/table	j0W0	264	184	61	1	64
-5F370000	33	12	lz10/table	j0W0	280	220	117	2	12
+5F370000	30	11	lz10/table	d01_msg	768	440	7	12	483
+5F370000	31	11	lz10/table	MapPartsTowerA	4368	760	67	64	16
+5F370000	32	1	lz10/table	MapStage	264	184	1	64	61
+5F370000	33	12	lz10/table	MessageContents	280	220	2	12	117
 5F370000	34	6	zip	Stage_symbol01.arc	33448	6565			
-5F3C0000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5F3C0000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5F3C0000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5F3C0000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5F3C0000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5F3C0000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5F3C0000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5F3C0000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5F3C0000	8	12	lz10/table	symbol	260	108	25	2	72
-5F3C0000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5F3C0000	10	12	lz10/table	MapChara	128	64	10	1	48
-5F3C0000	11	12	lz10/table	MapData	112	68	9	1	12
-5F3C0000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5F3C0000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5F3C0000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5F3C0000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5F3C0000	16	12	lz10/table	MapResource	192	96	13	2	56
-5F3C0000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5F3C0000	18	12	lz10/table	MonsterGroup	432	140	14	2	156
-5F3C0000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5F3C0000	20	12	lz10/table	Shop	128	76	6	1	28
-5F3C0000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5F3C0000	22	3	lz10/table	TableResource	192	164	15	26	4
-5F3C0000	23	12	lz10/table	TreasureGroup	592	184	15	6	80
-5F3C0000	24	3	lz10/table		912	376	0	9	55
-5F3C0000	25	3	lz10/table		76	76	3705371318	2621253731	1
+5F3C0000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5F3C0000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5F3C0000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5F3C0000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5F3C0000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5F3C0000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5F3C0000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5F3C0000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5F3C0000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5F3C0000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5F3C0000	10	12	lz10/table	MapChara	128	64	1	48	10
+5F3C0000	11	12	lz10/table	MapData	112	68	1	12	9
+5F3C0000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5F3C0000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5F3C0000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5F3C0000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5F3C0000	16	12	lz10/table	MapResource	192	96	2	56	13
+5F3C0000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5F3C0000	18	12	lz10/table	MonsterGroup	432	140	2	156	14
+5F3C0000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5F3C0000	20	12	lz10/table	Shop	128	76	1	28	6
+5F3C0000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5F3C0000	22	3	lz10/table	TableResource	192	164	26	4	15
+5F3C0000	23	12	lz10/table	TreasureGroup	592	184	6	80	15
+5F3C0000	24	3	lz10/?		912	376	9	115269721	0
+5F3C0000	25	3	lz10/?		76	76	2621253731	479661765	3705371318
 5F3C0000	26	3	lz10/?		0	0			
 5F3C0000	27	1	zip	contents0057.cro	20480	5346			
 5F3C0000	28	1	zip	d01_EventObject.bin	800	128			
 5F3C0000	29	1	zip	d01_StaticEvent.bin	112	41			
-5F3C0000	30	11	lz10/table		2048	1032	1767	7	12
-5F3C0000	31	11	lz10/table	MapPartsTowerB	4368	652	16	67	64
-5F3C0000	32	1	lz10/table	j0W0	264	184	61	1	64
-5F3C0000	33	12	lz10/table	j0W0	280	220	117	2	12
+5F3C0000	30	11	lz10/table	d01_msg	2048	1032	7	12	1767
+5F3C0000	31	11	lz10/table	MapPartsTowerB	4368	652	67	64	16
+5F3C0000	32	1	lz10/table	MapStage	264	184	1	64	61
+5F3C0000	33	12	lz10/table	MessageContents	280	220	2	12	117
 5F3C0000	34	6	zip	Stage_symbol01.arc	33448	6526			
-5F3D0000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5F3D0000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5F3D0000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5F3D0000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5F3D0000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5F3D0000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5F3D0000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5F3D0000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5F3D0000	8	12	lz10/table	symbol	260	108	25	2	72
-5F3D0000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5F3D0000	10	12	lz10/table	MapChara	128	68	10	1	48
-5F3D0000	11	12	lz10/table	MapData	112	68	9	1	12
-5F3D0000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5F3D0000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5F3D0000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5F3D0000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5F3D0000	16	12	lz10/table	MapResource	192	96	13	2	56
-5F3D0000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5F3D0000	18	12	lz10/table	MonsterGroup	608	184	14	3	156
-5F3D0000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5F3D0000	20	12	lz10/table	Shop	128	76	6	1	28
-5F3D0000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5F3D0000	22	3	lz10/table	TableResource	192	164	15	26	4
-5F3D0000	23	12	lz10/table	TreasureGroup	928	228	15	10	80
-5F3D0000	24	3	lz10/table		1788	616	0	9	131
-5F3D0000	25	3	lz10/table		76	76	3705371318	2621253731	1
+5F3D0000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5F3D0000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5F3D0000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5F3D0000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5F3D0000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5F3D0000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5F3D0000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5F3D0000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5F3D0000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5F3D0000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5F3D0000	10	12	lz10/table	MapChara	128	68	1	48	10
+5F3D0000	11	12	lz10/table	MapData	112	68	1	12	9
+5F3D0000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5F3D0000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5F3D0000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5F3D0000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5F3D0000	16	12	lz10/table	MapResource	192	96	2	56	13
+5F3D0000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5F3D0000	18	12	lz10/table	MonsterGroup	608	184	3	156	14
+5F3D0000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5F3D0000	20	12	lz10/table	Shop	128	76	1	28	6
+5F3D0000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5F3D0000	22	3	lz10/table	TableResource	192	164	26	4	15
+5F3D0000	23	12	lz10/table	TreasureGroup	928	228	10	80	15
+5F3D0000	24	3	lz10/?		1788	616	9	115269721	0
+5F3D0000	25	3	lz10/?		76	76	2621253731	479661765	3705371318
 5F3D0000	26	3	lz10/?		0	0			
 5F3D0000	27	1	zip	contents0056.cro	20480	5449			
 5F3D0000	28	1	zip	d01_EventObject.bin	1200	159			
 5F3D0000	29	1	zip	d01_StaticEvent.bin	112	41			
-5F3D0000	30	11	lz10/table		1088	608	811	7	12
-5F3D0000	31	11	lz10/table	MapPartsTempleB	4384	712	17	67	64
-5F3D0000	32	1	lz10/table	j0W0	264	184	61	1	64
-5F3D0000	33	12	lz10/table	j0W0	280	220	117	2	12
+5F3D0000	30	11	lz10/table	d01_msg	1088	608	7	12	811
+5F3D0000	31	11	lz10/table	MapPartsTempleB	4384	712	67	64	17
+5F3D0000	32	1	lz10/table	MapStage	264	184	1	64	61
+5F3D0000	33	12	lz10/table	MessageContents	280	220	2	12	117
 5F3D0000	34	6	zip	Stage_symbol01.arc	33448	9881			
-5FF00000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5FF00000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5FF00000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5FF00000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5FF00000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5FF00000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5FF00000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5FF00000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5FF00000	8	12	lz10/table	symbol	260	108	25	2	72
-5FF00000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5FF00000	10	12	lz10/table	MapChara	128	64	10	1	48
-5FF00000	11	12	lz10/table	MapData	112	68	9	1	12
-5FF00000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5FF00000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5FF00000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5FF00000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5FF00000	16	12	lz10/table	MapResource	192	88	13	2	56
-5FF00000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5FF00000	18	12	lz10/table	MonsterGroup	432	140	14	2	156
-5FF00000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5FF00000	20	12	lz10/table	Shop	128	76	6	1	28
-5FF00000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5FF00000	22	3	lz10/table	TableResource	192	164	15	26	4
-5FF00000	23	12	lz10/table	TreasureGroup	416	132	15	4	80
-5FF00000	24	3	lz10/table		1164	488	0	9	104
-5FF00000	25	3	lz10/table		76	80	235983835	2729450724	0
+5FF00000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5FF00000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5FF00000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5FF00000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5FF00000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5FF00000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5FF00000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5FF00000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5FF00000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5FF00000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5FF00000	10	12	lz10/table	MapChara	128	64	1	48	10
+5FF00000	11	12	lz10/table	MapData	112	68	1	12	9
+5FF00000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5FF00000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5FF00000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5FF00000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5FF00000	16	12	lz10/table	MapResource	192	88	2	56	13
+5FF00000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5FF00000	18	12	lz10/table	MonsterGroup	432	140	2	156	14
+5FF00000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5FF00000	20	12	lz10/table	Shop	128	76	1	28	6
+5FF00000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5FF00000	22	3	lz10/table	TableResource	192	164	26	4	15
+5FF00000	23	12	lz10/table	TreasureGroup	416	132	4	80	15
+5FF00000	24	3	lz10/?		1164	488	9	205829502	0
+5FF00000	25	3	lz10/?		76	80	2729450724	1655719032	235983835
 5FF00000	26	3	lz10/?		0	0			
 5FF00000	27	1	zip	contents0042.cro	20480	5349			
 5FF00000	28	1	zip	d01_EventObject.bin	608	109			
 5FF00000	29	1	zip	d01_StaticEvent.bin	112	41			
-5FF00000	30	11	lz10/table		2080	968	1795	7	12
-5FF00000	31	11	lz10/table	MapPartsHell	4368	652	14	67	64
-5FF00000	32	1	lz10/table	j0W0	264	184	61	1	64
-5FF00000	33	12	lz10/table	j0W0	280	220	117	2	12
+5FF00000	30	11	lz10/table	d01_msg	2080	968	7	12	1795
+5FF00000	31	11	lz10/table	MapPartsHell	4368	652	67	64	14
+5FF00000	32	1	lz10/table	MapStage	264	184	1	64	61
+5FF00000	33	12	lz10/table	MessageContents	280	220	2	12	117
 5FF00000	34	6	zip	Stage_symbol01.arc	33448	7766			
-5FF10000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5FF10000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5FF10000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5FF10000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5FF10000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5FF10000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5FF10000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5FF10000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5FF10000	8	12	lz10/table	symbol	260	108	25	2	72
-5FF10000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5FF10000	10	12	lz10/table	MapChara	176	92	10	2	48
-5FF10000	11	12	lz10/table	MapData	112	68	9	1	12
-5FF10000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5FF10000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5FF10000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5FF10000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5FF10000	16	12	lz10/table	MapResource	192	92	13	2	56
-5FF10000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5FF10000	18	12	lz10/table	MonsterGroup	432	140	14	2	156
-5FF10000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5FF10000	20	12	lz10/table	Shop	128	76	6	1	28
-5FF10000	21	12	lz10/table	ShopItem	1488	380	10	29	44
-5FF10000	22	3	lz10/table	TableResource	192	164	15	26	4
-5FF10000	23	12	lz10/table	TreasureGroup	416	132	15	4	80
-5FF10000	24	3	lz10/table		976	396	0	9	80
-5FF10000	25	3	lz10/table		76	80	235983835	2729450724	0
+5FF10000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5FF10000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5FF10000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5FF10000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5FF10000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5FF10000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5FF10000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5FF10000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5FF10000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5FF10000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5FF10000	10	12	lz10/table	MapChara	176	92	2	48	10
+5FF10000	11	12	lz10/table	MapData	112	68	1	12	9
+5FF10000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5FF10000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5FF10000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5FF10000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5FF10000	16	12	lz10/table	MapResource	192	92	2	56	13
+5FF10000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5FF10000	18	12	lz10/table	MonsterGroup	432	140	2	156	14
+5FF10000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5FF10000	20	12	lz10/table	Shop	128	76	1	28	6
+5FF10000	21	12	lz10/table	ShopItem	1488	380	29	44	10
+5FF10000	22	3	lz10/table	TableResource	192	164	26	4	15
+5FF10000	23	12	lz10/table	TreasureGroup	416	132	4	80	15
+5FF10000	24	3	lz10/?		976	396	9	205829502	0
+5FF10000	25	3	lz10/?		76	80	2729450724	1655719032	235983835
 5FF10000	26	3	lz10/?		0	0			
 5FF10000	27	1	zip	contents0043.cro	20480	5458			
 5FF10000	28	1	zip	d01_EventObject.bin	704	118			
 5FF10000	29	1	zip	d01_StaticEvent.bin	112	41			
-5FF10000	30	11	lz10/table		1432	724	1145	8	12
-5FF10000	31	11	lz10/table	MapPartsRelic	4368	740	15	67	64
-5FF10000	32	1	lz10/table	j0W0	264	180	61	1	64
-5FF10000	33	12	lz10/table	j0W0	280	220	117	2	12
+5FF10000	30	11	lz10/table	d01_msg	1432	724	8	12	1145
+5FF10000	31	11	lz10/table	MapPartsRelic	4368	740	67	64	15
+5FF10000	32	1	lz10/table	MapStage	264	180	1	64	61
+5FF10000	33	12	lz10/table	MessageContents	280	220	2	12	117
 5FF10000	34	6	zip	Stage_symbol01.arc	33448	7348			
-5FF20000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5FF20000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5FF20000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5FF20000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5FF20000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5FF20000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5FF20000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5FF20000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5FF20000	8	12	lz10/table	symbol	260	108	25	2	72
-5FF20000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5FF20000	10	12	lz10/table	MapChara	176	92	10	2	48
-5FF20000	11	12	lz10/table	MapData	112	68	9	1	12
-5FF20000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5FF20000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5FF20000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5FF20000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5FF20000	16	12	lz10/table	MapResource	192	92	13	2	56
-5FF20000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5FF20000	18	12	lz10/table	MonsterGroup	432	144	14	2	156
-5FF20000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5FF20000	20	12	lz10/table	Shop	128	76	6	1	28
-5FF20000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5FF20000	22	3	lz10/table	TableResource	192	164	15	26	4
-5FF20000	23	12	lz10/table	TreasureGroup	416	132	15	4	80
-5FF20000	24	3	lz10/table		1616	576	0	9	151
-5FF20000	25	3	lz10/table		76	80	235983835	2729450724	0
+5FF20000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5FF20000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5FF20000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5FF20000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5FF20000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5FF20000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5FF20000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5FF20000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5FF20000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5FF20000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5FF20000	10	12	lz10/table	MapChara	176	92	2	48	10
+5FF20000	11	12	lz10/table	MapData	112	68	1	12	9
+5FF20000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5FF20000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5FF20000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5FF20000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5FF20000	16	12	lz10/table	MapResource	192	92	2	56	13
+5FF20000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5FF20000	18	12	lz10/table	MonsterGroup	432	144	2	156	14
+5FF20000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5FF20000	20	12	lz10/table	Shop	128	76	1	28	6
+5FF20000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5FF20000	22	3	lz10/table	TableResource	192	164	26	4	15
+5FF20000	23	12	lz10/table	TreasureGroup	416	132	4	80	15
+5FF20000	24	3	lz10/?		1616	576	9	205829502	0
+5FF20000	25	3	lz10/?		76	80	2729450724	1655719032	235983835
 5FF20000	26	3	lz10/?		0	0			
 5FF20000	27	1	zip	contents0044.cro	20480	6344			
 5FF20000	28	1	zip	d01_EventObject.bin	704	119			
 5FF20000	29	1	zip	d01_StaticEvent.bin	112	41			
-5FF20000	30	11	lz10/table		4120	1776	3673	14	12
-5FF20000	31	11	lz10/table	MapPartsRelic	4368	740	15	67	64
-5FF20000	32	1	lz10/table	j0W0	264	184	61	1	64
-5FF20000	33	12	lz10/table	j0W0	280	220	117	2	12
+5FF20000	30	11	lz10/table	d01_msg	4120	1776	14	12	3673
+5FF20000	31	11	lz10/table	MapPartsRelic	4368	740	67	64	15
+5FF20000	32	1	lz10/table	MapStage	264	184	1	64	61
+5FF20000	33	12	lz10/table	MessageContents	280	220	2	12	117
 5FF20000	34	6	zip	Stage_symbol01.arc	33448	8670			
-5FF30000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5FF30000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5FF30000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5FF30000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5FF30000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5FF30000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5FF30000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5FF30000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5FF30000	8	12	lz10/table	symbol	260	108	25	2	72
-5FF30000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5FF30000	10	12	lz10/table	MapChara	128	64	10	1	48
-5FF30000	11	12	lz10/table	MapData	112	68	9	1	12
-5FF30000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5FF30000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5FF30000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5FF30000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5FF30000	16	12	lz10/table	MapResource	192	96	13	2	56
-5FF30000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5FF30000	18	12	lz10/table	MonsterGroup	432	144	14	2	156
-5FF30000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5FF30000	20	12	lz10/table	Shop	128	76	6	1	28
-5FF30000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5FF30000	22	3	lz10/table	TableResource	192	164	15	26	4
-5FF30000	23	12	lz10/table	TreasureGroup	416	132	15	4	80
-5FF30000	24	3	lz10/table		1384	540	0	9	91
-5FF30000	25	3	lz10/table		76	76	3705371318	2621253731	1
+5FF30000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5FF30000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5FF30000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5FF30000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5FF30000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5FF30000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5FF30000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5FF30000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5FF30000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5FF30000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5FF30000	10	12	lz10/table	MapChara	128	64	1	48	10
+5FF30000	11	12	lz10/table	MapData	112	68	1	12	9
+5FF30000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5FF30000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5FF30000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5FF30000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5FF30000	16	12	lz10/table	MapResource	192	96	2	56	13
+5FF30000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5FF30000	18	12	lz10/table	MonsterGroup	432	144	2	156	14
+5FF30000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5FF30000	20	12	lz10/table	Shop	128	76	1	28	6
+5FF30000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5FF30000	22	3	lz10/table	TableResource	192	164	26	4	15
+5FF30000	23	12	lz10/table	TreasureGroup	416	132	4	80	15
+5FF30000	24	3	lz10/?		1384	540	9	115269721	0
+5FF30000	25	3	lz10/?		76	76	2621253731	479661765	3705371318
 5FF30000	26	3	lz10/?		0	0			
 5FF30000	27	1	zip	contents0045.cro	20480	5299			
 5FF30000	28	1	zip	d01_EventObject.bin	608	111			
 5FF30000	29	1	zip	d01_StaticEvent.bin	112	41			
-5FF30000	30	11	lz10/table		1904	824	1617	7	12
-5FF30000	31	11	lz10/table	MapPartsTempleB	4384	712	17	67	64
-5FF30000	32	1	lz10/table	j0W0	264	184	61	1	64
-5FF30000	33	12	lz10/table	j0W0	280	220	117	2	12
+5FF30000	30	11	lz10/table	d01_msg	1904	824	7	12	1617
+5FF30000	31	11	lz10/table	MapPartsTempleB	4384	712	67	64	17
+5FF30000	32	1	lz10/table	MapStage	264	184	1	64	61
+5FF30000	33	12	lz10/table	MessageContents	280	220	2	12	117
 5FF30000	34	6	zip	Stage_symbol01.arc	33448	7058			
-5FF60000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5FF60000	1	12	lz10/table	BattleFieldContents	160	92	21	3	12
-5FF60000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5FF60000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5FF60000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5FF60000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5FF60000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5FF60000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5FF60000	8	12	lz10/table	symbol	260	108	25	2	72
-5FF60000	9	12	lz10/table	MapCamera	128	68	11	3	16
-5FF60000	10	12	lz10/table	MapChara	128	68	10	1	48
-5FF60000	11	12	lz10/table	MapData	112	72	9	1	12
-5FF60000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5FF60000	13	12	lz10/table	MapEnv	160	76	8	3	24
-5FF60000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5FF60000	15	12	lz10/table	MapPartsType	96	60	14	2	4
-5FF60000	16	12	lz10/table	MapResource	192	84	13	2	56
-5FF60000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5FF60000	18	12	lz10/table	MonsterGroup	752	220	14	4	156
-5FF60000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5FF60000	20	12	lz10/table	Shop	128	76	6	1	28
-5FF60000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5FF60000	22	3	lz10/table	TableResource	192	164	15	26	4
-5FF60000	23	12	lz10/table	TreasureGroup	416	132	15	4	80
-5FF60000	24	3	lz10/table		1464	612	0	9	106
-5FF60000	25	3	lz10/table		76	80	235983835	2729450724	0
+5FF60000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5FF60000	1	12	lz10/table	BattleFieldContents	160	92	3	12	21
+5FF60000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5FF60000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5FF60000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5FF60000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5FF60000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5FF60000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5FF60000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5FF60000	9	12	lz10/table	MapCamera	128	68	3	16	11
+5FF60000	10	12	lz10/table	MapChara	128	68	1	48	10
+5FF60000	11	12	lz10/table	MapData	112	72	1	12	9
+5FF60000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5FF60000	13	12	lz10/table	MapEnv	160	76	3	24	8
+5FF60000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5FF60000	15	12	lz10/table	MapPartsType	96	60	2	4	14
+5FF60000	16	12	lz10/table	MapResource	192	84	2	56	13
+5FF60000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5FF60000	18	12	lz10/table	MonsterGroup	752	220	4	156	14
+5FF60000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5FF60000	20	12	lz10/table	Shop	128	76	1	28	6
+5FF60000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5FF60000	22	3	lz10/table	TableResource	192	164	26	4	15
+5FF60000	23	12	lz10/table	TreasureGroup	416	132	4	80	15
+5FF60000	24	3	lz10/?		1464	612	9	205829502	0
+5FF60000	25	3	lz10/?		76	80	2729450724	1655719032	235983835
 5FF60000	26	3	lz10/?		0	0			
 5FF60000	27	1	zip	contents0040.cro	20480	5444			
 5FF60000	28	1	zip	d01_EventObject.bin	608	109			
 5FF60000	29	1	zip	d01_StaticEvent.bin	112	41			
-5FF60000	30	11	lz10/table		1920	916	1647	7	12
-5FF60000	31	11	lz10/table	MapPartsCaveC	4368	700	15	67	64
-5FF60000	32	11	lz10/table	MapPartsCaveD	4368	668	15	67	64
-5FF60000	33	1	lz10/table	j0W0	264	180	61	1	64
-5FF60000	34	12	lz10/table	j0W0	280	220	117	2	12
+5FF60000	30	11	lz10/table	d01_msg	1920	916	7	12	1647
+5FF60000	31	11	lz10/table	MapPartsCaveC	4368	700	67	64	15
+5FF60000	32	11	lz10/table	MapPartsCaveD	4368	668	67	64	15
+5FF60000	33	1	lz10/table	MapStage	264	180	1	64	61
+5FF60000	34	12	lz10/table	MessageContents	280	220	2	12	117
 5FF60000	35	6	zip	Stage_symbol01.arc	33448	7188			
-5FF70000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5FF70000	1	12	lz10/table	BattleFieldContents	160	92	21	3	12
-5FF70000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5FF70000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5FF70000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5FF70000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5FF70000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5FF70000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5FF70000	8	12	lz10/table	symbol	260	108	25	2	72
-5FF70000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5FF70000	10	12	lz10/table	MapChara	176	92	10	2	48
-5FF70000	11	12	lz10/table	MapData	112	68	9	1	12
-5FF70000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5FF70000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5FF70000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5FF70000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5FF70000	16	12	lz10/table	MapResource	192	112	13	2	56
-5FF70000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5FF70000	18	12	lz10/table	MonsterGroup	432	144	14	2	156
-5FF70000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5FF70000	20	12	lz10/table	Shop	128	76	6	1	28
-5FF70000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5FF70000	22	3	lz10/table	TableResource	192	164	15	26	4
-5FF70000	23	12	lz10/table	TreasureGroup	416	132	15	4	80
-5FF70000	24	3	lz10/table		636	300	0	9	40
-5FF70000	25	3	lz10/table		76	76	3705371318	2621253731	1
+5FF70000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5FF70000	1	12	lz10/table	BattleFieldContents	160	92	3	12	21
+5FF70000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5FF70000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5FF70000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5FF70000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5FF70000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5FF70000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5FF70000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5FF70000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5FF70000	10	12	lz10/table	MapChara	176	92	2	48	10
+5FF70000	11	12	lz10/table	MapData	112	68	1	12	9
+5FF70000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5FF70000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5FF70000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5FF70000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5FF70000	16	12	lz10/table	MapResource	192	112	2	56	13
+5FF70000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5FF70000	18	12	lz10/table	MonsterGroup	432	144	2	156	14
+5FF70000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5FF70000	20	12	lz10/table	Shop	128	76	1	28	6
+5FF70000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5FF70000	22	3	lz10/table	TableResource	192	164	26	4	15
+5FF70000	23	12	lz10/table	TreasureGroup	416	132	4	80	15
+5FF70000	24	3	lz10/?		636	300	9	115269721	0
+5FF70000	25	3	lz10/?		76	76	2621253731	479661765	3705371318
 5FF70000	26	3	lz10/?		0	0			
 5FF70000	27	1	zip	contents0041.cro	20480	6263			
 5FF70000	28	1	zip	d01_EventObject.bin	704	120			
 5FF70000	29	1	zip	d01_StaticEvent.bin	112	41			
-5FF70000	30	11	lz10/table		1832	1016	1379	14	12
+5FF70000	30	11	lz10/table	d01_msg	1832	1016	14	12	1379
 5FF70000	31	11	lz10/?		0	0			
-5FF70000	32	11	lz10/table	MapPartsVolcanoA	4384	760	18	67	64
-5FF70000	33	1	lz10/table	j0W0	264	184	61	1	64
-5FF70000	34	12	lz10/table	j0W0	280	220	117	2	12
+5FF70000	32	11	lz10/table	MapPartsVolcanoA	4384	760	67	64	18
+5FF70000	33	1	lz10/table	MapStage	264	184	1	64	61
+5FF70000	34	12	lz10/table	MessageContents	280	220	2	12	117
 5FF70000	35	6	zip	Stage_symbol01.arc	33448	8444			
-5FFC0000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5FFC0000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5FFC0000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5FFC0000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5FFC0000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5FFC0000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5FFC0000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5FFC0000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5FFC0000	8	12	lz10/table	symbol	260	108	25	2	72
-5FFC0000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5FFC0000	10	12	lz10/table	MapChara	176	92	10	2	48
-5FFC0000	11	12	lz10/table	MapData	112	68	9	1	12
-5FFC0000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5FFC0000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5FFC0000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5FFC0000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5FFC0000	16	12	lz10/table	MapResource	192	104	13	2	56
-5FFC0000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5FFC0000	18	12	lz10/table	MonsterGroup	432	140	14	2	156
-5FFC0000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5FFC0000	20	12	lz10/table	Shop	128	76	6	1	28
-5FFC0000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5FFC0000	22	3	lz10/table	TableResource	192	164	15	26	4
-5FFC0000	23	12	lz10/table	TreasureGroup	416	132	15	4	80
-5FFC0000	24	3	lz10/table		1284	484	0	9	114
-5FFC0000	25	3	lz10/table		76	80	235983835	2729450724	0
+5FFC0000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5FFC0000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5FFC0000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5FFC0000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5FFC0000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5FFC0000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5FFC0000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5FFC0000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5FFC0000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5FFC0000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5FFC0000	10	12	lz10/table	MapChara	176	92	2	48	10
+5FFC0000	11	12	lz10/table	MapData	112	68	1	12	9
+5FFC0000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5FFC0000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5FFC0000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5FFC0000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5FFC0000	16	12	lz10/table	MapResource	192	104	2	56	13
+5FFC0000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5FFC0000	18	12	lz10/table	MonsterGroup	432	140	2	156	14
+5FFC0000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5FFC0000	20	12	lz10/table	Shop	128	76	1	28	6
+5FFC0000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5FFC0000	22	3	lz10/table	TableResource	192	164	26	4	15
+5FFC0000	23	12	lz10/table	TreasureGroup	416	132	4	80	15
+5FFC0000	24	3	lz10/?		1284	484	9	205829502	0
+5FFC0000	25	3	lz10/?		76	80	2729450724	1655719032	235983835
 5FFC0000	26	3	lz10/?		0	0			
 5FFC0000	27	1	zip	contents0046.cro	20480	6305			
 5FFC0000	28	1	zip	d01_EventObject.bin	704	119			
 5FFC0000	29	1	zip	d01_StaticEvent.bin	112	41			
-5FFC0000	30	11	lz10/table		3896	1644	3443	14	12
-5FFC0000	31	11	lz10/table	MapPartsTemple	4368	868	16	67	64
-5FFC0000	32	1	lz10/table	j0W0	264	180	61	1	64
-5FFC0000	33	12	lz10/table	j0W0	280	220	117	2	12
+5FFC0000	30	11	lz10/table	d01_msg	3896	1644	14	12	3443
+5FFC0000	31	11	lz10/table	MapPartsTemple	4368	868	67	64	16
+5FFC0000	32	1	lz10/table	MapStage	264	180	1	64	61
+5FFC0000	33	12	lz10/table	MessageContents	280	220	2	12	117
 5FFC0000	34	6	zip	Stage_symbol01.arc	33448	8999			
-5FFD0000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5FFD0000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5FFD0000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5FFD0000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5FFD0000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5FFD0000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5FFD0000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5FFD0000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5FFD0000	8	12	lz10/table	symbol	260	108	25	2	72
-5FFD0000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5FFD0000	10	12	lz10/table	MapChara	128	64	10	1	48
-5FFD0000	11	12	lz10/table	MapData	112	68	9	1	12
-5FFD0000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5FFD0000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5FFD0000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5FFD0000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5FFD0000	16	12	lz10/table	MapResource	192	108	13	2	56
-5FFD0000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5FFD0000	18	12	lz10/table	MonsterGroup	608	188	14	3	156
-5FFD0000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5FFD0000	20	12	lz10/table	Shop	128	76	6	1	28
-5FFD0000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5FFD0000	22	3	lz10/table	TableResource	192	164	15	26	4
-5FFD0000	23	12	lz10/table	TreasureGroup	512	164	15	5	80
-5FFD0000	24	3	lz10/table		2976	992	0	9	155
-5FFD0000	25	3	lz10/table		76	76	3705371318	2621253731	1
+5FFD0000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5FFD0000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5FFD0000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5FFD0000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5FFD0000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5FFD0000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5FFD0000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5FFD0000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5FFD0000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5FFD0000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5FFD0000	10	12	lz10/table	MapChara	128	64	1	48	10
+5FFD0000	11	12	lz10/table	MapData	112	68	1	12	9
+5FFD0000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5FFD0000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5FFD0000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5FFD0000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5FFD0000	16	12	lz10/table	MapResource	192	108	2	56	13
+5FFD0000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5FFD0000	18	12	lz10/table	MonsterGroup	608	188	3	156	14
+5FFD0000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5FFD0000	20	12	lz10/table	Shop	128	76	1	28	6
+5FFD0000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5FFD0000	22	3	lz10/table	TableResource	192	164	26	4	15
+5FFD0000	23	12	lz10/table	TreasureGroup	512	164	5	80	15
+5FFD0000	24	3	lz10/?		2976	992	9	115269721	0
+5FFD0000	25	3	lz10/?		76	76	2621253731	479661765	3705371318
 5FFD0000	26	3	lz10/?		0	0			
 5FFD0000	27	1	zip	contents0047.cro	20480	5450			
 5FFD0000	28	1	zip	d01_EventObject.bin	704	119			
 5FFD0000	29	1	zip	d01_StaticEvent.bin	112	41			
-5FFD0000	30	11	lz10/table		1168	524	887	7	12
-5FFD0000	31	11	lz10/table	MapPartsIceA	4368	748	14	67	64
-5FFD0000	32	1	lz10/table	j0W0	264	184	61	1	64
-5FFD0000	33	12	lz10/table	j0W0	280	220	117	2	12
+5FFD0000	30	11	lz10/table	d01_msg	1168	524	7	12	887
+5FFD0000	31	11	lz10/table	MapPartsIceA	4368	748	67	64	14
+5FFD0000	32	1	lz10/table	MapStage	264	184	1	64	61
+5FFD0000	33	12	lz10/table	MessageContents	280	220	2	12	117
 5FFD0000	34	6	zip	Stage_symbol01.arc	33448	7869			
-5FFE0000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5FFE0000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5FFE0000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5FFE0000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5FFE0000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5FFE0000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5FFE0000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5FFE0000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5FFE0000	8	12	lz10/table	symbol	260	108	25	2	72
-5FFE0000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5FFE0000	10	12	lz10/table	MapChara	128	64	10	1	48
-5FFE0000	11	12	lz10/table	MapData	112	68	9	1	12
-5FFE0000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5FFE0000	13	12	lz10/table	MapEnv	160	84	8	3	24
-5FFE0000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5FFE0000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5FFE0000	16	12	lz10/table	MapResource	192	108	13	2	56
-5FFE0000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5FFE0000	18	12	lz10/table	MonsterGroup	432	144	14	2	156
-5FFE0000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5FFE0000	20	12	lz10/table	Shop	128	76	6	1	28
-5FFE0000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5FFE0000	22	3	lz10/table	TableResource	192	164	15	26	4
-5FFE0000	23	12	lz10/table	TreasureGroup	672	196	15	7	80
-5FFE0000	24	3	lz10/table		1652	568	0	9	93
-5FFE0000	25	3	lz10/table		76	76	3705371318	2621253731	1
+5FFE0000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5FFE0000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5FFE0000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5FFE0000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5FFE0000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5FFE0000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5FFE0000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5FFE0000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5FFE0000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5FFE0000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5FFE0000	10	12	lz10/table	MapChara	128	64	1	48	10
+5FFE0000	11	12	lz10/table	MapData	112	68	1	12	9
+5FFE0000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5FFE0000	13	12	lz10/table	MapEnv	160	84	3	24	8
+5FFE0000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5FFE0000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5FFE0000	16	12	lz10/table	MapResource	192	108	2	56	13
+5FFE0000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5FFE0000	18	12	lz10/table	MonsterGroup	432	144	2	156	14
+5FFE0000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5FFE0000	20	12	lz10/table	Shop	128	76	1	28	6
+5FFE0000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5FFE0000	22	3	lz10/table	TableResource	192	164	26	4	15
+5FFE0000	23	12	lz10/table	TreasureGroup	672	196	7	80	15
+5FFE0000	24	3	lz10/?		1652	568	9	115269721	0
+5FFE0000	25	3	lz10/?		76	76	2621253731	479661765	3705371318
 5FFE0000	26	3	lz10/?		0	0			
 5FFE0000	27	1	zip	contents0048.cro	20480	5351			
 5FFE0000	28	1	zip	d01_EventObject.bin	896	135			
 5FFE0000	29	1	zip	d01_StaticEvent.bin	112	41			
-5FFE0000	30	11	lz10/table		1488	672	1211	7	12
-5FFE0000	31	11	lz10/table	MapPartsIceA	4368	748	14	67	64
-5FFE0000	32	1	lz10/table	j0W0	264	184	61	1	64
-5FFE0000	33	12	lz10/table	j0W0	280	220	117	2	12
+5FFE0000	30	11	lz10/table	d01_msg	1488	672	7	12	1211
+5FFE0000	31	11	lz10/table	MapPartsIceA	4368	748	67	64	14
+5FFE0000	32	1	lz10/table	MapStage	264	184	1	64	61
+5FFE0000	33	12	lz10/table	MessageContents	280	220	2	12	117
 5FFE0000	34	6	zip	Stage_symbol01.arc	33448	8700			
-5FFF0000	0	12	lz10/table	AreaInfo	112	60	10	1	12
-5FFF0000	1	12	lz10/table	BattleFieldContents	160	96	21	3	12
-5FFF0000	2	12	lz10/table	CannonParameter	112	56	17	1	12
-5FFF0000	3	12	lz10/table	CecLampIgnore	96	48	15	1	4
-5FFF0000	4	12	lz10/table	ContentsDef	96	60	13	4	4
-5FFF0000	5	12	lz10/table	DebugMapJump	144	84	14	1	48
-5FFF0000	6	12	lz10/table	DesignedMap	112	56	13	1	28
-5FFF0000	7	12	lz10/table	FishingPoint	192	108	14	2	52
-5FFF0000	8	12	lz10/table	symbol	260	108	25	2	72
-5FFF0000	9	12	lz10/table	MapCamera	112	68	11	2	16
-5FFF0000	10	12	lz10/table	MapChara	176	92	10	2	48
-5FFF0000	11	12	lz10/table	MapData	112	68	9	1	12
-5FFF0000	12	12	lz10/table	MapDataResource	112	64	17	2	4
-5FFF0000	13	12	lz10/table	MapEnv	128	72	8	2	24
-5FFF0000	14	12	lz10/table	MapGroup	176	100	10	2	44
-5FFF0000	15	12	lz10/table	MapPartsType	96	52	14	1	4
-5FFF0000	16	12	lz10/table	MapResource	192	112	13	2	56
-5FFF0000	17	12	lz10/table	MapSurfaceIgnore	112	56	18	1	4
-5FFF0000	18	12	lz10/table	MonsterGroup	432	140	14	2	156
-5FFF0000	19	12	lz10/table	PlantPoint	112	56	12	1	24
-5FFF0000	20	12	lz10/table	Shop	128	76	6	1	28
-5FFF0000	21	12	lz10/table	ShopItem	192	88	10	2	44
-5FFF0000	22	3	lz10/table	TableResource	192	164	15	26	4
-5FFF0000	23	12	lz10/table	TreasureGroup	416	132	15	4	80
-5FFF0000	24	3	lz10/table		1236	508	0	9	97
-5FFF0000	25	3	lz10/table		76	76	3705371318	2621253731	1
+5FFF0000	0	12	lz10/table	AreaInfo	112	60	1	12	10
+5FFF0000	1	12	lz10/table	BattleFieldContents	160	96	3	12	21
+5FFF0000	2	12	lz10/table	CannonParameter	112	56	1	12	17
+5FFF0000	3	12	lz10/table	CecLampIgnore	96	48	1	4	15
+5FFF0000	4	12	lz10/table	ContentsDef	96	60	4	4	13
+5FFF0000	5	12	lz10/table	DebugMapJump	144	84	1	48	14
+5FFF0000	6	12	lz10/table	DesignedMap	112	56	1	28	13
+5FFF0000	7	12	lz10/table	FishingPoint	192	108	2	52	14
+5FFF0000	8	12	lz10/table	layout_contents	260	108	2	72	25
+5FFF0000	9	12	lz10/table	MapCamera	112	68	2	16	11
+5FFF0000	10	12	lz10/table	MapChara	176	92	2	48	10
+5FFF0000	11	12	lz10/table	MapData	112	68	1	12	9
+5FFF0000	12	12	lz10/table	MapDataResource	112	64	2	4	17
+5FFF0000	13	12	lz10/table	MapEnv	128	72	2	24	8
+5FFF0000	14	12	lz10/table	MapGroup	176	100	2	44	10
+5FFF0000	15	12	lz10/table	MapPartsType	96	52	1	4	14
+5FFF0000	16	12	lz10/table	MapResource	192	112	2	56	13
+5FFF0000	17	12	lz10/table	MapSurfaceIgnore	112	56	1	4	18
+5FFF0000	18	12	lz10/table	MonsterGroup	432	140	2	156	14
+5FFF0000	19	12	lz10/table	PlantPoint	112	56	1	24	12
+5FFF0000	20	12	lz10/table	Shop	128	76	1	28	6
+5FFF0000	21	12	lz10/table	ShopItem	192	88	2	44	10
+5FFF0000	22	3	lz10/table	TableResource	192	164	26	4	15
+5FFF0000	23	12	lz10/table	TreasureGroup	416	132	4	80	15
+5FFF0000	24	3	lz10/?		1236	508	9	115269721	0
+5FFF0000	25	3	lz10/?		76	76	2621253731	479661765	3705371318
 5FFF0000	26	3	lz10/?		0	0			
 5FFF0000	27	1	zip	contents0049.cro	20480	6320			
 5FFF0000	28	1	zip	d01_EventObject.bin	704	118			
 5FFF0000	29	1	zip	d01_StaticEvent.bin	112	41			
-5FFF0000	30	11	lz10/table		5592	2152	5151	14	12
-5FFF0000	31	11	lz10/table	MapPartsForestA	4384	792	17	67	64
-5FFF0000	32	1	lz10/table	j0W0	264	184	61	1	64
-5FFF0000	33	12	lz10/table	j0W0	280	220	117	2	12
+5FFF0000	30	11	lz10/table	d01_msg	5592	2152	14	12	5151
+5FFF0000	31	11	lz10/table	MapPartsForestA	4384	792	67	64	17
+5FFF0000	32	1	lz10/table	MapStage	264	184	1	64	61
+5FFF0000	33	12	lz10/table	MessageContents	280	220	2	12	117
 5FFF0000	34	6	zip	Stage_symbol01.arc	33448	9737			
 67F40000	0	10	zip	bg_10_templeB_01.gsc	4756	1730			
 67F40000	1	10	zip	bg_10_templeB_01_a.gsc	7420	2293			
@@ -3615,7 +3615,7 @@ archive	section	kind	encoding	name	size	stored	table_type	records	rec_size
 7BF70000	3	4	zip	bg_title_obj2.bch	86176	18516			
 7BF70000	4	4	zip	bg_titlemenu_camera.bch	724	196			
 839E0000	0	11	zip	ExtMagic.dat	15	15			
-839E0000	1	11	lz10/table	ResourceFileList	112	60	18	1	8
+839E0000	1	11	lz10/table	ResourceFileList	112	60	1	8	18
 8C8A0000	0	10	zip	bg_03_towerA_01.gsc	5780	2433			
 8C8A0000	1	10	zip	bg_03_towerA_01_a.gsc	17444	10224			
 8C8A0000	2	10	zip	bg_03_towerA_01_b.gsc	27812	10274			
@@ -6452,7 +6452,7 @@ EC3F0000	13	10	zip	inpt_04_fairy_14.gsc	26596	7206
 EC3F0000	14	10	zip	inpt_04_fairy_15.gsc	26724	7202			
 EDFE0000	0	11	zip	lotRareDenpa_Limited.bin	528	254			
 EDFE0000	1	11	zip	lotRareDenpa_Normal.bin	10080	1023			
-F090000A	0	11	lz10/table		1464	800	1195	13	4
+F090000A	0	11	lz10/table	MessageTutorial	1464	800	13	4	1195
 F48B0000	0	4	zip	hum_anim_ar.bch	54688	30244			
 F48B0000	1	4	zip	hum_anim_base.bch	88064	52395			
 F48B0000	2	4	zip	hum_anim_battle.bch	150656	86473			
@@ -6536,16 +6536,16 @@ FE4F0000	9	10	zip	bgpt_myland_03b.gsc	14280	5536
 FE4F0000	10	10	zip	bgpt_myland_09.gsc	11612	3891			
 FE4F0000	11	10	zip	bgpt_myland_09a.gsc	11228	3589			
 FE4F0000	12	10	zip	bgpt_myland_09b.gsc	11868	4041			
-FE74000A	0	11	lz10/table		1892	928	1558	20	4
-FE74000A	1	11	lz10/table		25708	10108	22078	294	4
-FE74000A	2	11	lz10/table		1408	684	1136	15	4
-FE74000A	3	11	lz10/table		3076	1516	2597	32	4
-FE74000A	4	11	lz10/table		3172	1472	2700	32	4
-FE74000A	5	11	lz10/table		588	392	354	10	4
-FE74000A	6	11	lz10/table		2960	1576	1955	75	4
-FE74000A	7	11	lz10/table		3816	1848	3015	57	4
-FE74000A	8	11	lz10/table		372992	173836	324091	2033	12
-FE74000A	9	11	lz10/table		125160	59256	108774	678	12
-FE74000A	10	11	lz10/table		4848	2060	3946	33	12
-FE74000A	11	11	lz10/table		12672	4908	9567	125	12
-FE74000A	12	11	lz10/table		8360	3924	7622	26	12
+FE74000A	0	11	lz10/table	MessageMenu	1892	928	20	4	1558
+FE74000A	1	11	lz10/table	MessageMenu	25708	10108	294	4	22078
+FE74000A	2	11	lz10/table	MessageMenu	1408	684	15	4	1136
+FE74000A	3	11	lz10/table	MessageMenu	3076	1516	32	4	2597
+FE74000A	4	11	lz10/table	MessageMenu	3172	1472	32	4	2700
+FE74000A	5	11	lz10/table	MessageMenu	588	392	10	4	354
+FE74000A	6	11	lz10/table	MessageMenu	2960	1576	75	4	1955
+FE74000A	7	11	lz10/table	MessageMenu	3816	1848	57	4	3015
+FE74000A	8	11	lz10/table	MessageNagomiFriend	372992	173836	2033	12	324091
+FE74000A	9	11	lz10/table	MessageNagomiTower	125160	59256	678	12	108774
+FE74000A	10	11	lz10/table	MessageTalkMap	4848	2060	33	12	3946
+FE74000A	11	11	lz10/table	MessageTalkShop	12672	4908	125	12	9567
+FE74000A	12	11	lz10/table	MessageTalkTower	8360	3924	26	12	7622

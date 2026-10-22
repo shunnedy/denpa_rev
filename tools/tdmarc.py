@@ -134,28 +134,39 @@ if __name__ == '__main__':
 
 # ---------------------------------------------------------------- data tables
 # Sections that are not ZIPs hold a single LZ10-compressed Genius Sonority
-# data table. Partially decoded header (all little-endian):
+# data table. Header (0x40 bytes, little-endian, offsets absolute in the blob):
 #   0x00 u32 record count
-#   0x04 u32 0x0C        (constant: header/field-descriptor size?)
-#   0x08 u32 0x40        (constant: offset of the table name)
-#   0x0C u32 table type id
-#   0x10 u32 main block offset
-#   0x14 u32 main block size   (== record count * record size)
-#   0x18 u32 aux block offset  (0 when absent)
-#   0x1C u32 aux block size
-#   0x28 u32 total size of the decompressed blob
-#   0x38 u32 length of the name including its NUL terminator
-#   0x40 char[] table name, NUL-padded
+#   0x04 u32 record size
+#   0x08 u32 string pool offset   (always 0x40)
+#   0x0C u32 string pool size
+#   0x10 u32 record array offset  (0x10-aligned, right after the pool)
+#   0x14 u32 record array size    (== count * record size)
+#   0x18 u32 block2 offset / 0x1C u32 block2 size
+#   0x20 u32 block3 offset / 0x24 u32 block3 size
+#   0x28 u32 block4 offset / 0x2C u32 block4 size
+#   0x34 u32 table name offset, relative to the pool
+#   0x38 u32 offset of the last entry in the pool
+# Verified on 5,089 of 5,635 sections (90.3%): pool offset is 0x40 and
+# record array size equals count * record size, with an ASCII name at 0x40+f13.
+FIELDS = ('count', 'rec_size', 'pool_off', 'pool_size', 'rec_off', 'rec_bytes',
+          'b2_off', 'b2_size', 'b3_off', 'b3_size', 'b4_off', 'b4_size',
+          'f12', 'name_off', 'last_off', 'f15')
+
+
 def table_header(data):
     f = struct.unpack_from('<16I', data, 0)
-    nlen = min(f[14], 0x40)
-    blob = data[0x40:0x40 + nlen]
-    blob = blob.split(b'\0', 1)[0]
-    name = blob.decode('ascii', 'replace') if blob.isascii() else ''
-    if not all(32 <= c < 127 for c in blob):
-        name = ''
-    rec_count, main_size = f[0], f[5]
-    return dict(name=name, count=rec_count, type=f[3],
-                main_off=f[4], main_size=main_size,
-                aux_off=f[6], aux_size=f[7], total=f[10],
-                rec_size=(main_size // rec_count) if rec_count else 0)
+    h = dict(zip(FIELDS, f))
+    name = data[h['pool_off'] + h['name_off']:].split(b'\0', 1)[0]
+    h['name'] = (name.decode('ascii') if name and name.isascii()
+                 and all(32 <= c < 127 for c in name) else '')
+    h['valid'] = (h['pool_off'] == 0x40 and bool(h['name'])
+                  and h['rec_bytes'] == h['count'] * h['rec_size'])
+    return h
+
+
+def records(data, h=None):
+    """Yield each record of a table as a tuple of u32 (record sizes are 4-aligned)."""
+    h = h or table_header(data)
+    n = h['rec_size'] // 4
+    for i in range(h['count']):
+        yield struct.unpack_from(f'<{n}I', data, h['rec_off'] + i * h['rec_size'])

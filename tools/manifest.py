@@ -20,14 +20,15 @@ def rows(romfs):
                 data, _ = a.payload(s)
                 try:
                     h = table_header(data)
-                    yield (f'{a.id:08X}', s['i'], s['kind'], 'lz10/table',
-                           h["name"].replace("\t"," "), len(data), s["size"],
-                           h['type'], h['count'], h['rec_size'])
+                    enc = 'lz10/table' if h['valid'] else 'lz10/?'
+                    yield (f'{a.id:08X}', s['i'], s['kind'], enc,
+                           h['name'], len(data), s['size'],
+                           h['count'], h['rec_size'], h['pool_size'])
                 except Exception:
                     yield (f'{a.id:08X}', s['i'], s['kind'], 'lz10/?',
                            '', len(data), s['size'], '', '', '')
 
 if __name__ == '__main__':
-    print('archive\tsection\tkind\tencoding\tname\tsize\tstored\ttable_type\trecords\trec_size')
+    print('archive\tsection\tkind\tencoding\tname\tsize\tstored\trecords\trec_size\tpool_size')
     for r in rows(sys.argv[1]):
         print('\t'.join(str(x) for x in r))
