@@ -51,6 +51,7 @@ ROMイメージ、展開した romfs / code.bin、モデル・テクスチャ・
 | [docs/18-cheats.md](docs/18-cheats.md) | Azahar用チートコード | 動作原理まで確定 |
 | [docs/19-denpa-record.md](docs/19-denpa-record.md) | 電波人間レコード完全解析（遺伝子・ステータス式・持ち物）＋フルエディタ | 実セーブ4体で式を検証済み |
 | [docs/20-colosseum-opponents.md](docs/20-colosseum-opponents.md) | Ｗｉ-Ｆｉコロシアム対戦相手blob（1256B）の完全解析＋生成ツール | 実機対戦は未確認 |
+| [docs/21-checkin-revival.md](docs/21-checkin-revival.md) | チェックイン復活: 更新データはSpotPass(BOSS)経由、AzaharにはNsDataを置く | handshakeは実機で成功、NsData配置は検証中 |
 
 ## 公開サイト
 
