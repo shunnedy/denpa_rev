@@ -108,6 +108,27 @@ NsData の形式（ビッグエンディアン）:
   HLE BOSS は URL を使わないので不要。実機（Luma3DS）で LLE BOSS を使う場合に
   意味を持つ（その場合は BOSS コンテナの AES-CTR 暗号化と署名が必要になり、別途課題）
 
+
+
+## BOSS タスクの流れ（コード確定）
+
+チェックインは各リソースについて **RegisterTask → SendProperty×多数 → StartTask →
+GetTaskState をポーリング → GetTaskResult → ReadNsData** という nn::boss の
+手順を踏む（`FUN_003eccf4`）。送るプロパティは URL(0x07,0x3e)・タスク名(0x03,0x04)・
+証明書/認証(0x10,0x11,0x12,0x3f)・ヘッダ(0x0d)・間隔/回数(0x13,0x14,0x15) など
+（`FUN_00347dc0`）。Azahar の HLE はこれらを受けて **StartTask はスタブ（実際には
+落とさない）**、代わりに extdata に置いた NsData を `ReadNsData` で返す。
+
+リソースID → NsDataId の対応（`Boss` テーブルの各レコード +8）:
+
+| リソース | GetRecordキー | 内容 | **NsDataId** |
+|---|---|---|---|
+| resource.dat | 0x80000001 | バージョン情報（`u16@0xC` をセーブ版と比較） | **3** |
+| checkin.dat | 0x80000002 | CheckinData テーブル | **2** |
+
+`tools/bossdata.py` が作るファイルはこの NsDataId（ヘッダ +0x2C）を 3 / 2 に
+設定してある（ファイル名 `00000003` / `00000002` は任意。Azahar はヘッダから読む）。
+
 ## Wi-Fi コロシアムのボタンが出ない件（別問題）
 
 「通信対戦」メニューに「Wi-Fiコロシアム」（MessageMenu 25）が出ないのは
