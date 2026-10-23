@@ -1,0 +1,1430 @@
+{
+ "total_bits": 771407,
+ "total_bytes": 96426,
+ "vars": [
+  {
+   "index": 0,
+   "bit": 0,
+   "width": 1,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 1,
+   "bit": 1,
+   "width": 8,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 2,
+   "bit": 9,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 3,
+   "bit": 41,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 4,
+   "bit": 73,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 5,
+   "bit": 105,
+   "width": 32,
+   "count": 1,
+   "max": 4290000000,
+   "note": ""
+  },
+  {
+   "index": 6,
+   "bit": 137,
+   "width": 1,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 7,
+   "bit": 138,
+   "width": 10,
+   "count": 1,
+   "max": 1000,
+   "note": ""
+  },
+  {
+   "index": 8,
+   "bit": 148,
+   "width": 10,
+   "count": 1,
+   "max": 999,
+   "note": ""
+  },
+  {
+   "index": 9,
+   "bit": 158,
+   "width": 22,
+   "count": 1,
+   "max": 3000000,
+   "note": ""
+  },
+  {
+   "index": 10,
+   "bit": 180,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 11,
+   "bit": 212,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 12,
+   "bit": 244,
+   "width": 1,
+   "count": 20000,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 13,
+   "bit": 20244,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 14,
+   "bit": 20276,
+   "width": 7,
+   "count": 8,
+   "max": 100,
+   "note": ""
+  },
+  {
+   "index": 15,
+   "bit": 20332,
+   "width": 32,
+   "count": 8,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 16,
+   "bit": 20588,
+   "width": 32,
+   "count": 8,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 17,
+   "bit": 20844,
+   "width": 32,
+   "count": 8,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 18,
+   "bit": 21100,
+   "width": 16,
+   "count": 1,
+   "max": 65535,
+   "note": ""
+  },
+  {
+   "index": 19,
+   "bit": 21116,
+   "width": 1,
+   "count": 700,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 20,
+   "bit": 21816,
+   "width": 7,
+   "count": 700,
+   "max": 127,
+   "note": ""
+  },
+  {
+   "index": 21,
+   "bit": 26716,
+   "width": 10,
+   "count": 700,
+   "max": 1023,
+   "note": ""
+  },
+  {
+   "index": 22,
+   "bit": 33716,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 23,
+   "bit": 33748,
+   "width": 32,
+   "count": 500,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 24,
+   "bit": 49748,
+   "width": 32,
+   "count": 500,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 25,
+   "bit": 65748,
+   "width": 32,
+   "count": 3,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 26,
+   "bit": 65844,
+   "width": 30,
+   "count": 1,
+   "max": 999999999,
+   "note": "gold (low half)"
+  },
+  {
+   "index": 27,
+   "bit": 65874,
+   "width": 30,
+   "count": 1,
+   "max": 999999999,
+   "note": "gold (high half)"
+  },
+  {
+   "index": 28,
+   "bit": 65904,
+   "width": 14,
+   "count": 1,
+   "max": 9999,
+   "note": "jewels"
+  },
+  {
+   "index": 29,
+   "bit": 65918,
+   "width": 7,
+   "count": 3000,
+   "max": 100,
+   "note": ""
+  },
+  {
+   "index": 30,
+   "bit": 86918,
+   "width": 7,
+   "count": 3000,
+   "max": 100,
+   "note": ""
+  },
+  {
+   "index": 31,
+   "bit": 107918,
+   "width": 1,
+   "count": 8,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 32,
+   "bit": 107926,
+   "width": 11,
+   "count": 1,
+   "max": 1058,
+   "note": ""
+  },
+  {
+   "index": 33,
+   "bit": 107937,
+   "width": 10,
+   "count": 1,
+   "max": 999,
+   "note": ""
+  },
+  {
+   "index": 34,
+   "bit": 107947,
+   "width": 4,
+   "count": 1,
+   "max": 8,
+   "note": ""
+  },
+  {
+   "index": 35,
+   "bit": 107951,
+   "width": 1,
+   "count": 8,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 36,
+   "bit": 107959,
+   "width": 1,
+   "count": 8,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 37,
+   "bit": 107967,
+   "width": 10,
+   "count": 1,
+   "max": 1000,
+   "note": ""
+  },
+  {
+   "index": 38,
+   "bit": 107977,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 39,
+   "bit": 108009,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 40,
+   "bit": 108041,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 41,
+   "bit": 108073,
+   "width": 16,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 42,
+   "bit": 108089,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 43,
+   "bit": 108121,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 44,
+   "bit": 108153,
+   "width": 4,
+   "count": 1,
+   "max": 8,
+   "note": ""
+  },
+  {
+   "index": 45,
+   "bit": 108157,
+   "width": 32,
+   "count": 8,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 46,
+   "bit": 108413,
+   "width": 32,
+   "count": 8,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 47,
+   "bit": 108669,
+   "width": 32,
+   "count": 24,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 48,
+   "bit": 109437,
+   "width": 16,
+   "count": 24,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 49,
+   "bit": 109821,
+   "width": 16,
+   "count": 24,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 50,
+   "bit": 110205,
+   "width": 1,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 51,
+   "bit": 110206,
+   "width": 1,
+   "count": 8,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 52,
+   "bit": 110214,
+   "width": 8,
+   "count": 100,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 53,
+   "bit": 111014,
+   "width": 32,
+   "count": 32,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 54,
+   "bit": 112038,
+   "width": 32,
+   "count": 32,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 55,
+   "bit": 113062,
+   "width": 32,
+   "count": 32,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 56,
+   "bit": 114086,
+   "width": 1,
+   "count": 1,
+   "max": 1,
+   "note": ""
+  },
+  {
+   "index": 57,
+   "bit": 114087,
+   "width": 1,
+   "count": 1,
+   "max": 1,
+   "note": ""
+  },
+  {
+   "index": 58,
+   "bit": 114088,
+   "width": 16,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 59,
+   "bit": 114104,
+   "width": 1,
+   "count": 1,
+   "max": 1,
+   "note": ""
+  },
+  {
+   "index": 60,
+   "bit": 114105,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 61,
+   "bit": 114137,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 62,
+   "bit": 114169,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 63,
+   "bit": 114201,
+   "width": 8,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 64,
+   "bit": 114209,
+   "width": 4,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 65,
+   "bit": 114213,
+   "width": 1,
+   "count": 128,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 66,
+   "bit": 114341,
+   "width": 32,
+   "count": 128,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 67,
+   "bit": 118437,
+   "width": 1,
+   "count": 32,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 68,
+   "bit": 118469,
+   "width": 16,
+   "count": 32,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 69,
+   "bit": 118981,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 70,
+   "bit": 119013,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 71,
+   "bit": 119045,
+   "width": 32,
+   "count": 50,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 72,
+   "bit": 120645,
+   "width": 32,
+   "count": 50,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 73,
+   "bit": 122245,
+   "width": 32,
+   "count": 50,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 74,
+   "bit": 123845,
+   "width": 6,
+   "count": 1,
+   "max": 50,
+   "note": ""
+  },
+  {
+   "index": 75,
+   "bit": 123851,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 76,
+   "bit": 123883,
+   "width": 19,
+   "count": 1,
+   "max": 359940,
+   "note": ""
+  },
+  {
+   "index": 77,
+   "bit": 123902,
+   "width": 19,
+   "count": 1,
+   "max": 359940,
+   "note": ""
+  },
+  {
+   "index": 78,
+   "bit": 123921,
+   "width": 19,
+   "count": 1,
+   "max": 359940,
+   "note": ""
+  },
+  {
+   "index": 79,
+   "bit": 123940,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 80,
+   "bit": 123972,
+   "width": 1,
+   "count": 64,
+   "max": 1,
+   "note": ""
+  },
+  {
+   "index": 81,
+   "bit": 124036,
+   "width": 1,
+   "count": 25000,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 82,
+   "bit": 149036,
+   "width": 8,
+   "count": 12500,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 83,
+   "bit": 249036,
+   "width": 1,
+   "count": 700,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 84,
+   "bit": 249736,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 85,
+   "bit": 249768,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 86,
+   "bit": 249800,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 87,
+   "bit": 249832,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 88,
+   "bit": 249864,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 89,
+   "bit": 249896,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 90,
+   "bit": 249928,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 91,
+   "bit": 249960,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 92,
+   "bit": 249992,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 93,
+   "bit": 250024,
+   "width": 1,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 94,
+   "bit": 250025,
+   "width": 8,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 95,
+   "bit": 250033,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 96,
+   "bit": 250065,
+   "width": 1,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 97,
+   "bit": 250066,
+   "width": 1,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 98,
+   "bit": 250067,
+   "width": 1,
+   "count": 1,
+   "max": 1,
+   "note": ""
+  },
+  {
+   "index": 99,
+   "bit": 250068,
+   "width": 32,
+   "count": 999,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 100,
+   "bit": 282036,
+   "width": 10,
+   "count": 1,
+   "max": 999,
+   "note": ""
+  },
+  {
+   "index": 101,
+   "bit": 282046,
+   "width": 32,
+   "count": 20,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 102,
+   "bit": 282686,
+   "width": 32,
+   "count": 20,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 103,
+   "bit": 283326,
+   "width": 1,
+   "count": 20,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 104,
+   "bit": 283346,
+   "width": 5,
+   "count": 20,
+   "max": 20,
+   "note": ""
+  },
+  {
+   "index": 105,
+   "bit": 283446,
+   "width": 10,
+   "count": 1,
+   "max": 999,
+   "note": ""
+  },
+  {
+   "index": 106,
+   "bit": 283456,
+   "width": 1,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 107,
+   "bit": 283457,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 108,
+   "bit": 283489,
+   "width": 14,
+   "count": 1,
+   "max": 9999,
+   "note": ""
+  },
+  {
+   "index": 109,
+   "bit": 283503,
+   "width": 14,
+   "count": 1,
+   "max": 9999,
+   "note": ""
+  },
+  {
+   "index": 110,
+   "bit": 283517,
+   "width": 32,
+   "count": 999,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 111,
+   "bit": 315485,
+   "width": 16,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 112,
+   "bit": 315501,
+   "width": 17,
+   "count": 1,
+   "max": 99999,
+   "note": ""
+  },
+  {
+   "index": 113,
+   "bit": 315518,
+   "width": 14,
+   "count": 1,
+   "max": 9999,
+   "note": ""
+  },
+  {
+   "index": 114,
+   "bit": 315532,
+   "width": 14,
+   "count": 1,
+   "max": 9999,
+   "note": ""
+  },
+  {
+   "index": 115,
+   "bit": 315546,
+   "width": 20,
+   "count": 1,
+   "max": 999999,
+   "note": ""
+  },
+  {
+   "index": 116,
+   "bit": 315566,
+   "width": 20,
+   "count": 1,
+   "max": 999999,
+   "note": ""
+  },
+  {
+   "index": 117,
+   "bit": 315586,
+   "width": 24,
+   "count": 1,
+   "max": 9999999,
+   "note": ""
+  },
+  {
+   "index": 118,
+   "bit": 315610,
+   "width": 24,
+   "count": 1,
+   "max": 9999999,
+   "note": ""
+  },
+  {
+   "index": 119,
+   "bit": 315634,
+   "width": 1,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 120,
+   "bit": 315635,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 121,
+   "bit": 315667,
+   "width": 8,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 122,
+   "bit": 315675,
+   "width": 17,
+   "count": 1,
+   "max": 99999,
+   "note": ""
+  },
+  {
+   "index": 123,
+   "bit": 315692,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 124,
+   "bit": 315724,
+   "width": 24,
+   "count": 5,
+   "max": 9999999,
+   "note": ""
+  },
+  {
+   "index": 125,
+   "bit": 315844,
+   "width": 16,
+   "count": 1,
+   "max": 65535,
+   "note": ""
+  },
+  {
+   "index": 126,
+   "bit": 315860,
+   "width": 14,
+   "count": 1,
+   "max": 9999,
+   "note": ""
+  },
+  {
+   "index": 127,
+   "bit": 315874,
+   "width": 14,
+   "count": 1,
+   "max": 9999,
+   "note": ""
+  },
+  {
+   "index": 128,
+   "bit": 315888,
+   "width": 17,
+   "count": 1,
+   "max": 99999,
+   "note": ""
+  },
+  {
+   "index": 129,
+   "bit": 315905,
+   "width": 14,
+   "count": 1,
+   "max": 9999,
+   "note": ""
+  },
+  {
+   "index": 130,
+   "bit": 315919,
+   "width": 14,
+   "count": 1,
+   "max": 9999,
+   "note": ""
+  },
+  {
+   "index": 131,
+   "bit": 315933,
+   "width": 20,
+   "count": 1,
+   "max": 999999,
+   "note": ""
+  },
+  {
+   "index": 132,
+   "bit": 315953,
+   "width": 20,
+   "count": 1,
+   "max": 999999,
+   "note": ""
+  },
+  {
+   "index": 133,
+   "bit": 315973,
+   "width": 24,
+   "count": 1,
+   "max": 9999999,
+   "note": ""
+  },
+  {
+   "index": 134,
+   "bit": 315997,
+   "width": 24,
+   "count": 1,
+   "max": 9999999,
+   "note": ""
+  },
+  {
+   "index": 135,
+   "bit": 316021,
+   "width": 1,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 136,
+   "bit": 316022,
+   "width": 1,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 137,
+   "bit": 316023,
+   "width": 1,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 138,
+   "bit": 316024,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 139,
+   "bit": 316056,
+   "width": 7,
+   "count": 1,
+   "max": 99,
+   "note": ""
+  },
+  {
+   "index": 140,
+   "bit": 316063,
+   "width": 7,
+   "count": 1,
+   "max": 99,
+   "note": ""
+  },
+  {
+   "index": 141,
+   "bit": 316070,
+   "width": 1,
+   "count": 300,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 142,
+   "bit": 316370,
+   "width": 1,
+   "count": 1000,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 143,
+   "bit": 317370,
+   "width": 1,
+   "count": 1000,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 144,
+   "bit": 318370,
+   "width": 1,
+   "count": 3000,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 145,
+   "bit": 321370,
+   "width": 1,
+   "count": 200,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 146,
+   "bit": 321570,
+   "width": 32,
+   "count": 1000,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 147,
+   "bit": 353570,
+   "width": 32,
+   "count": 1000,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 148,
+   "bit": 385570,
+   "width": 1,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 149,
+   "bit": 385571,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 150,
+   "bit": 385603,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 151,
+   "bit": 385635,
+   "width": 32,
+   "count": 100,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 152,
+   "bit": 388835,
+   "width": 16,
+   "count": 3000,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 153,
+   "bit": 436835,
+   "width": 7,
+   "count": 10,
+   "max": 99,
+   "note": ""
+  },
+  {
+   "index": 154,
+   "bit": 436905,
+   "width": 7,
+   "count": 200,
+   "max": 99,
+   "note": ""
+  },
+  {
+   "index": 155,
+   "bit": 438305,
+   "width": 1,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 156,
+   "bit": 438306,
+   "width": 1,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 157,
+   "bit": 438307,
+   "width": 7,
+   "count": 1,
+   "max": 99,
+   "note": ""
+  },
+  {
+   "index": 158,
+   "bit": 438314,
+   "width": 1,
+   "count": 3000,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 159,
+   "bit": 441314,
+   "width": 7,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 160,
+   "bit": 441321,
+   "width": 8,
+   "count": 100,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 161,
+   "bit": 442121,
+   "width": 7,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 162,
+   "bit": 442128,
+   "width": 1,
+   "count": 16,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 163,
+   "bit": 442144,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 164,
+   "bit": 442176,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 165,
+   "bit": 442208,
+   "width": 1,
+   "count": 100,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 166,
+   "bit": 442308,
+   "width": 1,
+   "count": 100,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 167,
+   "bit": 442408,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 168,
+   "bit": 442440,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 169,
+   "bit": 442472,
+   "width": 1,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 170,
+   "bit": 442473,
+   "width": 7,
+   "count": 1,
+   "max": 70,
+   "note": ""
+  },
+  {
+   "index": 171,
+   "bit": 442480,
+   "width": 16,
+   "count": 70,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 172,
+   "bit": 443600,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 173,
+   "bit": 443632,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 174,
+   "bit": 443664,
+   "width": 32,
+   "count": 1,
+   "max": 0,
+   "note": ""
+  },
+  {
+   "index": 175,
+   "bit": 443696,
+   "width": 24,
+   "count": 1,
+   "max": 9999999,
+   "note": ""
+  },
+  {
+   "index": 176,
+   "bit": 443720,
+   "width": 7,
+   "count": 1,
+   "max": 99,
+   "note": ""
+  },
+  {
+   "index": 177,
+   "bit": 443727,
+   "width": 32,
+   "count": 10240,
+   "max": 0,
+   "note": ""
+  }
+ ]
+}

@@ -259,3 +259,26 @@ uint ScriptFlag::GetGold() {
 
 モデルと読み書きは割れているので、オフセットが決まり次第
 エディタは完成する。
+
+### エディタ完成（基底オフセット1個を残して）
+
+- [`tools/varmap.py`](../tools/varmap.py) — `flagData.bin` から全178変数の
+  (ビット位置, 幅, 上限, 個数) を書き出す。結果は
+  [`data/variables.json`](../data/variables.json)
+- [`tools/varedit.py`](../tools/varedit.py) — セーブの変数ビット配列を
+  読み書きする。ゲーム内と同じビット抽出・クランプを再現。往復テスト済み
+  （ジュエル=9999、所持金=上限999,999,999、隣接変数を壊さないことを確認）
+
+```bash
+python3 tools/varmap.py extracted/update_romfs --json data/variables.json
+python3 tools/varedit.py save.bin --vars data/variables.json --base 0x3548 get gold
+python3 tools/varedit.py save.bin --vars data/variables.json --base 0x3548 set jewels 9999
+python3 tools/varedit.py save.bin --vars data/variables.json --find-base
+```
+
+変数モデル・読み書き・全変数の意味は完成している。**唯一の未確定定数は
+ビット配列のセーブ内バイトオフセット（`--base`）**で、今回の全ゼロ・序盤
+セーブでは「値≤上限」がゼロで常に成立するため一意化できない
+（`--find-base` が複数候補を出すのはこのため）。所持金かジュエルが
+非ゼロのセーブが1つあれば `--find-base` が一意に絞り、そこでエディタが
+完全に動く。この1定数以外はすべて揃っている。
