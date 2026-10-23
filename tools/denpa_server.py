@@ -61,9 +61,12 @@ OPPONENTS = []
 
 def opponent_fields(limit=3):
     """Two base64 fields per opponent: a 32-byte UTF-16 name and the 1256-byte
-    party blob (tools/colosseum.py). The battle wants three."""
+    party blob (tools/colosseum.py). The battle wants three; if more are
+    loaded, pick a random three so each visit differs."""
+    import random
+    pool = OPPONENTS if len(OPPONENTS) <= limit else random.sample(OPPONENTS, limit)
     out = []
-    for name, party in OPPONENTS[:limit]:
+    for name, party in pool:
         n = (name.encode('utf-16-le')[:OPP_NAME_LEN]).ljust(OPP_NAME_LEN, b'\0')
         p = party[:OPP_PARTY_LEN].ljust(OPP_PARTY_LEN, b'\0')
         out.append(base64.b64encode(n).decode('ascii'))

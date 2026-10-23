@@ -6,9 +6,13 @@ After=network.target
 Type=simple
 WorkingDirectory=/root/asahina-net-wifi
 ExecStart=/usr/bin/python3 /root/asahina-net-wifi/denpa_server.py --host 127.0.0.1 --port 8082 \
-  --opponent "カゲトラたち:/root/asahina-net-wifi/opponents/team1.blob" \
-  --opponent "きわむ:/root/asahina-net-wifi/opponents/team2.blob" \
-  --opponent "ゆうき:/root/asahina-net-wifi/opponents/team3.blob" \
+  --opponent "みならい隊:/root/asahina-net-wifi/opponents/team0.blob" \
+  --opponent "かけだし団:/root/asahina-net-wifi/opponents/team1.blob" \
+  --opponent "なかよし組:/root/asahina-net-wifi/opponents/team2.blob" \
+  --opponent "精鋭ズ:/root/asahina-net-wifi/opponents/team3.blob" \
+  --opponent "火の軍団:/root/asahina-net-wifi/opponents/team4.blob" \
+  --opponent "王者チーム:/root/asahina-net-wifi/opponents/team5.blob" \
+  --table /root/modding/denpamen_free/extracted/update_romfs/A9DF0000:CheckinData \
   --log /root/asahina-net-wifi/access.log
 Restart=on-failure
 RestartSec=3
