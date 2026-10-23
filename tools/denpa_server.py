@@ -125,8 +125,11 @@ def handle(path, q):
         if req == 'delete':
             return csv_ok()
         if req == 'check':
-            # support_id is echoed back by the real server's check call
-            return csv_ok(1, (q.get('support_id') or [SUPPORT_ID])[0])
+            # The client (FUN_003eb260) only reads field 1 and compares it with
+            # the literal "true": true -> already registered (do `update`),
+            # anything else -> not registered (do `create`). It is NOT a number.
+            registered = 'true' if (q.get('support_id') or [''])[0] else 'false'
+            return csv_ok(registered)
         return csv_err(10)
 
     if path == '/gameserver':
@@ -176,8 +179,10 @@ class Handler(BaseHTTPRequestHandler):
         body = handle(u.path, q)
         LOG.append((u.path, q.get('req', [''])[0], len(body)))
         ts = datetime.datetime.now().strftime('%H:%M:%S')
-        hdr = {k: self.headers.get(k) for k in ('101', '103', '104', '105') if self.headers.get(k)}
-        _log(f'{ts} {method} {self.path}  -> {body[:48]!r}  hdr={hdr}')
+        hdr = {k: v for k, v in self.headers.items()}
+        _log(f'{ts} {method} {self.path}')
+        _log(f'    hdr={hdr}')
+        _log(f'    -> {body!r}')
         raw = body.encode('ascii')
         self.send_response(200)
         self.send_header('Content-Type', 'text/plain')
