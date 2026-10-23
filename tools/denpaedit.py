@@ -459,7 +459,7 @@ def main():
     ap.add_argument('--from', dest='frm', help='new: template slot (default: built-in blank)')
     ap.add_argument('--dict', default=os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'denpa-dict.json'))
     ap.add_argument('--all', action='store_true', help='list: include empty slots')
-    a = ap.parse_args()
+    a = ap.parse_intermixed_args()
     if a.cmd == 'fields':
         print(FIELDS_HELP)
         return
