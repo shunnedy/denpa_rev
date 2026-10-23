@@ -48,6 +48,8 @@ ROMイメージ、展開した romfs / code.bin、モデル・テクスチャ・
 | [docs/15-character-format.md](docs/15-character-format.md) | キャラクター・チームのデータ構造 | 装備6枠は確定、残りは推定 |
 | [docs/16-save-editing.md](docs/16-save-editing.md) | セーブエディタの可否と探索ツール | 実セーブ待ち |
 | [docs/17-stock-console.md](docs/17-stock-console.md) | 無改造3DSでどこまでできるか | 一部推測を明記 |
+| [docs/18-cheats.md](docs/18-cheats.md) | Azahar用チートコード | 動作原理まで確定 |
+| [docs/19-denpa-record.md](docs/19-denpa-record.md) | 電波人間レコード完全解析（遺伝子・ステータス式・持ち物）＋フルエディタ | 実セーブ4体で式を検証済み |
 
 ## 復活キット
 
@@ -106,6 +108,16 @@ python3 tools/test_server.py extracted/update_romfs/A9DF0000 CheckinData
 
 # アーカイブ再構築（LayeredFS でのデータ改造）
 python3 tools/tdmpack.py extracted/base_romfs/5EFE0000 out.bin d01_msg=patched.bin
+
+# v1.17.0 セーブエディタ（所持金・ジュエル / 電波人間フルエディタ / 持ち物）
+python3 tools/moneyedit.py save.bin --gold 999999999 --jewels 9999 --out new.bin
+python3 tools/denpadict.py extracted/update_romfs data/denpa-dict.json   # 辞書の再生成
+python3 tools/denpaedit.py save.bin list
+python3 tools/denpaedit.py save.bin show p0
+python3 tools/denpaedit.py save.bin set p0 level=50 antenna=すこしわざアップ colora=むらさき --out new.bin
+python3 tools/denpaedit.py save.bin new b0 name=てすと level=15 --out new.bin
+python3 tools/denpaedit.py save.bin item キズぐすり 99 --out new.bin
+DENPA_SAVE=save.bin python3 tools/test_denpaedit.py      # 自己テスト79項目
 ```
 
 `ctr_extract.py` の BLZ 展開は、別途入手した `code.bin` / `code_dec.bin` のペアに対して
@@ -136,6 +148,8 @@ MD5 が一致することを確認済み。
 - [ ] レコード内の個別フィールドの意味、ブロック3/4の幅
 - [x] 没データの洗い出し（ペイント機能がアーカイブごと削除、Aprilイベントのデータ欠落ほか）
 - [x] データMODの実証（テキストと数値バランスの書き換え→再構築→読み戻し確認）
+- [x] 電波人間レコード252バイトの完全解析（外見遺伝子・体色と属性耐性・ステータス計算式を実セーブ4体で検証、docs/19）
+- [x] 持ち物の所在（変数ストア var 0x1d）とフルセーブエディタ
 - [x] サーバプロトコルの解明（CSV + base64、NEX不使用）とプロトタイプ実装
 - [x] `rand3` の応答形式（1相手につきbase64 2フィールド）
 - [x] 接続先差し替えパッチ（同一長25バイト、HTTPS維持）と証明書スロットの特定
