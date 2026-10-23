@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>解析資料 — denpa_rev</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<style>
+:root{--bg:#0b0d10;--panel:#14181d;--panel2:#1b2127;--fg:#dfe3e8;--mut:#8b96a2;--acc:#5ad1c4;--acc2:#f0a24e;--bd:#2a323b;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,"Segoe UI",system-ui,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;line-height:1.65}
+.wrap{max-width:1180px;margin:0 auto;padding:20px 16px 64px;display:grid;grid-template-columns:260px 1fr;gap:24px}
+@media(max-width:760px){.wrap{grid-template-columns:1fr}}
+nav{position:sticky;top:12px;align-self:start;background:var(--panel);border:1px solid var(--bd);border-radius:12px;padding:12px;font-size:.82rem;max-height:calc(100vh - 24px);overflow:auto}
+nav a{display:block;color:var(--fg);text-decoration:none;padding:4px 6px;border-radius:6px}
+nav a:hover,nav a.on{background:var(--panel2);color:var(--acc)}
+nav .h{color:var(--mut);font-size:.72rem;margin:8px 6px 2px}
+main{min-width:0}
+main h1{font-size:1.5rem;border-bottom:1px solid var(--bd);padding-bottom:6px}
+main h2{font-size:1.15rem;color:var(--acc2);margin-top:1.8em}
+main h3{font-size:1rem;color:var(--acc)}
+main a{color:var(--acc)}
+main code{background:var(--panel2);padding:1px 5px;border-radius:4px;font-size:.86em}
+main pre{background:var(--panel);border:1px solid var(--bd);border-radius:8px;padding:12px;overflow:auto;font-size:.8rem}
+main pre code{background:none;padding:0}
+main table{border-collapse:collapse;font-size:.84rem;margin:10px 0;display:block;overflow:auto;max-width:100%}
+main td,main th{border:1px solid var(--bd);padding:4px 8px;vertical-align:top}
+main th{background:var(--panel2)}
+main blockquote{border-left:3px solid var(--bd);margin:0;padding:0 12px;color:var(--mut)}
+.foot{color:var(--mut);font-size:.74rem;margin-top:26px;border-top:1px solid var(--bd);padding-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav id="nav"><a href="index.html">← トップ</a><a href="editor.html">電波人間エディタ</a><div class="h">docs</div></nav>
+<main id="main">読み込み中…</main>
+</div>
+<script>
+const DOCS=[
+ ['01-rom-container.md','01 ROMコンテナ'],['02-romfs.md','02 romfs'],['03-archive.md','03 アーカイブ形式'],['04-data-tables.md','04 データテーブル'],
+ ['05-text.md','05 テキスト'],['06-gsc.md','06 .gsc'],['07-injection.md','07 コードインジェクション'],['08-data-records.md','08 レコード・リソースID'],
+ ['09-contents-and-server.md','09 配信コンテンツとサーバ'],['10-qr.md','10 QR'],['11-cut-content.md','11 没データ'],['12-modding.md','12 MOD'],
+ ['13-server-protocol.md','13 サーバプロトコル'],['14-revival.md','14 Wi-Fiコロシアム復活'],['15-character-format.md','15 キャラクター構造'],
+ ['16-save-editing.md','16 セーブ解析'],['17-stock-console.md','17 無改造3DS'],['18-cheats.md','18 チートコード'],['19-denpa-record.md','19 電波人間レコード完全解析'],
+ ['README.md','README（リポジトリ）'],['patches/README.md','patches/README'],['deploy/SETUP.md','deploy/SETUP']];
+const GH='https://github.com/shunnedy/denpa_rev/blob/main/';
+const nav=document.getElementById('nav');
+DOCS.forEach(([f,t])=>{const a=document.createElement('a');a.href='docs.html?doc='+f;a.textContent=t;a.dataset.f=f;nav.appendChild(a);});
+const doc=new URLSearchParams(location.search).get('doc')||'19-denpa-record.md';
+document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',a.dataset.f===doc));
+const path=doc.includes('/')||doc==='README.md'?'repo/'+doc:'repo/docs/'+doc;
+fetch(path).then(r=>{if(!r.ok)throw r.status;return r.text();}).then(md=>{
+  const renderer=new marked.Renderer();
+  const base=doc.includes('/')?doc.split('/')[0]+'/':(doc==='README.md'?'':'docs/');
+  renderer.link=function({href,title,text}){let h=href;
+    if(!/^https?:|^#|^mailto:/.test(h)){let p=base+h;while(p.includes('../')){p=p.replace(/[^\/]*\/\.\.\//,'');}
+      if(/\.md$/.test(p)){h='docs.html?doc='+(p.startsWith('docs/')?p.slice(5):p);}else h=GH+p;}
+    return `<a href="${h}"${title?` title="${title}"`:''}>${text}</a>`;};
+  marked.use({renderer});
+  document.getElementById('main').innerHTML=marked.parse(md)+`<div class=foot>原文: <a href="${GH+(doc.includes('/')||doc==='README.md'?doc:'docs/'+doc)}">GitHub</a></div>`;
+  document.title=(md.match(/^#\s*(.+)$/m)||[,doc])[1]+' — denpa_rev';
+}).catch(e=>{document.getElementById('main').textContent='読み込めませんでした: '+e;});
+</script>
+</body>
+</html>

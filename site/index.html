@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>denpa_rev — 電波人間のRPG FREE! 解析</title>
+<meta name="description" content="ニンテンドー3DS『電波人間のRPG FREE!』のファイルフォーマット解析、セーブエディタ、Wi-Fiコロシアム復活キット、チートコード。">
+<style>
+:root{--bg:#0b0d10;--panel:#14181d;--panel2:#1b2127;--fg:#dfe3e8;--mut:#8b96a2;--acc:#5ad1c4;--acc2:#f0a24e;--bd:#2a323b;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,"Segoe UI",system-ui,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;line-height:1.6}
+.wrap{max-width:980px;margin:0 auto;padding:28px 16px 64px}
+h1{font-size:1.7rem;margin:0 0 4px}h1 .x{color:var(--acc)}
+.sub{color:var(--mut);margin:0 0 20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:16px 0}
+.card{background:var(--panel);border:1px solid var(--bd);border-radius:12px;padding:16px;text-decoration:none;color:var(--fg);display:block}
+.card:hover{border-color:var(--acc)}
+.card h2{margin:0 0 6px;font-size:1.05rem;color:var(--acc2)}
+.card p{margin:0;font-size:.85rem;color:var(--mut)}
+.panel{background:var(--panel);border:1px solid var(--bd);border-radius:12px;padding:16px;margin:14px 0}
+.panel h2{font-size:1rem;margin:0 0 10px;color:var(--acc2)}
+table{border-collapse:collapse;width:100%;font-size:.86rem}
+td,th{padding:5px 8px;border-bottom:1px solid var(--bd);text-align:left;vertical-align:top}
+a{color:var(--acc)}
+code{background:var(--panel2);padding:1px 5px;border-radius:4px;font-size:.86em}
+.foot{color:var(--mut);font-size:.74rem;margin-top:26px;border-top:1px solid var(--bd);padding-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>denpa_<span class="x">rev</span></h1>
+<p class="sub">ニンテンドー3DS『電波人間のRPG FREE!』（Genius Sonority, 2013）のファイルフォーマット解析と、その成果物。
+ROM・ゲームデータ本体は一切含みません。解析には自分のROMが必要です。</p>
+
+<div class="cards">
+  <a class="card" href="editor.html"><h2>電波人間エディタ</h2><p>ブラウザだけで動く v1.17.0 セーブエディタ。個体・外見遺伝子・アンテナ・装備・持ち物・所持金・ジュエル。ファイルはサーバに送りません。</p></a>
+  <a class="card" href="docs.html?doc=19-denpa-record.md"><h2>電波人間レコード完全解析</h2><p>252バイトの全項目、体色→属性耐性、ステータス計算式（実セーブで検証済み）、転生・子作りの遺伝ルール。</p></a>
+  <a class="card" href="docs.html?doc=14-revival.md"><h2>Wi-Fiコロシアム復活キット</h2><p>サーバプロトコル解析、自前サーバ、接続先を差し替えるIPSパッチ。</p></a>
+  <a class="card" href="docs.html?doc=18-cheats.md"><h2>Azahar用チートコード</h2><p>所持金・ジュエル（v1.17.0 / v1.0.0）。動作原理まで。</p></a>
+</div>
+
+<div class="panel">
+<h2>解析資料（docs）</h2>
+<table>
+<tr><td><a href="docs.html?doc=01-rom-container.md">01</a></td><td>NCSD / CIA / NCCH / ExeFS / RomFS / BLZ(.code圧縮)</td></tr>
+<tr><td><a href="docs.html?doc=02-romfs.md">02</a></td><td>romfs の構成と統計</td></tr>
+<tr><td><a href="docs.html?doc=03-archive.md">03</a></td><td>hex名アーカイブのコンテナ仕様、LZ10</td></tr>
+<tr><td><a href="docs.html?doc=04-data-tables.md">04</a></td><td>データテーブル形式、テーブル一覧</td></tr>
+<tr><td><a href="docs.html?doc=05-text.md">05</a></td><td>メッセージ形式、制御コード、ルビ</td></tr>
+<tr><td><a href="docs.html?doc=06-gsc.md">06</a></td><td><code>.gsc</code> リソースラッパ</td></tr>
+<tr><td><a href="docs.html?doc=07-injection.md">07</a></td><td>コードインジェクション基盤、シンボルマップ</td></tr>
+<tr><td><a href="docs.html?doc=08-data-records.md">08</a></td><td>レコード内部、リソースIDの構造</td></tr>
+<tr><td><a href="docs.html?doc=09-contents-and-server.md">09</a></td><td>配信コンテンツ、キャンペーンコード、サーバAPI</td></tr>
+<tr><td><a href="docs.html?doc=10-qr.md">10</a></td><td>QR機能の有無（結論: 無い）</td></tr>
+<tr><td><a href="docs.html?doc=11-cut-content.md">11</a></td><td>没データ・未使用データ</td></tr>
+<tr><td><a href="docs.html?doc=12-modding.md">12</a></td><td>MODの作りやすさ</td></tr>
+<tr><td><a href="docs.html?doc=13-server-protocol.md">13</a></td><td>サーバプロトコルとプロトタイプ実装</td></tr>
+<tr><td><a href="docs.html?doc=14-revival.md">14</a></td><td>Wi-Fiコロシアム復活の構成</td></tr>
+<tr><td><a href="docs.html?doc=15-character-format.md">15</a></td><td>キャラクター・チームのデータ構造</td></tr>
+<tr><td><a href="docs.html?doc=16-save-editing.md">16</a></td><td>セーブデータの解析経過（所持金・ジュエル・変数ストア）</td></tr>
+<tr><td><a href="docs.html?doc=17-stock-console.md">17</a></td><td>無改造3DSでどこまでできるか</td></tr>
+<tr><td><a href="docs.html?doc=18-cheats.md">18</a></td><td>Azahar用チートコード</td></tr>
+<tr><td><a href="docs.html?doc=19-denpa-record.md">19</a></td><td>電波人間レコード完全解析（遺伝子・ステータス式・持ち物）</td></tr>
+</table>
+</div>
+
+<div class="panel">
+<h2>ダウンロード</h2>
+<table>
+<tr><td><a href="repo/cheats/0004000E00125D00.txt">cheats/0004000E00125D00.txt</a></td><td>Azahar用チートファイル（v1.17.0、所持金・ジュエル）</td></tr>
+<tr><td><a href="repo/patches/code-update.ips">patches/code-update.ips</a></td><td>接続先を wifi.asahina.net に差し替えるパッチ（v1.17.0）。<a href="docs.html?doc=patches/README.md">説明</a></td></tr>
+<tr><td><a href="repo/patches/code-base.ips">patches/code-base.ips</a></td><td>同 v1.0.0</td></tr>
+<tr><td><a href="denpa_rev-tools.zip">denpa_rev-tools.zip</a></td><td>Python製ツール一式（ROM展開、テーブル、セーブエディタCLI、サーバ ほか。標準ライブラリのみ）</td></tr>
+<tr><td><a href="denpa-dict.json">denpa-dict.json</a></td><td>エディタが使う辞書（とくぎ名・アイテム名・各種数値表）</td></tr>
+<tr><td><a href="https://github.com/shunnedy/denpa_rev">GitHub: shunnedy/denpa_rev</a></td><td>ソース・履歴・全ファイル</td></tr>
+</table>
+</div>
+
+<div class="panel">
+<h2>関連</h2>
+<p style="margin:0"><a href="https://denpa.asahina.net/">電波人間QRラボ</a>（電波人間のRPG3 のQRコード解読・生成）／
+<a href="https://wifi.asahina.net/gameserver?req=res_ver">wifi.asahina.net</a>（復活サーバの稼働確認）</p>
+</div>
+
+<div class="foot">ビルド: <span id="built">BUILD_DATE</span>　｜　このサイトはゲームのROM・テキスト・画像・音声を配布しません。</div>
+</div>
+</body>
+</html>

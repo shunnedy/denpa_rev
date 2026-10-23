@@ -63,3 +63,18 @@ Mods フォルダへ。詳細は `patches/README.md`。
 Azahar のログに `wifi.asahina.net` 宛のリクエストが出る。
 サーバ側は `journalctl -u wifi-denpa -f` でアクセスが見える。
 `req=res_ver` → `req=check` → `req=rand3` の順に来るはず。
+
+## 6. 公開サイト denpa-rev.asahina.net（資料＋ブラウザ版エディタ）
+
+```bash
+python3 tools/site_build.py /root/asahina-net-denpa-rev   # site/ と docs/ などから静的サイトを組み立て
+cp deploy/denpa-rev.service /etc/systemd/system/ && systemctl daemon-reload && systemctl enable --now denpa-rev
+# ingress に denpa-rev.asahina.net / denpa_rev.asahina.net → 127.0.0.1:8083 を追加して
+cloudflared tunnel ingress validate
+cloudflared tunnel route dns asahina-net denpa-rev.asahina.net
+cloudflared tunnel route dns asahina-net denpa_rev.asahina.net
+systemctl restart cloudflared
+```
+
+ブラウザ版エディタ（`site/editor.html`）は `tools/denpaedit.py` と同じロジックの JavaScript 移植で、
+セーブはブラウザ内だけで処理する。更新は `site_build.py` を再実行するだけ。

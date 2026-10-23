@@ -2,3 +2,7 @@
 # キャッチオールより前へ挿入する
   - hostname: wifi.asahina.net
     service: http://127.0.0.1:8082
+  - hostname: denpa-rev.asahina.net
+    service: http://127.0.0.1:8083
+  - hostname: denpa_rev.asahina.net
+    service: http://127.0.0.1:8083

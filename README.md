@@ -51,6 +51,10 @@ ROMイメージ、展開した romfs / code.bin、モデル・テクスチャ・
 | [docs/18-cheats.md](docs/18-cheats.md) | Azahar用チートコード | 動作原理まで確定 |
 | [docs/19-denpa-record.md](docs/19-denpa-record.md) | 電波人間レコード完全解析（遺伝子・ステータス式・持ち物）＋フルエディタ | 実セーブ4体で式を検証済み |
 
+## 公開サイト
+
+**https://denpa-rev.asahina.net/** — 解析資料の閲覧と、ブラウザだけで動く**電波人間エディタ**（`site/`）。
+
 ## 復活キット
 
 - [`patches/`](patches) — 接続先を自前サーバに差し替えるIPSパッチ（base / update）

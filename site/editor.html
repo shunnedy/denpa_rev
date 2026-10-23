@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>電波人間エディタ — 電波人間のRPG FREE! v1.17.0 セーブ</title>
+<meta name="description" content="電波人間のRPG FREE!（3DS）v1.17.0 のセーブデータをブラウザだけで編集。電波人間の個体・外見遺伝子・アンテナ・装備・持ち物・所持金。">
+<style>
+:root{--bg:#0b0d10;--panel:#14181d;--panel2:#1b2127;--fg:#dfe3e8;--mut:#8b96a2;--acc:#5ad1c4;--acc2:#f0a24e;--ok:#64d989;--bad:#ff6b6b;--bd:#2a323b;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,"Segoe UI",system-ui,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;line-height:1.55}
+.wrap{max-width:1100px;margin:0 auto;padding:20px 16px 64px}
+h1{font-size:1.4rem;margin:0 0 2px}h1 .x{color:var(--acc)}
+.sub{color:var(--mut);font-size:.85rem;margin:0 0 16px}
+.panel{background:var(--panel);border:1px solid var(--bd);border-radius:12px;padding:14px;margin:12px 0}
+.panel h2{font-size:.95rem;margin:0 0 10px;color:var(--acc2)}
+label{display:block;font-size:.74rem;color:var(--mut);margin:0 0 2px}
+select,input{width:100%;background:var(--panel2);color:var(--fg);border:1px solid var(--bd);border-radius:7px;padding:6px 8px;font:inherit;font-size:.88rem}
+input[type=number]{-moz-appearance:textfield}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:8px}
+.row.n{grid-template-columns:repeat(auto-fit,minmax(105px,1fr))}
+.btn{background:var(--acc);color:#04221f;border:0;border-radius:8px;padding:8px 14px;font:inherit;font-weight:700;cursor:pointer}
+.btn.ghost{background:var(--panel2);color:var(--fg);border:1px solid var(--bd);font-weight:600}
+.btn.bad{background:var(--bad);color:#fff}
+.btn:disabled{opacity:.4;cursor:default}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin:10px 0}
+.tabs button{background:var(--panel2);color:var(--mut);border:1px solid var(--bd);border-radius:8px 8px 0 0;padding:7px 14px;font:inherit;cursor:pointer}
+.tabs button.on{color:var(--fg);background:var(--panel);border-bottom-color:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:.84rem}
+td,th{padding:4px 8px;border-bottom:1px solid var(--bd);text-align:left;white-space:nowrap}
+tr.sel td{background:#1e2a30}
+tr.pick{cursor:pointer}tr.pick:hover td{background:#1a2228}
+.scroll{max-height:380px;overflow:auto;border:1px solid var(--bd);border-radius:8px}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.78rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:6px}
+.stat{background:var(--panel2);border:1px solid var(--bd);border-radius:8px;padding:6px 8px;text-align:center}
+.stat b{display:block;font-size:1.1rem;color:var(--acc)}
+.stat span{font-size:.7rem;color:var(--mut)}
+.sw{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:4px;border:1px solid #0006}
+.hint{font-size:.76rem;color:var(--mut);margin-top:6px}
+.ok{color:var(--ok)}.bad{color:var(--bad)}
+a{color:var(--acc)}
+.foot{color:var(--mut);font-size:.74rem;margin-top:26px;border-top:1px solid var(--bd);padding-top:14px}
+#drop{border:2px dashed var(--bd);border-radius:12px;padding:22px;text-align:center;color:var(--mut)}
+#drop.over{border-color:var(--acc);color:var(--fg)}
+.hid{display:none!important}
+.chip{display:inline-block;font-size:.7rem;padding:1px 7px;border-radius:99px;border:1px solid var(--bd);color:var(--mut);margin-left:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>電波人間<span class="x">エディタ</span> <span class="chip">RPG FREE! v1.17.0</span></h1>
+<p class="sub">ブラウザだけで動くセーブエディタ。ファイルはサーバに送られません。
+解析の根拠は <a href="docs.html?doc=19-denpa-record.md">docs/19</a>、CLI版は <a href="https://github.com/shunnedy/denpa_rev">GitHub</a>。</p>
+
+<div class="panel" id="loadpanel">
+  <h2>1. セーブデータを読み込む</h2>
+  <div id="drop">ここに Azahar の <b>savedata.bin</b>（v1.17.0、約1.9MB）をドロップ、または
+    <input type="file" id="file" style="width:auto;display:inline-block"></div>
+  <div class="hint">Azahar の場所: <span class="mono">sdmc/Nintendo 3DS/&lt;id&gt;/&lt;id&gt;/title/0004000e/00125d00/data/00000001/savedata.bin</span>（右クリック→セーブデータの場所を開く）。
+  チェックサムは無いので書き換えたファイルをそのまま戻せます。<b>必ずバックアップを取ってから。</b></div>
+  <div id="loadinfo" class="hint"></div>
+</div>
+
+<div id="app" class="hid">
+<div class="tabs">
+  <button data-tab="denpa" class="on">電波人間</button>
+  <button data-tab="items">持ち物</button>
+  <button data-tab="money">所持金・ジュエル</button>
+</div>
+
+<div id="tab-denpa">
+<div class="panel">
+  <h2>2. 個体を選ぶ</h2>
+  <div class="row">
+    <div><label>表示</label><select id="area"><option value="p">手持ち (p0-p15)</option><option value="b">ボックス (b0-b1049)</option><option value="x">予備 (x0-x7)</option></select></div>
+    <div><label>&nbsp;</label><label><input type="checkbox" id="showempty" style="width:auto"> 空き枠も表示</label></div>
+  </div>
+  <div class="scroll"><table id="slots"><thead><tr><th>枠</th><th>名前</th><th>Lv</th><th>世代</th><th>HP/AP</th><th>アンテナ</th><th>種別</th></tr></thead><tbody></tbody></table></div>
+  <div class="btns">
+    <button class="btn ghost" id="newblank">空き枠に新規作成</button>
+    <button class="btn ghost" id="importrec">レコード(.bin)を読み込んで空き枠へ</button>
+    <input type="file" id="importfile" class="hid">
+  </div>
+</div>
+
+<div class="panel" id="edit" style="display:none">
+  <h2>3. 編集 — <span id="edtitle"></span></h2>
+  <div class="stats" id="stats"></div>
+  <div class="hint" id="aff"></div>
+
+  <h3 style="font-size:.85rem;color:var(--mut);margin:14px 0 6px">基本</h3>
+  <div class="row">
+    <div><label>名前（読みは自動生成）</label><input id="f_name" maxlength="7"></div>
+    <div><label>レベル（EXPも連動）</label><input type="number" id="f_level" min="1" max="999"></div>
+    <div><label>累積EXP</label><input type="number" id="f_exp" min="0"></div>
+    <div><label>現在HP</label><input type="number" id="f_hp" min="0" max="9999"></div>
+    <div><label>現在AP</label><input type="number" id="f_ap" min="0" max="255"></div>
+    <div><label>幸福度</label><input type="number" id="f_happy" min="0" max="999"></div>
+    <div><label>何代目</label><input type="number" id="f_gen" min="1" max="10"></div>
+    <div><label>何代まで</label><input type="number" id="f_maxgen" min="1" max="10"></div>
+    <div><label>転生回数</label><input type="number" id="f_rebirths" min="0" max="250"></div>
+    <div><label>子作り残り回数</label><input type="number" id="f_breed" min="0" max="3"></div>
+    <div><label>こども残り日数</label><input type="number" id="f_childdays" min="0" max="63"></div>
+    <div><label>種別 (kind)</label><select id="f_kind"></select></div>
+  </div>
+  <h3 style="font-size:.85rem;color:var(--mut);margin:14px 0 6px">アンテナ</h3>
+  <div class="row">
+    <div><label>アンテナ群</label><select id="f_antenna"></select></div>
+    <div><label>成長タイプ (0-2)</label><input type="number" id="f_growth" min="0" max="2"></div>
+    <div><label>段階 / 現在のとくぎ（自動）</label><input id="f_tier" disabled></div>
+  </div>
+  <h3 style="font-size:.85rem;color:var(--mut);margin:14px 0 6px">外見</h3>
+  <div class="row n">
+    <div><label>頭 (0-70)</label><input type="number" id="f_head" min="0" max="70"></div>
+    <div><label>体型 (0-29)</label><input type="number" id="f_body" min="0" max="29"></div>
+    <div><label>まゆ (0-31)</label><input type="number" id="f_brow" min="0" max="31"></div>
+    <div><label>目 (0-63)</label><input type="number" id="f_eye" min="0" max="63"></div>
+    <div><label>鼻 (0-63)</label><input type="number" id="f_nose" min="0" max="63"></div>
+    <div><label>口 (0-63)</label><input type="number" id="f_mouth" min="0" max="63"></div>
+    <div><label>ほほ (0-31)</label><input type="number" id="f_cheek" min="0" max="31"></div>
+    <div><label>はだ質感 (0-15)</label><input type="number" id="f_skin" min="0" max="15"></div>
+    <div><label>かみがた (0-50)</label><input type="number" id="f_hair" min="0" max="50"></div>
+    <div><label>はだの色 (0-5)</label><select id="f_facecolor"></select></div>
+    <div><label>かみの色 (0-11)</label><select id="f_haircolor"></select></div>
+  </div>
+  <div class="row">
+    <div><label>体色A</label><select id="f_colora"></select></div>
+    <div><label>体色B（まだら用）</label><select id="f_colorb"></select></div>
+    <div><label>まだら模様 (0=単色)</label><input type="number" id="f_mix" min="0" max="255"></div>
+  </div>
+  <h3 style="font-size:.85rem;color:var(--mut);margin:14px 0 6px">装備（アイテム名で検索）</h3>
+  <div class="row" id="equips"></div>
+  <h3 style="font-size:.85rem;color:var(--mut);margin:14px 0 6px">ステータスボーナス（HP AP こうげき ぼうぎょ すばやさ かいひ）</h3>
+  <div class="row n" id="bonus"></div>
+  <div class="btns">
+    <button class="btn" id="apply">この内容を反映</button>
+    <button class="btn ghost" id="copyto">空き枠へコピー</button>
+    <button class="btn ghost" id="exportrec">レコード(.bin)を書き出し</button>
+    <button class="btn bad" id="delete">この枠を空にする</button>
+  </div>
+  <div class="hint" id="editmsg"></div>
+</div>
+</div>
+
+<div id="tab-items" class="hid">
+<div class="panel">
+  <h2>持ち物（上限 99）</h2>
+  <div class="row"><div><label>追加するアイテム</label><input id="itemsearch" list="itemlist" placeholder="名前で検索"><datalist id="itemlist"></datalist></div>
+  <div><label>個数</label><input type="number" id="itemcount" value="99" min="0" max="99"></div>
+  <div><label>&nbsp;</label><button class="btn" id="itemadd">セット</button></div></div>
+  <div class="scroll"><table id="items"><thead><tr><th>ID</th><th>名前</th><th>個数</th></tr></thead><tbody></tbody></table></div>
+</div>
+</div>
+
+<div id="tab-money" class="hid">
+<div class="panel">
+  <h2>所持金・ジュエル</h2>
+  <div class="row"><div><label>ゴールド (0-999,999,999)</label><input type="number" id="gold" min="0" max="999999999"></div>
+  <div><label>ジュエル (0-9,999)</label><input type="number" id="jewel" min="0" max="9999"></div>
+  <div><label>&nbsp;</label><button class="btn" id="moneyapply">反映</button></div></div>
+</div>
+</div>
+
+<div class="panel">
+  <h2>4. 保存</h2>
+  <div class="btns"><button class="btn" id="download">編集したセーブをダウンロード</button> <span class="hint" id="dlmsg"></span></div>
+</div>
+</div>
+
+<div class="foot">
+計算ステータスは装備効果を含みません（装備効果テーブルは未解析）。
+属性名の 土/電気 は推定。解析資料: <a href="index.html">denpa_rev</a> ／ <a href="https://github.com/shunnedy/denpa_rev">GitHub</a>
+</div>
+</div>
+
+<script>
+'use strict';
+const REC=0xFC, DIR=0x14, VAR_BASE=0x965FF, ITEM_BIT=65918, GOLD_LO=65844, GOLD_HI=65874, JEWEL_OFF=0x2088;
+const KINDS={3:'レア(ROM定義)',4:'モンスター',6:'外部データ',8:'初期メンバー',9:'NPC',10:'子(通常)',11:'ゲット',12:'子(ゲット系)'};
+const HASH_KINDS=[0,1,2,5,6,8,10,12];
+const FACE=[['brow',0x67,32],['eye',0x68,64],['nose',0x69,64],['mouth',0x6a,64],['cheek',0x6b,32],['skin',0x65,16],['hair',0x66,51]];
+const STATN=['HP','AP','こうげき','ぼうぎょ','すばやさ','かいひ'];
+const SKIN=['#f8dbc7','#ffd780','#ffbeaa','#e68c50','#d26946','#903c28'];
+const HAIRC=['#282828','#ffffff','#804507','#cd902a','#942a00','#ffdd20','#0059ff','#09a600','#a128ff','#ff6e80','#f75700','#f00011'];
+let D=null, buf=null, dv=null, sec=null, cur=null;
+const $=id=>document.getElementById(id);
+
+fetch('denpa-dict.json').then(r=>r.json()).then(d=>{D=d; initDict();}).catch(e=>{$('loadinfo').innerHTML='<span class=bad>辞書 denpa-dict.json の読み込みに失敗: '+e+'</span>';});
+
+function idiv(a,b){const q=Math.floor(Math.abs(a)/Math.abs(b));return (a>=0)===(b>=0)?q:-q;}
+const u8=o=>buf[o], u16=o=>dv.getUint16(o,true), u32=o=>dv.getUint32(o,true);
+const w8=(o,v)=>{buf[o]=v&0xff}, w16=(o,v)=>dv.setUint16(o,v&0xffff,true), w32=(o,v)=>dv.setUint32(o,v>>>0,true);
+
+// ---------- record view
+class Denpa{
+  constructor(base){this.b=base;}
+  u8(o){return u8(this.b+o)} u16(o){return u16(this.b+o)} u32(o){return u32(this.b+o)}
+  w8(o,v){w8(this.b+o,v)} w16(o,v){w16(this.b+o,v)} w32(o,v){w32(this.b+o,v)}
+  get empty(){return this.u32(0)===0}
+  get kind(){return (this.u16(6)&0xff)>>4}
+  get level(){return this.u16(0x96)}
+  get gen(){return this.u8(0x82)}
+  raw(){return buf.slice(this.b,this.b+REC)}
+  name(){let e=0;const r=buf.subarray(this.b+0x14,this.b+0x2c);while(e+1<24&&!(r[e]===0&&r[e+1]===0))e+=2;return new TextDecoder('utf-16le').decode(r.subarray(0,e));}
+  voice(name){const vm=D.voice_map;let out=[];for(const ch of name){let h=ch;if(ch>='ァ'&&ch<='ヶ')h=String.fromCharCode(ch.charCodeAt(0)-0x60);if(vm[h])for(let i=0;i<vm[h].length;i+=2)out.push(parseInt(vm[h].substr(i,2),16));}return out;}
+  setName(name){const enc=[];for(const ch of name){const c=ch.charCodeAt(0);enc.push(c&0xff,c>>8);}const v=this.voice(name);if(enc.length+2+v.length+1>24)throw '名前が長すぎます（読み込みで24バイト以内）';const blob=new Array(24).fill(0);let i=0;for(const x of enc)blob[i++]=x;i+=2;for(const x of v)blob[i++]=x;for(let k=0;k<24;k++)buf[this.b+0x14+k]=blob[k];}
+  tier(){const g=D.antenna_groups[this.u8(0x94)];const lv=this.level;return g.tiers.filter(t=>t.level<=lv).length;}
+  refreshAntenna(){const g=D.antenna_groups[this.u8(0x94)];const t=this.tier();this.w8(0x95,t);this.w16(0x62,t?g.tiers[t-1].skill_id:1);}
+  setLevel(lv){lv=Math.max(1,Math.min(999,lv));this.w16(0x96,lv);this.w32(0x98,D.level_exp[lv-1]);this.refreshAntenna();}
+  async hash(){const a=buf.subarray(this.b+0x60,this.b+0x76);const data=new Uint8Array([a[0xd],a[4],a[5],a[6],a[7],a[8],a[9],a[0xa],a[0xb],a[0x10],a[0x13],a[0x14]]);const dg=new DataView(await crypto.subtle.digest('SHA-256',data));let s=0;for(let i=0;i<4;i++)s=(s+dg.getUint32(i*4,true))>>>0;s=((s%0xffff)+(s>>>16))>>>0;return (s&0xffff)||1;}
+  async refreshHash(){if(HASH_KINDS.includes(this.kind))this.w16(0x60,await this.hash());}
+  bodyColor(){const a=this.u8(0x71),b=this.u8(0x72);const ma=D.color_data[a]?.mask??0,mb=D.color_data[b]?.mask??0;const m=(ma===mb&&a!==b)?(ma|0x2000):(ma|mb);return D.body_color_effects.find(r=>(r.mask_a|r.mask_b)===m)||D.body_color_effects[0];}
+  stats(){const gt=Math.min(this.u8(0x9e)&0xf,2),rows=D.level_status[gt],lv=this.level;let i=0;while(i<rows.length-1&&rows[i+1][0]<=lv)i++;const v=rows[i].slice();if(i<rows.length-1&&rows[i][0]!==lv){const nx=rows[i+1],f=lv-v[0],dd=nx[0]-v[0];for(let k=1;k<6;k++)v[k]+=idiv((nx[k]-v[k])*f,dd);}
+    const g=D.antenna_groups[this.u8(0x94)],pc=D.parameter_cap[Math.min(this.gen,9)],bd=D.body_types[this.u8(0x6d)]||D.body_types[0],hd=D.heads[this.u8(0x64)]||D.heads[0],bc=this.bodyColor();
+    const s=[];for(let k=0;k<5;k++){let x=idiv((g.stat_mult[k]*2+0x2ec)*v[k+1],1000);s.push(idiv((pc.stat_pct[k]+1000)*x,1000));}
+    const hp=idiv(bd.stat_pct[0]*s[0],100),ap=s[1]+(s[1]?hd.ap_bonus:0),atk=idiv(bd.stat_pct[1]*s[2],100),de=idiv(bc.def_pct*idiv(bd.stat_pct[2]*s[3],100),100),spd=idiv(bd.stat_pct[3]*s[4],100),b=g.stat_bonus;
+    const out=[this.u8(0xa6)+hp+pc.hp_bonus+b[0]+this.u8(0xa0),this.u8(0xa7)+ap+pc.ap_bonus+b[1]+this.u8(0xa1),this.u8(0xa8)+atk+pc.atk_bonus+b[2]+this.u8(0xa2),this.u8(0xa9)+pc.def_bonus+de+b[3]+this.u8(0xa3),this.u8(0xaa)+spd+pc.spd_bonus+b[4]+this.u8(0xa4),bd.eva+this.u8(0xab)+this.u8(0xa5)];
+    if(this.u8(0x84)>>2){out[2]=(out[2]+1)>>1;out[3]=(out[3]+1)>>1;}
+    for(let k=0;k<5;k++)out[k]=Math.max(1,Math.min(9999,out[k]));if(g.stat_mult[1]===0)out[1]=0;out[5]=Math.max(0,Math.min(50,out[5]));return out;}
+}
+function slotOf(spec){const k=spec[0],i=parseInt(spec.slice(1));const [off,size]=sec[k];if(!(i>=0&&i<size/REC))throw 'bad slot';return new Denpa(off+i*REC);}
+function* allSlots(){for(const k of 'pbx'){const [off,size]=sec[k];for(let i=0;i<size/REC;i++)yield [k+i,new Denpa(off+i*REC)];}}
+function nextInstance(){let m=0;for(const [,d] of allSlots())m=Math.max(m,d.u32(0));return m+1;}
+function firstEmpty(){for(const k of 'pbx'){const [off,size]=sec[k];for(let i=0;i<size/REC;i++){if(new Denpa(off+i*REC).empty)return k+i;}}return null;}
+// bit store
+function getbits(bit,w){const p=VAR_BASE*8+bit;let v=0n;for(let i=0;i<8;i++)v|=BigInt(buf[(p>>3)+i])<<BigInt(8*i);return Number((v>>BigInt(p&7))&((1n<<BigInt(w))-1n));}
+function setbits(bit,w,val){const p=VAR_BASE*8+bit;for(let k=0;k<w;k++){const q=p+k,b=(val>>k)&1;buf[q>>3]=(buf[q>>3]&~(1<<(q&7)))|(b<<(q&7));}}
+
+// ---------- UI
+function initDict(){
+  const ag=$('f_antenna');D.antenna_groups.forEach(g=>{const o=document.createElement('option');o.value=g.index;o.textContent=`[${g.index}] ${g.display||'(なし)'}`+(g.tiers.length>1?` → ${g.tiers.slice(1).map(t=>t.name).join(' / ')}`:'');ag.appendChild(o);});
+  for(const id of ['f_colora','f_colorb']){const s=$(id);D.color_data.forEach(c=>{const o=document.createElement('option');o.value=c.index;o.textContent=`${c.index}: ${c.name||'(なし)'}`;o.style.background=c.rgb;o.style.color='#000';s.appendChild(o);});}
+  SKIN.forEach((c,i)=>{const o=document.createElement('option');o.value=i;o.textContent=i+' ';o.style.background=c;o.style.color='#000';$('f_facecolor').appendChild(o);});
+  HAIRC.forEach((c,i)=>{const o=document.createElement('option');o.value=i;o.textContent=i+' ';o.style.background=c;o.style.color=i===1||i===5?'#000':'#fff';$('f_haircolor').appendChild(o);});
+  Object.entries(KINDS).forEach(([k,v])=>{const o=document.createElement('option');o.value=k;o.textContent=`0x${(+k).toString(16)} ${v}`;$('f_kind').appendChild(o);});
+  const dl=$('itemlist');Object.entries(D.items_by_id).forEach(([id,n])=>{if(n){const o=document.createElement('option');o.value=n;dl.appendChild(o);}});
+  const eq=$('equips');for(let k=0;k<8;k++){const d=document.createElement('div');d.innerHTML=`<label>装備${k}${k===1?'（うでわ）':''}</label><input id="f_equip${k}" list="itemlist" placeholder="なし">`;eq.appendChild(d);}
+  const bo=$('bonus');['bonus','feast'].forEach(p=>STATN.forEach((n,i)=>{const d=document.createElement('div');d.innerHTML=`<label>${p==='bonus'?'永続':'今世代'} ${n}</label><input type=number id="f_${p}${i}" min=0 max=255>`;bo.appendChild(d);}));
+}
+function itemId(name){if(!name)return 0;if(/^\d+$/.test(name))return +name;for(const [id,n] of Object.entries(D.items_by_id))if(n===name)return +id;throw 'アイテムが見つかりません: '+name;}
+
+function loadFile(f){const r=new FileReader();r.onload=()=>{buf=new Uint8Array(r.result);dv=new DataView(r.result);try{const s=[];for(let i=0;i<8;i++)s.push([u32(DIR+8*i),u32(DIR+8*i+4)]);sec={p:s[5],b:s[6],x:s[7]};if(sec.p[1]%REC||sec.b[1]%REC||sec.p[0]!==0x2588)throw 'セクション表が想定と違います（v1.17.0 の savedata.bin ですか？）';}catch(e){$('loadinfo').innerHTML='<span class=bad>'+e+'</span>';return;}
+  $('loadinfo').innerHTML=`<span class=ok>読み込み完了</span> ${f.name} (${buf.length} bytes) — 手持ち${sec.p[1]/REC}枠 / ボックス${sec.b[1]/REC}枠`;$('app').classList.remove('hid');$('edit').style.display='none';cur=null;renderSlots();renderItems();renderMoney();};r.readAsArrayBuffer(f);}
+$('file').onchange=e=>e.target.files[0]&&loadFile(e.target.files[0]);
+const dz=$('drop');dz.ondragover=e=>{e.preventDefault();dz.classList.add('over')};dz.ondragleave=()=>dz.classList.remove('over');dz.ondrop=e=>{e.preventDefault();dz.classList.remove('over');if(e.dataTransfer.files[0])loadFile(e.dataTransfer.files[0]);};
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));['denpa','items','money'].forEach(t=>$('tab-'+t).classList.toggle('hid',t!==b.dataset.tab));});
+$('area').onchange=renderSlots;$('showempty').onchange=renderSlots;
+
+function renderSlots(){const k=$('area').value,[off,size]=sec[k],tb=$('slots').querySelector('tbody');tb.innerHTML='';for(let i=0;i<size/REC;i++){const d=new Denpa(off+i*REC);if(d.empty&&!$('showempty').checked)continue;const tr=document.createElement('tr');tr.className='pick'+(cur===k+i?' sel':'');const g=D.antenna_groups[d.u8(0x94)];tr.innerHTML=d.empty?`<td>${k}${i}</td><td colspan=6 style="color:var(--mut)">(空き)</td>`:`<td>${k}${i}</td><td>${d.name()}</td><td>${d.level}</td><td>${d.gen+1}/${d.u8(0x83)+1}</td><td>${d.u16(0x78)}/${d.u8(0x7a)}</td><td>${g?.display||'(なし)'}</td><td>${KINDS[d.kind]||'0x'+d.kind.toString(16)}</td>`;tr.onclick=()=>{if(d.empty)return;select(k+i);};tb.appendChild(tr);}}
+function select(spec){cur=spec;const d=slotOf(spec);$('edtitle').textContent=`${spec} ${d.name()}`;$('edit').style.display='';fill(d);renderSlots();$('editmsg').textContent='';}
+function fill(d){$('f_name').value=d.name();$('f_level').value=d.level;$('f_exp').value=d.u32(0x98);$('f_hp').value=d.u16(0x78);$('f_ap').value=d.u8(0x7a);$('f_happy').value=d.u16(0x80);$('f_gen').value=d.gen+1;$('f_maxgen').value=d.u8(0x83)+1;$('f_rebirths').value=d.u8(0x85);$('f_breed').value=d.u8(0x84)&3;$('f_childdays').value=d.u8(0x84)>>2;$('f_kind').value=d.kind;
+  $('f_antenna').value=d.u8(0x94);$('f_growth').value=d.u8(0x9e)&0xf;$('f_head').value=d.u8(0x64);$('f_body').value=d.u8(0x6d);for(const [n,o] of FACE)$('f_'+n).value=d.u8(o);$('f_facecolor').value=d.u8(0x73);$('f_haircolor').value=d.u8(0x74);$('f_colora').value=d.u8(0x71);$('f_colorb').value=d.u8(0x72);$('f_mix').value=d.u8(0x70);
+  for(let k=0;k<8;k++){const e=d.u32(0xac+4*k)&0x7fffffff;$('f_equip'+k).value=e?(D.items_by_id[e]||String(e)):'';}
+  for(let i=0;i<6;i++){$('f_bonus'+i).value=d.u8(0xa6+i);$('f_feast'+i).value=d.u8(0xa0+i);}
+  showDerived(d);}
+function showDerived(d){const st=d.stats(),pc=D.parameter_cap[Math.min(d.gen,9)];$('stats').innerHTML=STATN.map((n,i)=>`<div class=stat><b>${st[i]}</b><span>${n}</span></div>`).join('')+`<div class=stat><b>${pc.level_cap}</b><span>Lv上限</span></div><div class=stat><b>${pc.happy_max}</b><span>幸福上限</span></div>`;
+  const bc=d.bodyColor(),aff=D.elements.map((e,i)=>bc.elements[i]?`${e}${bc.elements[i]>0?'+':''}${bc.elements[i]}`:'').filter(x=>x).join('　');const g=D.antenna_groups[d.u8(0x94)],t=d.tier();$('f_tier').value=`段階${t}: ${t?g.tiers[t-1].name:'アンテナのねっこ'}`;$('aff').innerHTML=`属性耐性: ${aff||'なし'}（ぼうぎょ${bc.def_pct}%）　外見ハッシュ 0x${d.u16(0x60).toString(16).padStart(4,'0')}　個体番号 ${d.u32(0)}　名前番号 ${d.u32(0x10)}`;}
+['f_level','f_antenna','f_growth','f_head','f_body','f_colora','f_colorb','f_gen','f_childdays'].forEach(id=>$(id).addEventListener('input',()=>{}));
+
+async function applyEdits(){if(!cur)return;const d=slotOf(cur);try{
+  const v=id=>parseInt($(id).value)||0;
+  if($('f_name').value!==d.name())d.setName($('f_name').value);
+  const lv=v('f_level');if(lv!==d.level){d.setLevel(lv);$('f_exp').value=d.u32(0x98);}else d.w32(0x98,v('f_exp'));
+  d.w16(0x78,v('f_hp'));d.w8(0x7a,v('f_ap'));d.w16(0x80,v('f_happy'));
+  d.w8(0x82,Math.max(0,Math.min(9,v('f_gen')-1)));d.w8(0x83,Math.max(d.u8(0x82),v('f_maxgen')-1));d.w8(0x85,v('f_rebirths'));
+  d.w8(0x84,(v('f_breed')&3)|((v('f_childdays')&0x3f)<<2));d.w16(6,(d.u16(6)&0xff0f)|((v('f_kind')&0xf)<<4));
+  const ga=v('f_antenna');if(ga!==d.u8(0x94)){d.w8(0x94,ga);d.w8(0x9e,(d.u8(0x9e)&0xf0)|D.antenna_groups[ga].growth_type);$('f_growth').value=D.antenna_groups[ga].growth_type;}
+  d.w8(0x9e,(d.u8(0x9e)&0xf0)|(v('f_growth')&0xf));
+  d.w8(0x64,v('f_head'));d.w8(0x6d,v('f_body'));for(const [n,o,mx] of FACE)d.w8(o,Math.min(mx-1,v('f_'+n)));d.w8(0x73,v('f_facecolor'));d.w8(0x74,v('f_haircolor'));
+  d.w8(0x71,v('f_colora'));d.w8(0x72,v('f_colorb'));let mix=v('f_mix');if(d.u8(0x71)===d.u8(0x72)){d.w8(0x72,0);mix=0;}if(d.u8(0x72)===0)mix=0;else if(mix===0)mix=1;d.w8(0x70,mix);$('f_mix').value=mix;$('f_colorb').value=d.u8(0x72);
+  for(let k=0;k<8;k++){const id=itemId($('f_equip'+k).value.trim());d.w32(0xac+4*k,id?(0x80000000|id)>>>0:0);}
+  for(let i=0;i<6;i++){d.w8(0xa6+i,v('f_bonus'+i));d.w8(0xa0+i,v('f_feast'+i));}
+  d.refreshAntenna();await d.refreshHash();fill(d);renderSlots();$('edtitle').textContent=`${cur} ${d.name()}`;$('editmsg').innerHTML='<span class=ok>反映しました。最後に「編集したセーブをダウンロード」を押してください。</span>';
+ }catch(e){$('editmsg').innerHTML='<span class=bad>'+e+'</span>';}}
+$('apply').onclick=applyEdits;
+$('copyto').onclick=()=>{if(!cur)return;const dst=firstEmpty();if(!dst)return alert('空き枠がありません');const s=slotOf(cur),d=slotOf(dst);buf.set(s.raw(),d.b);d.w32(0,nextInstance());$('editmsg').innerHTML=`<span class=ok>${dst} にコピーしました</span>`;renderSlots();};
+$('delete').onclick=()=>{if(!cur||!confirm(cur+' を空にしますか？'))return;const d=slotOf(cur);buf.fill(0,d.b,d.b+REC);cur=null;$('edit').style.display='none';renderSlots();};
+$('exportrec').onclick=()=>{if(!cur)return;const d=slotOf(cur);dl(d.raw(),`${d.name()||cur}.denpa.bin`);};
+$('importrec').onclick=()=>$('importfile').click();
+$('importfile').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const rec=new Uint8Array(r.result);if(rec.length!==REC)return alert('252バイトのレコードではありません');const dst=firstEmpty();if(!dst)return alert('空き枠がありません');const d=slotOf(dst);buf.set(rec,d.b);d.w32(0,nextInstance());renderSlots();select(dst);};r.readAsArrayBuffer(f);e.target.value='';};
+$('newblank').onclick=async()=>{const dst=firstEmpty();if(!dst)return alert('空き枠がありません');const d=slotOf(dst);buf.fill(0,d.b,d.b+REC);d.w16(4,1);d.w16(6,0x00b4);d.w8(0xc,1);d.w8(0x6d,15);d.w8(0x71,3);d.w8(0x83,6);d.w8(0x84,1);d.w8(0x9f,3);d.w8(0x76,0x10);d.setName('でんぱ');d.setLevel(1);d.w32(0,nextInstance());const st=d.stats();d.w16(0x78,st[0]);d.w8(0x7a,st[1]);await d.refreshHash();renderSlots();select(dst);};
+
+function renderItems(){const tb=$('items').querySelector('tbody');tb.innerHTML='';for(let i=0;i<3000;i++){const n=getbits(ITEM_BIT+7*i,7);if(!n)continue;const tr=document.createElement('tr');tr.innerHTML=`<td>${i}</td><td>${D.items_by_id[i]||''}</td><td><input type=number min=0 max=99 value=${n} style="width:70px" data-id=${i}></td>`;tr.querySelector('input').onchange=e=>setbits(ITEM_BIT+7*i,7,Math.max(0,Math.min(99,+e.target.value||0)));tb.appendChild(tr);}}
+$('itemadd').onclick=()=>{try{const id=itemId($('itemsearch').value.trim());if(!id)throw 'アイテムを選んでください';setbits(ITEM_BIT+7*id,7,Math.max(0,Math.min(99,+$('itemcount').value||0)));renderItems();}catch(e){alert(e);}};
+function renderMoney(){$('gold').value=getbits(GOLD_LO,30)+getbits(GOLD_HI,30);$('jewel').value=u32(JEWEL_OFF);}
+$('moneyapply').onclick=()=>{let g=Math.max(0,Math.min(999999999,+$('gold').value||0));const lo=Math.min(g,(1<<30)-1);setbits(GOLD_LO,30,lo);setbits(GOLD_HI,30,g-lo);w32(JEWEL_OFF,Math.max(0,Math.min(9999,+$('jewel').value||0)));renderMoney();$('dlmsg').textContent='所持金を反映しました';};
+function dl(bytes,name){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([bytes],{type:'application/octet-stream'}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),5000);}
+$('download').onclick=()=>{dl(buf,'savedata.bin');$('dlmsg').textContent='savedata.bin を保存しました。Azahar のフォルダに上書きしてください。';};
+</script>
+</body>
+</html>
