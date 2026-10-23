@@ -5,7 +5,11 @@ After=network.target
 [Service]
 Type=simple
 WorkingDirectory=/root/asahina-net-wifi
-ExecStart=/usr/bin/python3 /root/asahina-net-wifi/denpa_server.py --host 127.0.0.1 --port 8082 --opponents 12
+ExecStart=/usr/bin/python3 /root/asahina-net-wifi/denpa_server.py --host 127.0.0.1 --port 8082 \
+  --opponent "カゲトラたち:/root/asahina-net-wifi/opponents/team1.blob" \
+  --opponent "きわむ:/root/asahina-net-wifi/opponents/team2.blob" \
+  --opponent "ゆうき:/root/asahina-net-wifi/opponents/team3.blob" \
+  --log /root/asahina-net-wifi/access.log
 Restart=on-failure
 RestartSec=3
 

@@ -50,6 +50,7 @@ ROMイメージ、展開した romfs / code.bin、モデル・テクスチャ・
 | [docs/17-stock-console.md](docs/17-stock-console.md) | 無改造3DSでどこまでできるか | 一部推測を明記 |
 | [docs/18-cheats.md](docs/18-cheats.md) | Azahar用チートコード | 動作原理まで確定 |
 | [docs/19-denpa-record.md](docs/19-denpa-record.md) | 電波人間レコード完全解析（遺伝子・ステータス式・持ち物）＋フルエディタ | 実セーブ4体で式を検証済み |
+| [docs/20-colosseum-opponents.md](docs/20-colosseum-opponents.md) | Ｗｉ-Ｆｉコロシアム対戦相手blob（1256B）の完全解析＋生成ツール | 実機対戦は未確認 |
 
 ## 公開サイト
 

@@ -59,9 +59,11 @@ OPP_PARTY_LEN = 0x4E8
 OPPONENTS = []
 
 
-def opponent_fields():
+def opponent_fields(limit=3):
+    """Two base64 fields per opponent: a 32-byte UTF-16 name and the 1256-byte
+    party blob (tools/colosseum.py). The battle wants three."""
     out = []
-    for name, party in OPPONENTS:
+    for name, party in OPPONENTS[:limit]:
         n = (name.encode('utf-16-le')[:OPP_NAME_LEN]).ljust(OPP_NAME_LEN, b'\0')
         p = party[:OPP_PARTY_LEN].ljust(OPP_PARTY_LEN, b'\0')
         out.append(base64.b64encode(n).decode('ascii'))
@@ -132,23 +134,53 @@ def handle(path, q):
     return csv_err(10)
 
 
+ACCESS_LOG = None        # path; every request line is appended here
+
+
+def _log(line):
+    print(line, file=sys.stderr, flush=True)
+    if ACCESS_LOG:
+        try:
+            with open(ACCESS_LOG, 'a') as f:
+                f.write(line + '\n')
+        except OSError:
+            pass
+
+
 class Handler(BaseHTTPRequestHandler):
     server_version = 'denpamen-proto'
 
-    def do_GET(self):
+    def _serve(self, method):
         u = urllib.parse.urlparse(self.path)
         q = urllib.parse.parse_qs(u.query)
         body = handle(u.path, q)
         LOG.append((u.path, q.get('req', [''])[0], len(body)))
+        ts = datetime.datetime.now().strftime('%H:%M:%S')
+        hdr = {k: self.headers.get(k) for k in ('101', '103', '104', '105') if self.headers.get(k)}
+        _log(f'{ts} {method} {self.path}  -> {body[:48]!r}  hdr={hdr}')
         raw = body.encode('ascii')
         self.send_response(200)
         self.send_header('Content-Type', 'text/plain')
         self.send_header('Content-Length', str(len(raw)))
         self.end_headers()
-        self.wfile.write(raw)
+        if method != 'HEAD':
+            self.wfile.write(raw)
+
+    def do_GET(self):
+        self._serve('GET')
+
+    def do_HEAD(self):
+        self._serve('HEAD')
+
+    def do_POST(self):
+        # the retail game never POSTs, but log one if it appears
+        n = int(self.headers.get('Content-Length') or 0)
+        data = self.rfile.read(n) if n else b''
+        _log(f'POST {self.path}  body[{len(data)}]={data[:64].hex()}')
+        self._serve('POST')
 
     def log_message(self, fmt, *a):
-        print('  ' + fmt % a, file=sys.stderr)
+        pass
 
 
 def load_tables(specs):
@@ -178,17 +210,31 @@ def main():
     ap.add_argument('--port', type=int, default=8080)
     ap.add_argument('--table', action='append',
                     help='<archive path>:<TableName> to serve as a payload')
+    ap.add_argument('--opponent', action='append', default=[],
+                    help='NAME:party.blob  (party.blob from tools/colosseum.py)')
+    ap.add_argument('--opponent-save', action='append', default=[],
+                    help='NAME:save.bin  serve that save\'s party as an opponent')
     ap.add_argument('--opponents', type=int, default=0,
-                    help='serve N synthetic Wi-Fi Colosseum opponents')
+                    help='pad with N random-filler opponents (the game would '
+                         'generate these locally anyway)')
+    ap.add_argument('--log', help='append every request to this file')
     ap.add_argument('--cert', help='PEM certificate to wrap the socket in TLS')
     ap.add_argument('--key', help='its private key')
     a = ap.parse_args()
+    global ACCESS_LOG
+    ACCESS_LOG = a.log
     load_tables(a.table)
+    for spec in a.opponent:
+        name, _, path = spec.partition(':')
+        OPPONENTS.append((name or 'CPU', open(path, 'rb').read()))
+    for spec in a.opponent_save:
+        import colosseum
+        name, _, path = spec.partition(':')
+        OPPONENTS.append((name or 'CPU', colosseum.pack_party(colosseum.records_from_save(path))))
     for i in range(a.opponents):
-        OPPONENTS.append((f'テスト{i:02d}', bytes((i + j) & 0xFF
-                                                  for j in range(OPP_PARTY_LEN))))
+        OPPONENTS.append((f'CPU{i:02d}', bytes(OPP_PARTY_LEN)))
     if OPPONENTS:
-        print(f'opponents: {len(OPPONENTS)}')
+        print(f'opponents: {len(OPPONENTS)} ' + ', '.join(n for n, _ in OPPONENTS))
     srv = ThreadingHTTPServer((a.host, a.port), Handler)
     if a.cert:
         ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
