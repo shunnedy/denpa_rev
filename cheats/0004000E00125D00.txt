@@ -1,0 +1,14 @@
+; 電波人間のRPG FREE!  (v1.17.0 / Title ID 0004000E00125D00)
+; Azahar: ゲーム右クリック → Properties → Cheats → Add、または
+;   <Azaharユーザーディレクトリ>/cheats/0004000E00125D00.txt に保存
+; GetGold / GetJewel を定数リターンに書き換える方式(docs/16)
+
+[Gold max (always 999,999,999)]
+00191DD4 E59F0000
+00191DD8 E12FFF1E
+00191DDC 3B9AC9FF
+
+[Jewels max (always 9,999)]
+00191E24 E59F0000
+00191E28 E12FFF1E
+00191E2C 0000270F
