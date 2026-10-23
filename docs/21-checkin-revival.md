@@ -110,6 +110,36 @@ NsData の形式（ビッグエンディアン）:
 
 
 
+
+
+## 実機ログでの最終判定（2026-10-24, Azahar 2126.2 / Windows）
+
+デバッグログ（`Service.BOSS:Debug`）で確定した:
+
+- `code.ips` 適用OK、NsData を `extdata/00000000/0000125D/boss/` に配置済み（`user` フォルダも在る）
+- チェックインで BOSS は **RegisterTask → SendProperty(0x00〜0x15) → StartTask** まで実行
+  （プロパティ 0x0F のサイズ不一致エラーは Azahar が**ログのみで継続**するので無害）
+- **しかしログに `GetNsDataIdList` も `ReadNsData` も一度も現れない**。つまりゲームは
+  我々の置いた NsData を**読む段階に到達していない**
+
+原因は **Azahar の HLE BOSS で `StartTask` が空実装（STUBBED、実際には何もしない）** なこと。
+このゲームは「タスクを開始 → バックグラウンドでダウンロード完了 → その後 `ReadNsData` で読む」
+という作りなので、タスクが永遠に完了しない Azahar では `ReadNsData` まで進まず、
+「更新データのダウンロードに失敗」になる。
+
+**＝ NsData の形式・配置は正しいが、Azahar 側の未実装が壁。** 以下なら動く可能性がある:
+
+1. **Azahar の HLE BOSS が改善**され、`StartTask` が extdata の NsData を「完了済みタスクの結果」
+   として見せるようになる（上流の対応待ち）
+2. **ゲーム側を小さくパッチ**して、タスクの完了判定を飛ばして `ReadNsData` に直行させる
+   （FUN_003a0cf0 のタスク後の分岐を書き換え。脆く、数回の実機往復が要る）
+3. **実機 + CFW（Luma3DS）で LLE BOSS** を使い、romfs の `boss.bin` を自前サーバに向け、
+   BOSS コンテナ（AES-CTR 暗号 + 署名）を配信する（署名は任天堂の秘密鍵が要るため
+   ルート CA 差し替え前提。CFW 必須で難度が高い）
+
+なお `tools/bossdata.py` が作る NsData は Azahar が受理する形式（検証済み）なので、
+1 が実現すれば配置するだけで動くはず。
+
 ## BOSS タスクの流れ（コード確定）
 
 チェックインは各リソースについて **RegisterTask → SendProperty×多数 → StartTask →
