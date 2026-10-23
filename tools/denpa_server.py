@@ -47,6 +47,11 @@ def now_stamp(when=None):
 # That split is inferred, not yet confirmed in the code.
 CHUNK = 3000
 
+# Device check-in support number issued to a client that has none yet
+# (MessageMenu[23]: "サポート番号はチェックインから発行できます"). NNID is not
+# involved, so check-in works without a network account.
+SUPPORT_ID = '1000000001'
+
 # Wi-Fi Colosseum opponent list (`req=rand3` / `rank`, 40 KB response buffer):
 #   SUCCESS,<base64 A1>,<base64 B1>,<base64 A2>,<base64 B2>,...
 # two fields per opponent, each base64, decoded straight into a fixed slot:
@@ -107,9 +112,21 @@ def handle(path, q):
             payload = (table_payload('CheckinData', t_num, 0x1000)
                        or table_payload(tbl, t_num, 0x1000))
             return csv_ok(payload) if payload else csv_err(10)
+        if req in ('create', 'update'):
+            # Device-based check-in (no NNID): the client sends support_id,
+            # region, dates and play stats and expects SUCCESS plus a support
+            # number it stores. First call sends an empty support_id and the
+            # server issues one. The game only requires field 0 == SUCCESS and
+            # keeps the rest; we echo/issue the support number and zero the
+            # bonus fields until their exact meaning is confirmed from a real
+            # request in the log.
+            sid = (q.get('support_id') or [''])[0] or SUPPORT_ID
+            return csv_ok(sid, 0, 0, 0)
+        if req == 'delete':
+            return csv_ok()
         if req == 'check':
             # support_id is echoed back by the real server's check call
-            return csv_ok(1, (q.get('support_id') or [''])[0])
+            return csv_ok(1, (q.get('support_id') or [SUPPORT_ID])[0])
         return csv_err(10)
 
     if path == '/gameserver':
