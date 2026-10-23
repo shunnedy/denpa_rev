@@ -31,7 +31,10 @@ import collections, json, os, struct, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from dbexport import tables, export
 
-ELEMENTS = ['火', '水', '風', '土', '電気', '氷', '光', '闇']   # 3/4 are inferred
+# The eight denpa attributes are colours, confirmed from BodyColorData:
+# mask bit 0x2..0x100 -> element index 0..7, each named by the colour that
+# gives +2 affinity there. (Earlier guesses of 火/水/… were wrong.)
+ELEMENTS = ['あか', 'みずいろ', 'みどり', 'だいだい', 'きいろ', 'あお', 'しろ', 'むらさき']
 RGB565 = None
 
 
