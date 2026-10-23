@@ -123,7 +123,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('cmd', choices=['strings', 'names', 'value', 'stats',
-                                    'items', 'diff'])
+                                    'items', 'diff', 'sections'])
     ap.add_argument('save')
     ap.add_argument('arg', nargs='?')
     ap.add_argument('--db', default='out/db', help='dbexport.py output')
@@ -131,6 +131,28 @@ def main():
     a = ap.parse_args()
     data = open(a.save, 'rb').read()
     print(f'{os.path.basename(a.save)}: {len(data)} bytes ({len(data)/1024:.0f} KiB)')
+
+    if a.cmd == 'sections':
+        # the save opens with a directory of (offset, size) u32 pairs; identical
+        # sizes that appear twice are a block and its backup mirror.
+        import collections
+        secs = []
+        for o in range(0x14, 0x200, 8):
+            off, sz = struct.unpack_from('<2I', data, o)
+            if off < len(data) and 0 < sz <= len(data) and off + sz <= len(data):
+                secs.append((o, off, sz))
+        bysize = collections.defaultdict(list)
+        for _, off, sz in secs:
+            bysize[sz].append(off)
+        for o, off, sz in secs:
+            mirror = ''
+            peers = bysize[sz]
+            if len(peers) == 2:
+                other = peers[1] if peers[0] == off else peers[0]
+                diff = sum(1 for i in range(sz) if data[off + i] != data[other + i])
+                mirror = f'  <-> {other:#08x} ({diff} bytes differ)'
+            print(f'  dir@{o:#04x}  off={off:#08x} size={sz:#08x}{mirror}')
+        return
 
     if a.cmd == 'strings':
         for off, s in utf16_strings(data)[:a.limit]:

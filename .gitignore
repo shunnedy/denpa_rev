@@ -20,6 +20,8 @@ romfs.bin
 
 # セーブデータ・個人情報
 *.sav
+savedata.bin
+*save*.bin
 *.gh_token
 .gh_token
 
